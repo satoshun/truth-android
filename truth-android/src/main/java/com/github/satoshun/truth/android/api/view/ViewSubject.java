@@ -1,7 +1,9 @@
 package com.github.satoshun.truth.android.api.view;
 
 import android.annotation.TargetApi;
+import android.graphics.drawable.Drawable;
 import android.view.View;
+import android.view.animation.Animation;
 
 import com.google.common.truth.FailureStrategy;
 import com.google.common.truth.Subject;
@@ -18,9 +20,42 @@ public class ViewSubject extends Subject<ViewSubject, View> {
   }
 
   @TargetApi(HONEYCOMB)
-  public ViewSubject isSameAlpha(float alpha) {
+  public ViewSubject sameAsAlpha(float alpha) {
+    isNotNull();
     if (actual().getAlpha() != alpha) {
-      fail("is same alpha", actual().getAlpha());
+      fail("same as alpha", actual().getAlpha());
+    }
+    return this;
+  }
+
+  public ViewSubject sameAsAnimation(Animation animation) {
+    isNotNull();
+    if (actual().getAnimation() != animation) {
+      fail("same as animation", actual().getAnimation());
+    }
+    return this;
+  }
+
+  public ViewSubject sameAsBackground(Drawable background) {
+    isNotNull();
+    if (actual().getBackground() != background) {
+      fail("same as background", actual().getBackground());
+    }
+    return this;
+  }
+
+  public ViewSubject sameAsWidth(int width) {
+    isNotNull();
+    if (actual().getWidth() != width) {
+      fail("same as width", actual().getWidth());
+    }
+    return this;
+  }
+
+  public ViewSubject sameAsHeight(int height) {
+    isNotNull();
+    if (actual().getHeight() != height) {
+      fail("same as height", actual().getHeight());
     }
     return this;
   }
