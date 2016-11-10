@@ -15,8 +15,7 @@ public class ViewSubject extends Subject<ViewSubject, View> {
   }
 
   public ViewSubject isVisible() {
-    // TODO: check NULL
-
+    isNotNull();
     if (actual().getVisibility() != View.VISIBLE) {
       fail("is visible", actual().getVisibility());
     }
