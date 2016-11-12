@@ -60,6 +60,14 @@ public class ViewSubject extends Subject<ViewSubject, View> {
     return this;
   }
 
+  public ViewSubject sameAsId(int id) {
+    isNotNull();
+    if (actual().getId() != id) {
+      fail("same as id", actual().getId());
+    }
+    return this;
+  }
+
   public ViewSubject isVisible() {
     isNotNull();
     if (actual().getVisibility() != View.VISIBLE) {
@@ -74,7 +82,22 @@ public class ViewSubject extends Subject<ViewSubject, View> {
       fail("is not visible", actual().getVisibility());
     }
     return this;
+  }
 
+  public ViewSubject isClickable() {
+    isNotNull();
+    if (!actual().isClickable()) {
+      fail("is clickable", actual().isClickable());
+    }
+    return this;
+  }
+
+  public ViewSubject isNotClickable() {
+    isNotNull();
+    if (actual().isClickable()) {
+      fail("is not clickable", actual().isClickable());
+    }
+    return this;
   }
 
   private static class ViewSubjectFactory extends SubjectFactory<ViewSubject, View> {

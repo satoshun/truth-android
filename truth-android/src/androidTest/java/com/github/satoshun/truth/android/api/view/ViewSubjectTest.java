@@ -1,15 +1,12 @@
 package com.github.satoshun.truth.android.api.view;
 
-import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.annotation.UiThreadTest;
 import android.support.test.rule.UiThreadTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.animation.Animation;
 
 import com.github.satoshun.truth.android.api.TruthAndroid;
@@ -113,6 +110,21 @@ public class ViewSubjectTest {
     view.setBottom(200);
     TruthAndroid.assertThat(view)
             .sameAsHeight(201);
+  }
+
+  @UiThreadTest @Test
+  public void sameAsId_success() throws Exception {
+    view.setId(100);
+    TruthAndroid.assertThat(view)
+            .sameAsId(100);
+  }
+
+  @UiThreadTest @Test(expected = AssertionError.class)
+  public void sameAsId_failure() throws Exception {
+    assumeVersion(HONEYCOMB);
+    view.setId(100);
+    TruthAndroid.assertThat(view)
+            .sameAsId(101);
   }
 
   @UiThreadTest @Test
