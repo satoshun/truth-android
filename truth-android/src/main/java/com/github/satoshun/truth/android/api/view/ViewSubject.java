@@ -11,11 +11,11 @@ import com.google.common.truth.SubjectFactory;
 
 import static android.os.Build.VERSION_CODES.HONEYCOMB;
 
-public class ViewSubject extends Subject<ViewSubject, View> {
+public abstract class ViewSubject<S extends ViewSubject<S, T>, T extends View> extends Subject<S, T> {
 
   public static final ViewSubjectFactory FACTORY = new ViewSubjectFactory();
 
-  ViewSubject(FailureStrategy failureStrategy, View actual) {
+  ViewSubject(FailureStrategy failureStrategy, T actual) {
     super(failureStrategy, actual);
   }
 
@@ -100,10 +100,16 @@ public class ViewSubject extends Subject<ViewSubject, View> {
     return this;
   }
 
-  private static class ViewSubjectFactory extends SubjectFactory<ViewSubject, View> {
+  private static class ViewSubjectImpl extends ViewSubject<ViewSubjectImpl, View> {
+    ViewSubjectImpl(FailureStrategy failureStrategy, View actual) {
+      super(failureStrategy, actual);
+    }
+  }
+
+  private static class ViewSubjectFactory extends SubjectFactory<ViewSubjectImpl, View> {
     @Override
-    public ViewSubject getSubject(FailureStrategy fs, View that) {
-      return new ViewSubject(fs, that);
+    public ViewSubjectImpl getSubject(FailureStrategy fs, View that) {
+      return new ViewSubjectImpl(fs, that);
     }
   }
 }
