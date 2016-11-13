@@ -11,6 +11,9 @@ import com.google.common.truth.SubjectFactory;
 
 import static android.os.Build.VERSION_CODES.HONEYCOMB;
 
+/**
+ * Propositions for TextView subject
+ */
 public abstract class ViewSubject<S extends ViewSubject<S, T>, T extends View> extends Subject<S, T> {
 
   public static final ViewSubjectFactory FACTORY = new ViewSubjectFactory();
