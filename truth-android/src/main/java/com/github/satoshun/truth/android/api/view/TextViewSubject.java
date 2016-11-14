@@ -8,11 +8,11 @@ import com.google.common.truth.SubjectFactory;
 /**
  * Propositions for TextView subject
  */
-public class TextViewSubject extends ViewSubject<TextViewSubject, TextView> {
+public class TextViewSubject<S extends TextViewSubject<S, T>, T extends TextView> extends ViewSubject<S, T> {
 
   public static final TextViewSubjectFactory FACTORY = new TextViewSubjectFactory();
 
-  TextViewSubject(FailureStrategy failureStrategy, TextView actual) {
+  TextViewSubject(FailureStrategy failureStrategy, T actual) {
     super(failureStrategy, actual);
   }
 
@@ -40,10 +40,16 @@ public class TextViewSubject extends ViewSubject<TextViewSubject, TextView> {
     return this;
   }
 
-  private static class TextViewSubjectFactory extends SubjectFactory<TextViewSubject, TextView> {
+  private static class TextViewSubjectImpl extends TextViewSubject<TextViewSubjectImpl, TextView> {
+    TextViewSubjectImpl(FailureStrategy failureStrategy, TextView actual) {
+      super(failureStrategy, actual);
+    }
+  }
+
+  private static class TextViewSubjectFactory extends SubjectFactory<TextViewSubjectImpl, TextView> {
     @Override
-    public TextViewSubject getSubject(FailureStrategy fs, TextView that) {
-      return new TextViewSubject(fs, that);
+    public TextViewSubjectImpl getSubject(FailureStrategy fs, TextView that) {
+      return new TextViewSubjectImpl(fs, that);
     }
   }
 }
