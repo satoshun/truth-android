@@ -8,6 +8,8 @@ import android.view.animation.Animation;
 import com.google.common.truth.FailureStrategy;
 import com.google.common.truth.Subject;
 import com.google.common.truth.SubjectFactory;
+import com.google.common.truth.TestVerb;
+import com.google.common.truth.Truth;
 
 import static android.os.Build.VERSION_CODES.HONEYCOMB;
 
@@ -18,89 +20,95 @@ public abstract class ViewSubject<S extends ViewSubject<S, T>, T extends View> e
 
   public static final ViewSubjectFactory FACTORY = new ViewSubjectFactory();
 
+  private static final TestVerb ASSERT = Truth.assert_();
+
   ViewSubject(FailureStrategy failureStrategy, T actual) {
     super(failureStrategy, actual);
   }
 
   @TargetApi(HONEYCOMB)
-  public ViewSubject sameAsAlpha(float alpha) {
+  public S sameAsAlpha(float alpha) {
     isNotNull();
-    if (actual().getAlpha() != alpha) {
-      fail("same as alpha", actual().getAlpha());
-    }
-    return this;
+    ASSERT.withFailureMessage("same as alpha")
+            .that(alpha)
+            .isEqualTo(actual().getAlpha());
+    return myself();
   }
 
-  public ViewSubject sameAsAnimation(Animation animation) {
+  public S sameAsAnimation(Animation animation) {
     isNotNull();
-    if (actual().getAnimation() != animation) {
-      fail("same as animation", actual().getAnimation());
-    }
-    return this;
+    ASSERT.withFailureMessage("same as animation")
+            .that(animation)
+            .isEqualTo(actual().getAnimation());
+    return myself();
   }
 
-  public ViewSubject sameAsBackground(Drawable background) {
+  public S sameAsBackground(Drawable background) {
     isNotNull();
-    if (actual().getBackground() != background) {
-      fail("same as background", actual().getBackground());
-    }
-    return this;
+    ASSERT.withFailureMessage("same as background")
+            .that(background)
+            .isEqualTo(actual().getBackground());
+    return myself();
   }
 
-  public ViewSubject sameAsWidth(int width) {
+  public S sameAsWidth(int width) {
     isNotNull();
-    if (actual().getWidth() != width) {
-      fail("same as width", actual().getWidth());
-    }
-    return this;
+    ASSERT.withFailureMessage("same as width")
+            .that(width)
+            .isEqualTo(actual().getWidth());
+    return myself();
   }
 
-  public ViewSubject sameAsHeight(int height) {
+  public S sameAsHeight(int height) {
     isNotNull();
-    if (actual().getHeight() != height) {
-      fail("same as height", actual().getHeight());
-    }
-    return this;
+    ASSERT.withFailureMessage("same as height")
+            .that(height)
+            .isEqualTo(actual().getHeight());
+    return myself();
   }
 
-  public ViewSubject sameAsId(int id) {
+  public S sameAsId(int id) {
     isNotNull();
-    if (actual().getId() != id) {
-      fail("same as id", actual().getId());
-    }
-    return this;
+    ASSERT.withFailureMessage("same as id")
+            .that(id)
+            .isEqualTo(actual().getId());
+    return myself();
   }
 
-  public ViewSubject isVisible() {
+  public S isVisible() {
     isNotNull();
-    if (actual().getVisibility() != View.VISIBLE) {
-      fail("is visible", actual().getVisibility());
-    }
-    return this;
+    ASSERT.withFailureMessage("is visible")
+            .that(View.VISIBLE)
+            .isEqualTo(actual().getVisibility());
+    return myself();
   }
 
-  public ViewSubject isNotVisible() {
+  public S isNotVisible() {
     isNotNull();
-    if (actual().getVisibility() == View.VISIBLE) {
-      fail("is not visible", actual().getVisibility());
-    }
-    return this;
+    ASSERT.withFailureMessage("is visible")
+            .that(View.VISIBLE)
+            .isNotEqualTo(actual().getVisibility());
+    return myself();
   }
 
-  public ViewSubject isClickable() {
+  public S isClickable() {
     isNotNull();
-    if (!actual().isClickable()) {
-      fail("is clickable", actual().isClickable());
-    }
-    return this;
+    ASSERT.withFailureMessage("is clickable")
+            .that(actual().isClickable())
+            .isTrue();
+    return myself();
   }
 
-  public ViewSubject isNotClickable() {
+  public S isNotClickable() {
     isNotNull();
-    if (actual().isClickable()) {
-      fail("is not clickable", actual().isClickable());
-    }
-    return this;
+    ASSERT.withFailureMessage("is not clickable")
+            .that(actual().isClickable())
+            .isFalse();
+    return myself();
+  }
+
+  protected S myself() {
+    return (S) this;
   }
 
   private static class ViewSubjectImpl extends ViewSubject<ViewSubjectImpl, View> {

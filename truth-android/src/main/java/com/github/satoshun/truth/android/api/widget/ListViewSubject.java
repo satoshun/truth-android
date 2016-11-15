@@ -8,7 +8,7 @@ import com.google.common.truth.SubjectFactory;
 /**
  * Propositions for ListView subject
  */
-public class ListViewSubject<S extends ListViewSubject<S, T>, T extends ListView> extends AbsListViewSubject<S, T> {
+public abstract class ListViewSubject<S extends ListViewSubject<S, T>, T extends ListView> extends AbsListViewSubject<S, T> {
 
   public static final ListViewSubjectFactory FACTORY = new ListViewSubjectFactory();
 

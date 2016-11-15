@@ -8,7 +8,7 @@ import com.google.common.truth.SubjectFactory;
 /**
  * Propositions for TextView subject
  */
-public class TextViewSubject<S extends TextViewSubject<S, T>, T extends TextView> extends ViewSubject<S, T> {
+public abstract class TextViewSubject<S extends TextViewSubject<S, T>, T extends TextView> extends ViewSubject<S, T> {
 
   public static final TextViewSubjectFactory FACTORY = new TextViewSubjectFactory();
 
@@ -16,28 +16,28 @@ public class TextViewSubject<S extends TextViewSubject<S, T>, T extends TextView
     super(failureStrategy, actual);
   }
 
-  public TextViewSubject sameAsText(CharSequence text) {
+  public S sameAsText(CharSequence text) {
     isNotNull();
     if (!actual().getText().equals(text)) {
       fail("is text", actual().isClickable());
     }
-    return this;
+    return myself();
   }
 
-  public TextViewSubject isEmpty() {
+  public S isEmpty() {
     isNotNull();
     if (!actual().getText().equals("")) {
       fail("is empty");
     }
-    return this;
+    return myself();
   }
 
-  public TextViewSubject isNotEmpty() {
+  public S isNotEmpty() {
     isNotNull();
     if (actual().getText().equals("")) {
       fail("is not empty", actual().isClickable());
     }
-    return this;
+    return myself();
   }
 
   private static class TextViewSubjectImpl extends TextViewSubject<TextViewSubjectImpl, TextView> {
