@@ -37,40 +37,65 @@ public abstract class WebViewSubject<S extends WebViewSubject<S, T>, T extends W
 
   public S canGoForward() {
     isNotNull();
-    if (!actual().canGoForward()) {
-      fail("can go forward", actual().canGoForward());
-    }
+    ASSERT.withFailureMessage("can go forward")
+            .that(actual().canGoForward())
+            .isTrue();
     return myself();
   }
 
   public S canNotGoForward() {
     isNotNull();
-    if (actual().canGoForward()) {
-      fail("can not go forward", actual().canGoForward());
-    }
+    ASSERT.withFailureMessage("can not go forward")
+            .that(actual().canGoForward())
+            .isFalse();
     return myself();
   }
 
   public S sameAsCertificate(SslCertificate certificate) {
     isNotNull();
-    if (!certificate.equals(actual().getCertificate())) {
-      fail("same as certificate", actual().getCertificate());
-    }
+    ASSERT.withFailureMessage("same as certificate")
+            .that(certificate)
+            .isEqualTo(actual().getCertificate());
+    return myself();
+  }
+
+  public S sameAsContentHeight(int height) {
+    isNotNull();
+    ASSERT.withFailureMessage("same as content height")
+            .that(height)
+            .isEqualTo(actual().getContentHeight());
     return myself();
   }
 
   public S sameAsOriginalUrl(String url) {
     isNotNull();
-    if (url == null) {
-      if (actual().getOriginalUrl() != null) {
-        fail("same as originalUrl", actual().getOriginalUrl());
-      }
-      return myself();
-    }
-    Truth.assertThat(url).isEqualTo("");
-    if (!url.equals(actual().getOriginalUrl())) {
-      fail("same as originalUrl", actual().getOriginalUrl());
-    }
+    ASSERT.withFailureMessage("same as original url")
+            .that(url)
+            .isEqualTo(actual().getOriginalUrl());
+    return myself();
+  }
+
+  public S sameAsProgress(int progress) {
+    isNotNull();
+    ASSERT.withFailureMessage("same as progress")
+            .that(progress)
+            .isEqualTo(actual().getProgress());
+    return myself();
+  }
+
+  public S sameAsTitle(String title) {
+    isNotNull();
+    ASSERT.withFailureMessage("same as title")
+            .that(title)
+            .isEqualTo(actual().getTitle());
+    return myself();
+  }
+
+  public S sameAsUrl(String url) {
+    isNotNull();
+    ASSERT.withFailureMessage("same as url")
+            .that(url)
+            .isEqualTo(actual().getUrl());
     return myself();
   }
 
