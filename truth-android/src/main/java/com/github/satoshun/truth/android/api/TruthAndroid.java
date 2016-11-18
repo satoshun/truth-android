@@ -1,5 +1,6 @@
 package com.github.satoshun.truth.android.api;
 
+import android.net.Uri;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
@@ -10,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.github.satoshun.truth.android.api.net.UriSubject;
 import com.github.satoshun.truth.android.api.view.EditTextSubject;
 import com.github.satoshun.truth.android.api.view.TextViewSubject;
 import com.github.satoshun.truth.android.api.view.ViewGroupSubject;
@@ -51,5 +53,9 @@ public class TruthAndroid {
 
   public static WebViewSubject assertThat(WebView target) {
     return Truth.assertAbout(WebViewSubject.FACTORY).that(target);
+  }
+
+  public static UriSubject assertThat(Uri target) {
+    return Truth.assertAbout(UriSubject.FACTORY).that(target);
   }
 }

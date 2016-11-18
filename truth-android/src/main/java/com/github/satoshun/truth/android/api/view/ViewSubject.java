@@ -5,8 +5,8 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.animation.Animation;
 
+import com.github.satoshun.truth.android.api.BaseSubject;
 import com.google.common.truth.FailureStrategy;
-import com.google.common.truth.Subject;
 import com.google.common.truth.SubjectFactory;
 import com.google.common.truth.TestVerb;
 import com.google.common.truth.Truth;
@@ -16,7 +16,7 @@ import static android.os.Build.VERSION_CODES.HONEYCOMB;
 /**
  * Propositions for View subject
  */
-public abstract class ViewSubject<S extends ViewSubject<S, T>, T extends View> extends Subject<S, T> {
+public abstract class ViewSubject<S extends ViewSubject<S, T>, T extends View> extends BaseSubject<S, T> {
 
   public static final ViewSubjectFactory FACTORY = new ViewSubjectFactory();
 
@@ -107,6 +107,7 @@ public abstract class ViewSubject<S extends ViewSubject<S, T>, T extends View> e
     return myself();
   }
 
+  @SuppressWarnings("unchecked")
   protected S myself() {
     return (S) this;
   }
