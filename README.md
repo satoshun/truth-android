@@ -4,3 +4,10 @@
 [![codecov](https://codecov.io/gh/satoshun/truth-android/branch/master/graph/badge.svg)](https://codecov.io/gh/satoshun/truth-android)
 
 this project inspired by [assertj-android](https://github.com/square/assertj-android).
+
+
+## Examples
+
+```java
+TruthAndroid.assertThat(view).isGone();
+``` 
