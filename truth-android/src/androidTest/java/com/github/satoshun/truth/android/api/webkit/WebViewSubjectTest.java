@@ -18,7 +18,8 @@ import org.junit.runner.RunWith;
 @RunWith(AndroidJUnit4.class)
 public class WebViewSubjectTest {
 
-  @Rule public ActivityTestRule<TestActivity> activityRule = new ActivityTestRule<>(TestActivity.class);
+  @Rule
+  public ActivityTestRule<TestActivity> activityRule = new ActivityTestRule<>(TestActivity.class);
   private UiThreadTestRule uiThreadTestRule = new UiThreadTestRule();
 
   private WebView view;
@@ -48,6 +49,6 @@ public class WebViewSubjectTest {
   @Test(expected = AssertionError.class)
   public void canGoBack_failure() throws Exception {
     TruthAndroid.assertThat(view)
-            .canGoBack();
+        .canGoBack();
   }
 }

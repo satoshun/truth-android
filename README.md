@@ -11,3 +11,10 @@ this project inspired by [assertj-android](https://github.com/square/assertj-and
 ```java
 TruthAndroid.assertThat(view).isGone();
 ``` 
+
+```java
+TruthAndroid.assertThat(view)
+    .isGone()
+    .sameAsWidth(100)
+    .sameAsHeight(200);
+```

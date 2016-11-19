@@ -18,11 +18,11 @@ public class UriSubjectTest {
 
   @Test public void sameAsPath_success() throws Exception {
     TruthAndroid.assertThat(uri)
-            .sameAsPath("/hoge/fuga");
+        .sameAsPath("/hoge/fuga");
   }
 
   @Test(expected = AssertionError.class) public void sameAsPath_failure() throws Exception {
     TruthAndroid.assertThat(uri)
-            .sameAsPath("/hoge");
+        .sameAsPath("/hoge");
   }
 }
