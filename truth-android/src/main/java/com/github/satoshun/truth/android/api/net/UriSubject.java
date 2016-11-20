@@ -14,46 +14,46 @@ public abstract class UriSubject<S extends UriSubject<S, T>, T extends Uri> exte
     super(failureStrategy, actual);
   }
 
-  public S sameAsPath(String path) {
+  public S isPath(String path) {
     isNotNull();
     String actualPath = actual().getPath();
-    check().withFailureMessage("same as path")
+    check().withFailureMessage("is path")
         .that(actualPath)
         .isEqualTo(path);
     return myself();
   }
 
-  public S notSameAsPath(String path) {
+  public S isNotPath(String path) {
     isNotNull();
     String actualPath = actual().getPath();
-    check().withFailureMessage("not same as path")
+    check().withFailureMessage("is not path")
         .that(actualPath)
         .isNotEqualTo(path);
     return myself();
   }
 
-  public S sameAsPort(int port) {
+  public S isPort(int port) {
     isNotNull();
     int actualPort = actual().getPort();
-    check().withFailureMessage("same as port")
+    check().withFailureMessage("is port")
         .that(actualPort)
         .isEqualTo(port);
     return myself();
   }
 
-  public S sameAsHost(String host) {
+  public S isHost(String host) {
     isNotNull();
     String actualHost = actual().getHost();
-    check().withFailureMessage("same as host")
+    check().withFailureMessage("is host")
         .that(actualHost)
         .isEqualTo(host);
     return myself();
   }
 
-  public S sameAsFragment(String fragment) {
+  public S isFragment(String fragment) {
     isNotNull();
     String actualFragment = actual().getFragment();
-    check().withFailureMessage("same as fragment")
+    check().withFailureMessage("is fragment")
         .that(actualFragment)
         .isEqualTo(fragment);
     return myself();
@@ -68,10 +68,10 @@ public abstract class UriSubject<S extends UriSubject<S, T>, T extends Uri> exte
     return myself();
   }
 
-  public S sameAsQuery(String query) {
+  public S isQuery(String query) {
     isNotNull();
     String actualQuery = actual().getQuery();
-    check().withFailureMessage("same as query")
+    check().withFailureMessage("is query")
         .that(actualQuery)
         .isEqualTo(query);
     return myself();
@@ -86,19 +86,19 @@ public abstract class UriSubject<S extends UriSubject<S, T>, T extends Uri> exte
     return myself();
   }
 
-  public S sameAsScheme(String scheme) {
+  public S isScheme(String scheme) {
     isNotNull();
     String actualScheme = actual().getScheme();
-    check().withFailureMessage("same as scheme")
+    check().withFailureMessage("is scheme")
         .that(actualScheme)
         .isEqualTo(scheme);
     return myself();
   }
 
-  public S sameAsUserInfo(String userInfo) {
+  public S isUserInfo(String userInfo) {
     isNotNull();
     String actualUserInfo = actual().getUserInfo();
-    check().withFailureMessage("same as userinfo")
+    check().withFailureMessage("is userinfo")
         .that(actualUserInfo)
         .isEqualTo(userInfo);
     return myself();

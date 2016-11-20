@@ -36,7 +36,7 @@ public class ViewSubjectTest {
     assumeVersion(HONEYCOMB);
     view.setAlpha((float) 0.45);
     TruthAndroid.assertThat(view)
-            .sameAsAlpha((float) 0.45);
+            .isAlpha((float) 0.45);
   }
 
   @UiThreadTest @Test(expected = AssertionError.class)
@@ -44,7 +44,7 @@ public class ViewSubjectTest {
     assumeVersion(HONEYCOMB);
     view.setAlpha((float) 0.45);
     TruthAndroid.assertThat(view)
-            .sameAsAlpha((float) 0.451);
+            .isAlpha((float) 0.451);
   }
 
   @UiThreadTest @Test
@@ -53,7 +53,7 @@ public class ViewSubjectTest {
     };
     view.setAnimation(animation);
     TruthAndroid.assertThat(view)
-            .sameAsAnimation(animation);
+            .isAnimation(animation);
   }
 
   @UiThreadTest @Test(expected = AssertionError.class)
@@ -61,7 +61,7 @@ public class ViewSubjectTest {
     view.setAnimation(new Animation() {
     });
     TruthAndroid.assertThat(view)
-            .sameAsAnimation(new Animation() {
+            .isAnimation(new Animation() {
             });
   }
 
@@ -70,14 +70,14 @@ public class ViewSubjectTest {
     BitmapDrawable background = new BitmapDrawable();
     view.setBackgroundDrawable(background);
     TruthAndroid.assertThat(view)
-            .sameAsBackground(background);
+            .isBackground(background);
   }
 
   @UiThreadTest @Test(expected = AssertionError.class)
   public void sameAsBackground_failure() throws Exception {
     view.setBackgroundDrawable(new BitmapDrawable());
     TruthAndroid.assertThat(view)
-            .sameAsBackground(new BitmapDrawable());
+            .isBackground(new BitmapDrawable());
   }
 
   @UiThreadTest @Test
@@ -85,7 +85,7 @@ public class ViewSubjectTest {
     assumeVersion(HONEYCOMB);
     view.setRight(100);
     TruthAndroid.assertThat(view)
-            .sameAsWidth(100);
+            .isWidth(100);
   }
 
   @UiThreadTest @Test(expected = AssertionError.class)
@@ -93,7 +93,7 @@ public class ViewSubjectTest {
     assumeVersion(HONEYCOMB);
     view.setRight(101);
     TruthAndroid.assertThat(view)
-            .sameAsWidth(100);
+            .isWidth(100);
   }
 
   @UiThreadTest @Test
@@ -101,7 +101,7 @@ public class ViewSubjectTest {
     assumeVersion(HONEYCOMB);
     view.setBottom(200);
     TruthAndroid.assertThat(view)
-            .sameAsHeight(200);
+            .isHeight(200);
   }
 
   @UiThreadTest @Test(expected = AssertionError.class)
@@ -109,14 +109,14 @@ public class ViewSubjectTest {
     assumeVersion(HONEYCOMB);
     view.setBottom(200);
     TruthAndroid.assertThat(view)
-            .sameAsHeight(201);
+            .isHeight(201);
   }
 
   @UiThreadTest @Test
   public void sameAsId_success() throws Exception {
     view.setId(100);
     TruthAndroid.assertThat(view)
-            .sameAsId(100);
+            .isId(100);
   }
 
   @UiThreadTest @Test(expected = AssertionError.class)
@@ -124,7 +124,7 @@ public class ViewSubjectTest {
     assumeVersion(HONEYCOMB);
     view.setId(100);
     TruthAndroid.assertThat(view)
-            .sameAsId(101);
+            .isId(101);
   }
 
   @UiThreadTest @Test

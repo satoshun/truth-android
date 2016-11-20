@@ -12,6 +12,7 @@ import com.google.common.truth.TestVerb;
 import com.google.common.truth.Truth;
 
 import static android.os.Build.VERSION_CODES.HONEYCOMB;
+import static android.os.Build.VERSION_CODES.KITKAT;
 
 /**
  * Propositions for View subject
@@ -25,49 +26,49 @@ public abstract class ViewSubject<S extends ViewSubject<S, T>, T extends View> e
   }
 
   @TargetApi(HONEYCOMB)
-  public S sameAsAlpha(float alpha) {
+  public S isAlpha(float alpha) {
     isNotNull();
-    check().withFailureMessage("same as alpha")
+    check().withFailureMessage("is alpha")
         .that(alpha)
         .isEqualTo(actual().getAlpha());
     return myself();
   }
 
-  public S sameAsAnimation(Animation animation) {
+  public S isAnimation(Animation animation) {
     isNotNull();
-    check().withFailureMessage("same as animation")
+    check().withFailureMessage("is animation")
         .that(animation)
         .isEqualTo(actual().getAnimation());
     return myself();
   }
 
-  public S sameAsBackground(Drawable background) {
+  public S isBackground(Drawable background) {
     isNotNull();
-    check().withFailureMessage("same as background")
+    check().withFailureMessage("is background")
         .that(background)
         .isEqualTo(actual().getBackground());
     return myself();
   }
 
-  public S sameAsWidth(int width) {
+  public S isWidth(int width) {
     isNotNull();
-    check().withFailureMessage("same as width")
+    check().withFailureMessage("is width")
         .that(width)
         .isEqualTo(actual().getWidth());
     return myself();
   }
 
-  public S sameAsHeight(int height) {
+  public S isHeight(int height) {
     isNotNull();
-    check().withFailureMessage("same as height")
+    check().withFailureMessage("is height")
         .that(height)
         .isEqualTo(actual().getHeight());
     return myself();
   }
 
-  public S sameAsId(int id) {
+  public S isId(int id) {
     isNotNull();
-    check().withFailureMessage("same as id")
+    check().withFailureMessage("is id")
         .that(id)
         .isEqualTo(actual().getId());
     return myself();
@@ -101,6 +102,78 @@ public abstract class ViewSubject<S extends ViewSubject<S, T>, T extends View> e
     isNotNull();
     check().withFailureMessage("is not clickable")
         .that(actual().isClickable())
+        .isFalse();
+    return myself();
+  }
+
+  @TargetApi(KITKAT)
+  public S isAttachedToWindow() {
+    isNotNull();
+    check().withFailureMessage("is attached to window")
+        .that(actual().isAttachedToWindow())
+        .isTrue();
+    return myself();
+  }
+
+  @TargetApi(KITKAT)
+  public S isNotAttachedToWindow() {
+    isNotNull();
+    check().withFailureMessage("is not attached to window")
+        .that(actual().isAttachedToWindow())
+        .isFalse();
+    return myself();
+  }
+
+  @TargetApi(KITKAT)
+  public S isResolvedLayoutDirection() {
+    isNotNull();
+    check().withFailureMessage("is resolvedLayoutDirection")
+        .that(actual().isLayoutDirectionResolved())
+        .isTrue();
+    return myself();
+  }
+
+  @TargetApi(KITKAT)
+  public S isNotResolvedLayoutDirection() {
+    isNotNull();
+    check().withFailureMessage("is not resolvedLayoutDirection")
+        .that(actual().isLayoutDirectionResolved())
+        .isFalse();
+    return myself();
+  }
+
+  @TargetApi(KITKAT)
+  public S isTextAlignmentResolvedIsTrue() {
+    isNotNull();
+    check().withFailureMessage("is textAlignmentResolved")
+        .that(actual().isTextAlignmentResolved())
+        .isTrue();
+    return myself();
+  }
+
+  @TargetApi(KITKAT)
+  public S isNotTextAlignmentResolved() {
+    isNotNull();
+    check().withFailureMessage("is not textAlignmentResolved")
+        .that(actual().isTextAlignmentResolved())
+        .isFalse();
+    return myself();
+  }
+
+  @TargetApi(KITKAT)
+  public S isResolvedTextDirection() {
+    isNotNull();
+    check().withFailureMessage("is resolvedTextDirection")
+        .that(actual().isTextDirectionResolved())
+        .isTrue();
+    return myself();
+  }
+
+  @TargetApi(KITKAT)
+  public S isNotResolvedTextDirection() {
+    isNotNull();
+    check().withFailureMessage("is not resolvedTextDirection")
+        .that(actual().isTextDirectionResolved())
         .isFalse();
     return myself();
   }

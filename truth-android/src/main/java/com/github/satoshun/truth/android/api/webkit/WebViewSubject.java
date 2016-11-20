@@ -49,49 +49,49 @@ public abstract class WebViewSubject<S extends WebViewSubject<S, T>, T extends W
     return myself();
   }
 
-  public S sameAsCertificate(SslCertificate certificate) {
+  public S isCertificate(SslCertificate certificate) {
     isNotNull();
-    check().withFailureMessage("same as certificate")
+    check().withFailureMessage("is certificate")
         .that(certificate)
         .isEqualTo(actual().getCertificate());
     return myself();
   }
 
-  public S sameAsContentHeight(int height) {
+  public S isContentHeight(int height) {
     isNotNull();
-    check().withFailureMessage("same as content height")
+    check().withFailureMessage("is content height")
         .that(height)
         .isEqualTo(actual().getContentHeight());
     return myself();
   }
 
-  public S sameAsOriginalUrl(String url) {
+  public S isOriginalUrl(String url) {
     isNotNull();
-    check().withFailureMessage("same as original url")
+    check().withFailureMessage("is original url")
         .that(url)
         .isEqualTo(actual().getOriginalUrl());
     return myself();
   }
 
-  public S sameAsProgress(int progress) {
+  public S isProgress(int progress) {
     isNotNull();
-    check().withFailureMessage("same as progress")
+    check().withFailureMessage("is progress")
         .that(progress)
         .isEqualTo(actual().getProgress());
     return myself();
   }
 
-  public S sameAsTitle(String title) {
+  public S isTitle(String title) {
     isNotNull();
-    check().withFailureMessage("same as title")
+    check().withFailureMessage("is title")
         .that(title)
         .isEqualTo(actual().getTitle());
     return myself();
   }
 
-  public S sameAsUrl(String url) {
+  public S isUrl(String url) {
     isNotNull();
-    check().withFailureMessage("same as url")
+    check().withFailureMessage("is url")
         .that(url)
         .isEqualTo(actual().getUrl());
     return myself();
