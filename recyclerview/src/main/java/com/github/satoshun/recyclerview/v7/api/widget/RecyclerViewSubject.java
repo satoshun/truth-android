@@ -71,16 +71,16 @@ public abstract class RecyclerViewSubject<S extends RecyclerViewSubject<S, T>, T
     return myself();
   }
 
-  private static class RecyclerViewSubjectImpl extends RecyclerViewSubject<RecyclerViewSubjectImpl, RecyclerView> {
-    RecyclerViewSubjectImpl(FailureStrategy failureStrategy, RecyclerView actual) {
-      super(failureStrategy, actual);
+    private static class RecyclerViewSubjectImpl extends RecyclerViewSubject<RecyclerViewSubjectImpl, RecyclerView> {
+      RecyclerViewSubjectImpl(FailureStrategy failureStrategy, RecyclerView actual) {
+        super(failureStrategy, actual);
+      }
     }
-  }
 
-  private static class RecyclerViewSubjectFactory extends SubjectFactory<RecyclerViewSubjectImpl, RecyclerView> {
-    @Override
-    public RecyclerViewSubjectImpl getSubject(FailureStrategy fs, RecyclerView that) {
-      return new RecyclerViewSubjectImpl(fs, that);
+    private static class RecyclerViewSubjectFactory extends SubjectFactory<RecyclerViewSubjectImpl, RecyclerView> {
+      @Override
+      public RecyclerViewSubjectImpl getSubject(FailureStrategy fs, RecyclerView that) {
+        return new RecyclerViewSubjectImpl(fs, that);
+      }
     }
-  }
 }
