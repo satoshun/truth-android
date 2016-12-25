@@ -6,16 +6,15 @@ import com.github.satoshun.truth.android.api.BaseSubject;
 import com.google.common.truth.FailureStrategy;
 import com.google.common.truth.SubjectFactory;
 
-public abstract class RecyclerViewAdapterSubject<VH extends RecyclerView.ViewHolder, S extends RecyclerViewAdapterSubject<VH, S, T>, T extends RecyclerView.Adapter<VH>>
-    extends BaseSubject<S, T> {
+public class RecyclerViewAdapterSubject<VH extends RecyclerView.ViewHolder> extends BaseSubject<RecyclerViewAdapterSubject<VH>, RecyclerView.Adapter<VH>> {
 
   public static final RecyclerViewAdapterSubjectFactory FACTORY = new RecyclerViewAdapterSubjectFactory();
 
-  public RecyclerViewAdapterSubject(FailureStrategy failureStrategy, T actual) {
+  public RecyclerViewAdapterSubject(FailureStrategy failureStrategy, RecyclerView.Adapter<VH> actual) {
     super(failureStrategy, actual);
   }
 
-  public S isItemCount(int count) {
+  public RecyclerViewAdapterSubject isItemCount(int count) {
     isNotNull();
     check().withFailureMessage("is item count")
         .that(count)
@@ -23,7 +22,7 @@ public abstract class RecyclerViewAdapterSubject<VH extends RecyclerView.ViewHol
     return myself();
   }
 
-  public S hasStableIds() {
+  public RecyclerViewAdapterSubject hasStableIds() {
     isNotNull();
     check().withFailureMessage("has stable ids")
         .that(actual().hasStableIds())
@@ -31,7 +30,7 @@ public abstract class RecyclerViewAdapterSubject<VH extends RecyclerView.ViewHol
     return myself();
   }
 
-  public S doesNotHaveStableIds() {
+  public RecyclerViewAdapterSubject doesNotHaveStableIds() {
     isNotNull();
     check().withFailureMessage("does not have stable ids")
         .that(actual().hasStableIds())
@@ -39,7 +38,7 @@ public abstract class RecyclerViewAdapterSubject<VH extends RecyclerView.ViewHol
     return myself();
   }
 
-  public S hasObservers() {
+  public RecyclerViewAdapterSubject hasObservers() {
     isNotNull();
     check().withFailureMessage("has observers")
         .that(actual().hasObservers())
@@ -47,7 +46,7 @@ public abstract class RecyclerViewAdapterSubject<VH extends RecyclerView.ViewHol
     return myself();
   }
 
-  public S doesNotHaveObservers() {
+  public RecyclerViewAdapterSubject doesNotHaveObservers() {
     isNotNull();
     check().withFailureMessage("does not have observers")
         .that(actual().hasObservers())
@@ -55,16 +54,10 @@ public abstract class RecyclerViewAdapterSubject<VH extends RecyclerView.ViewHol
     return myself();
   }
 
-  private static class RecyclerViewAdapterSubjectImpl<VH extends RecyclerView.ViewHolder>  extends RecyclerViewAdapterSubject<VH, RecyclerViewAdapterSubjectImpl<VH>, RecyclerView.Adapter<VH>> {
-    public RecyclerViewAdapterSubjectImpl(FailureStrategy failureStrategy, RecyclerView.Adapter<VH> actual) {
-      super(failureStrategy, actual);
-    }
-  }
-
-  private static class RecyclerViewAdapterSubjectFactory<VH extends RecyclerView.ViewHolder> extends SubjectFactory<RecyclerViewAdapterSubjectImpl<VH>, RecyclerView.Adapter<VH>> {
+  private static class RecyclerViewAdapterSubjectFactory<VH extends RecyclerView.ViewHolder> extends SubjectFactory<RecyclerViewAdapterSubject<VH>, RecyclerView.Adapter<VH>> {
     @Override
-    public RecyclerViewAdapterSubjectImpl<VH> getSubject(FailureStrategy fs, RecyclerView.Adapter<VH> that) {
-      return new RecyclerViewAdapterSubjectImpl<>(fs, that);
+    public RecyclerViewAdapterSubject<VH> getSubject(FailureStrategy fs, RecyclerView.Adapter<VH> that) {
+      return new RecyclerViewAdapterSubject<>(fs, that);
     }
   }
 }

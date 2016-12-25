@@ -6,16 +6,15 @@ import com.github.satoshun.truth.android.api.view.ViewGroupSubject;
 import com.google.common.truth.FailureStrategy;
 import com.google.common.truth.SubjectFactory;
 
-public abstract class RecyclerViewSubject<S extends RecyclerViewSubject<S, T>, T extends RecyclerView>
-    extends ViewGroupSubject<S, T> {
+public class RecyclerViewSubject extends ViewGroupSubject<RecyclerViewSubject, RecyclerView> {
 
   public static final RecyclerViewSubjectFactory FACTORY = new RecyclerViewSubjectFactory();
 
-  public RecyclerViewSubject(FailureStrategy failureStrategy, T actual) {
+  public RecyclerViewSubject(FailureStrategy failureStrategy, RecyclerView actual) {
     super(failureStrategy, actual);
   }
 
-  public <VH extends RecyclerView.ViewHolder> S isAdapter(RecyclerView.Adapter<VH> adapter) {
+  public <VH extends RecyclerView.ViewHolder> RecyclerViewSubject isAdapter(RecyclerView.Adapter<VH> adapter) {
     isNotNull();
     check().withFailureMessage("is adapter")
         .that(adapter)
@@ -23,7 +22,7 @@ public abstract class RecyclerViewSubject<S extends RecyclerViewSubject<S, T>, T
     return myself();
   }
 
-  public S isItemAnimator(RecyclerView.ItemAnimator itemAnimator) {
+  public RecyclerViewSubject isItemAnimator(RecyclerView.ItemAnimator itemAnimator) {
     isNotNull();
     check().withFailureMessage("is item animator")
         .that(itemAnimator)
@@ -31,7 +30,7 @@ public abstract class RecyclerViewSubject<S extends RecyclerViewSubject<S, T>, T
     return myself();
   }
 
-  public S isLayoutManager(RecyclerView.LayoutManager layoutManager) {
+  public RecyclerViewSubject isLayoutManager(RecyclerView.LayoutManager layoutManager) {
     isNotNull();
     check().withFailureMessage("is layout manager")
         .that(layoutManager)
@@ -39,7 +38,7 @@ public abstract class RecyclerViewSubject<S extends RecyclerViewSubject<S, T>, T
     return myself();
   }
 
-  public S isRecycledViewPool(RecyclerView.RecycledViewPool recycledViewPool) {
+  public RecyclerViewSubject isRecycledViewPool(RecyclerView.RecycledViewPool recycledViewPool) {
     isNotNull();
     check().withFailureMessage("is recycled view pool")
         .that(recycledViewPool)
@@ -47,7 +46,7 @@ public abstract class RecyclerViewSubject<S extends RecyclerViewSubject<S, T>, T
     return myself();
   }
 
-  public S isScrollState(int scrollState) {
+  public RecyclerViewSubject isScrollState(int scrollState) {
     isNotNull();
     check().withFailureMessage("is scroll state")
         .that(scrollState)
@@ -55,7 +54,7 @@ public abstract class RecyclerViewSubject<S extends RecyclerViewSubject<S, T>, T
     return myself();
   }
 
-  public S hasFixedSize() {
+  public RecyclerViewSubject hasFixedSize() {
     isNotNull();
     check().withFailureMessage("has fixed size")
         .that(actual().hasFixedSize())
@@ -63,7 +62,7 @@ public abstract class RecyclerViewSubject<S extends RecyclerViewSubject<S, T>, T
     return myself();
   }
 
-  public S doesNotHaveFixedSize() {
+  public RecyclerViewSubject doesNotHaveFixedSize() {
     isNotNull();
     check().withFailureMessage("does not have fixed size")
         .that(actual().hasFixedSize())
@@ -71,16 +70,10 @@ public abstract class RecyclerViewSubject<S extends RecyclerViewSubject<S, T>, T
     return myself();
   }
 
-    private static class RecyclerViewSubjectImpl extends RecyclerViewSubject<RecyclerViewSubjectImpl, RecyclerView> {
-      RecyclerViewSubjectImpl(FailureStrategy failureStrategy, RecyclerView actual) {
-        super(failureStrategy, actual);
-      }
+  private static class RecyclerViewSubjectFactory extends SubjectFactory<RecyclerViewSubject, RecyclerView> {
+    @Override
+    public RecyclerViewSubject getSubject(FailureStrategy fs, RecyclerView that) {
+      return new RecyclerViewSubject(fs, that);
     }
-
-    private static class RecyclerViewSubjectFactory extends SubjectFactory<RecyclerViewSubjectImpl, RecyclerView> {
-      @Override
-      public RecyclerViewSubjectImpl getSubject(FailureStrategy fs, RecyclerView that) {
-        return new RecyclerViewSubjectImpl(fs, that);
-      }
-    }
+  }
 }

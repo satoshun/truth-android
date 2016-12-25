@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.github.satoshun.recyclerview.v7.api.widget.RecyclerViewAdapterSubject;
 import com.github.satoshun.recyclerview.v7.api.widget.RecyclerViewSubject;
+import com.github.satoshun.recyclerview.v7.api.widget.RecyclerViewViewHolderSubject;
 import com.google.common.truth.Truth;
 
 public final class Subjects {
@@ -12,7 +13,11 @@ public final class Subjects {
     return Truth.assertAbout(RecyclerViewSubject.FACTORY).that(target);
   }
 
-  public static <VH extends RecyclerView.ViewHolder> RecyclerViewAdapterSubject assertThat(RecyclerView.Adapter<VH> target) {
-    return (RecyclerViewAdapterSubject) Truth.assertAbout(RecyclerViewAdapterSubject.FACTORY).that(target);
+  public static <VH extends RecyclerView.ViewHolder> RecyclerViewAdapterSubject<VH> assertThat(RecyclerView.Adapter<VH> target) {
+    return (RecyclerViewAdapterSubject<VH>) Truth.assertAbout(RecyclerViewAdapterSubject.FACTORY).that(target);
+  }
+
+  public static RecyclerViewViewHolderSubject assertThat(RecyclerView.ViewHolder target) {
+    return Truth.assertAbout(RecyclerViewViewHolderSubject.FACTORY).that(target);
   }
 }
