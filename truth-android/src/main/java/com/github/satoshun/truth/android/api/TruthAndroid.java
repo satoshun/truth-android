@@ -1,5 +1,6 @@
 package com.github.satoshun.truth.android.api;
 
+import android.accounts.Account;
 import android.net.Uri;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.github.satoshun.truth.android.api.accounts.AccountSubject;
 import com.github.satoshun.truth.android.api.net.UriSubject;
 import com.github.satoshun.truth.android.api.view.EditTextSubject;
 import com.github.satoshun.truth.android.api.view.TextViewSubject;
@@ -57,5 +59,9 @@ public class TruthAndroid {
 
   public static UriSubject assertThat(Uri target) {
     return Truth.assertAbout(UriSubject.FACTORY).that(target);
+  }
+
+  public static AccountSubject assertThat(Account target) {
+    return Truth.assertAbout(AccountSubject.FACTORY).that(target);
   }
 }
