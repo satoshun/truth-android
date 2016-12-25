@@ -6,7 +6,7 @@ import android.support.test.rule.UiThreadTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.widget.TextView;
 
-import com.github.satoshun.truth.android.api.TruthAndroid;
+import com.github.satoshun.truth.android.api.Subjects;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -28,12 +28,12 @@ public class TextViewSubjectTest {
   @UiThreadTest @Test
   public void sameAsText_success() throws Exception {
     view.setText("hoge");
-    TruthAndroid.assertThat(view).sameAsText("hoge");
+    Subjects.assertThat(view).sameAsText("hoge");
   }
 
   @UiThreadTest @Test(expected = AssertionError.class)
   public void sameAsText_failure() throws Exception {
     view.setText("hoge");
-    TruthAndroid.assertThat(view).sameAsText("fuga");
+    Subjects.assertThat(view).sameAsText("fuga");
   }
 }

@@ -24,7 +24,7 @@ import com.github.satoshun.truth.android.api.widget.AdapterViewSubject;
 import com.github.satoshun.truth.android.api.widget.ListViewSubject;
 import com.google.common.truth.Truth;
 
-public class TruthAndroid {
+public class Subjects {
   public static ViewSubject assertThat(View target) {
     return Truth.assertAbout(ViewSubject.FACTORY).that(target);
   }
