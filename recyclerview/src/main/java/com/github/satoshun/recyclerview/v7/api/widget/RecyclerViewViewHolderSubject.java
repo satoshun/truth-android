@@ -6,8 +6,6 @@ import com.github.satoshun.truth.android.api.BaseSubject;
 import com.google.common.truth.FailureStrategy;
 import com.google.common.truth.SubjectFactory;
 
-import static com.google.common.truth.Truth.assertThat;
-
 public class RecyclerViewViewHolderSubject extends BaseSubject<RecyclerViewViewHolderSubject, RecyclerView.ViewHolder> {
 
   public static final RecyclerViewViewHolderSubjectFactory FACTORY = new RecyclerViewViewHolderSubjectFactory();

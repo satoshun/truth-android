@@ -3,6 +3,7 @@ package com.github.satoshun.recyclerview.v7.api;
 import android.support.v7.widget.RecyclerView;
 
 import com.github.satoshun.recyclerview.v7.api.widget.RecyclerViewAdapterSubject;
+import com.github.satoshun.recyclerview.v7.api.widget.RecyclerViewLayoutSubject;
 import com.github.satoshun.recyclerview.v7.api.widget.RecyclerViewSubject;
 import com.github.satoshun.recyclerview.v7.api.widget.RecyclerViewViewHolderSubject;
 import com.google.common.truth.Truth;
@@ -19,5 +20,9 @@ public final class Subjects {
 
   public static RecyclerViewViewHolderSubject assertThat(RecyclerView.ViewHolder target) {
     return Truth.assertAbout(RecyclerViewViewHolderSubject.FACTORY).that(target);
+  }
+
+  public static RecyclerViewLayoutSubject assertThat(RecyclerView.LayoutParams target) {
+    return Truth.assertAbout(RecyclerViewLayoutSubject.FACTORY).that(target);
   }
 }
