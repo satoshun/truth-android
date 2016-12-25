@@ -1,2 +1,3 @@
-include ':app'
 include ':truth-android'
+include ':recyclerview'
+include ':app'
