@@ -1,11 +1,14 @@
 package com.github.satoshun.truth.android.api.webkit;
 
+import android.annotation.TargetApi;
 import android.net.http.SslCertificate;
 import android.webkit.WebView;
 
 import com.github.satoshun.truth.android.api.widget.AbsoluteLayoutSubject;
 import com.google.common.truth.FailureStrategy;
 import com.google.common.truth.SubjectFactory;
+
+import static android.os.Build.VERSION_CODES.HONEYCOMB;
 
 public abstract class WebViewSubject<S extends WebViewSubject<S, T>, T extends WebView> extends AbsoluteLayoutSubject<S, T> {
 
@@ -92,6 +95,24 @@ public abstract class WebViewSubject<S extends WebViewSubject<S, T>, T extends W
     check().withFailureMessage("is url")
         .that(url)
         .isEqualTo(actual().getUrl());
+    return myself();
+  }
+
+  @TargetApi(HONEYCOMB)
+  public S isPrivateBrowsingEnabled() {
+    isNotNull();
+    check().withFailureMessage("is private browsing enabled")
+        .that(actual().isPrivateBrowsingEnabled())
+        .isTrue();
+    return myself();
+  }
+
+  @TargetApi(HONEYCOMB)
+  public S isPrivateBrowsingDisabled() {
+    isNotNull();
+    check().withFailureMessage("is private browsing disabled")
+        .that(actual().isPrivateBrowsingEnabled())
+        .isFalse();
     return myself();
   }
 
