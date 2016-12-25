@@ -6,8 +6,6 @@ import android.webkit.WebView;
 import com.github.satoshun.truth.android.api.widget.AbsoluteLayoutSubject;
 import com.google.common.truth.FailureStrategy;
 import com.google.common.truth.SubjectFactory;
-import com.google.common.truth.TestVerb;
-import com.google.common.truth.Truth;
 
 public abstract class WebViewSubject<S extends WebViewSubject<S, T>, T extends WebView> extends AbsoluteLayoutSubject<S, T> {
 

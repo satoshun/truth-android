@@ -8,8 +8,6 @@ import android.view.animation.Animation;
 import com.github.satoshun.truth.android.api.BaseSubject;
 import com.google.common.truth.FailureStrategy;
 import com.google.common.truth.SubjectFactory;
-import com.google.common.truth.TestVerb;
-import com.google.common.truth.Truth;
 
 import static android.os.Build.VERSION_CODES.HONEYCOMB;
 import static android.os.Build.VERSION_CODES.KITKAT;
