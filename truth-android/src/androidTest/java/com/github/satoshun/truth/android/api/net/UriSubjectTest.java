@@ -2,7 +2,7 @@ package com.github.satoshun.truth.android.api.net;
 
 import android.net.Uri;
 
-import com.github.satoshun.truth.android.api.TruthAndroid;
+import com.github.satoshun.truth.android.api.Subjects;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -17,12 +17,12 @@ public class UriSubjectTest {
   }
 
   @Test public void sameAsPath_success() throws Exception {
-    TruthAndroid.assertThat(uri)
+    Subjects.assertThat(uri)
         .isPath("/hoge/fuga");
   }
 
   @Test(expected = AssertionError.class) public void sameAsPath_failure() throws Exception {
-    TruthAndroid.assertThat(uri)
+    Subjects.assertThat(uri)
         .isPath("/hoge");
   }
 }

@@ -9,7 +9,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.github.satoshun.truth.android.TestActivity;
-import com.github.satoshun.truth.android.api.TruthAndroid;
+import com.github.satoshun.truth.android.api.Subjects;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -48,7 +48,7 @@ public class WebViewSubjectTest {
 
   @Test(expected = AssertionError.class)
   public void canGoBack_failure() throws Exception {
-    TruthAndroid.assertThat(view)
+    Subjects.assertThat(view)
         .canGoBack();
   }
 }

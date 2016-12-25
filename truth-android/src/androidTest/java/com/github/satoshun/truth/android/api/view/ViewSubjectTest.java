@@ -9,7 +9,7 @@ import android.support.test.runner.AndroidJUnit4;
 import android.view.View;
 import android.view.animation.Animation;
 
-import com.github.satoshun.truth.android.api.TruthAndroid;
+import com.github.satoshun.truth.android.api.Subjects;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -35,7 +35,7 @@ public class ViewSubjectTest {
   public void sameAsAlpha_success() throws Exception {
     assumeVersion(HONEYCOMB);
     view.setAlpha((float) 0.45);
-    TruthAndroid.assertThat(view)
+    Subjects.assertThat(view)
             .isAlpha((float) 0.45);
   }
 
@@ -43,7 +43,7 @@ public class ViewSubjectTest {
   public void sameAsAlpha_failure() throws Exception {
     assumeVersion(HONEYCOMB);
     view.setAlpha((float) 0.45);
-    TruthAndroid.assertThat(view)
+    Subjects.assertThat(view)
             .isAlpha((float) 0.451);
   }
 
@@ -52,7 +52,7 @@ public class ViewSubjectTest {
     Animation animation = new Animation() {
     };
     view.setAnimation(animation);
-    TruthAndroid.assertThat(view)
+    Subjects.assertThat(view)
             .isAnimation(animation);
   }
 
@@ -60,7 +60,7 @@ public class ViewSubjectTest {
   public void sameAsAnimation_failure() throws Exception {
     view.setAnimation(new Animation() {
     });
-    TruthAndroid.assertThat(view)
+    Subjects.assertThat(view)
             .isAnimation(new Animation() {
             });
   }
@@ -69,14 +69,14 @@ public class ViewSubjectTest {
   public void sameAsBackground_success() throws Exception {
     BitmapDrawable background = new BitmapDrawable();
     view.setBackgroundDrawable(background);
-    TruthAndroid.assertThat(view)
+    Subjects.assertThat(view)
             .isBackground(background);
   }
 
   @UiThreadTest @Test(expected = AssertionError.class)
   public void sameAsBackground_failure() throws Exception {
     view.setBackgroundDrawable(new BitmapDrawable());
-    TruthAndroid.assertThat(view)
+    Subjects.assertThat(view)
             .isBackground(new BitmapDrawable());
   }
 
@@ -84,7 +84,7 @@ public class ViewSubjectTest {
   public void sameAsWidth_success() throws Exception {
     assumeVersion(HONEYCOMB);
     view.setRight(100);
-    TruthAndroid.assertThat(view)
+    Subjects.assertThat(view)
             .isWidth(100);
   }
 
@@ -92,7 +92,7 @@ public class ViewSubjectTest {
   public void sameAsWidth_failure() throws Exception {
     assumeVersion(HONEYCOMB);
     view.setRight(101);
-    TruthAndroid.assertThat(view)
+    Subjects.assertThat(view)
             .isWidth(100);
   }
 
@@ -100,7 +100,7 @@ public class ViewSubjectTest {
   public void sameAsHeight_success() throws Exception {
     assumeVersion(HONEYCOMB);
     view.setBottom(200);
-    TruthAndroid.assertThat(view)
+    Subjects.assertThat(view)
             .isHeight(200);
   }
 
@@ -108,14 +108,14 @@ public class ViewSubjectTest {
   public void sameAsHeight_failure() throws Exception {
     assumeVersion(HONEYCOMB);
     view.setBottom(200);
-    TruthAndroid.assertThat(view)
+    Subjects.assertThat(view)
             .isHeight(201);
   }
 
   @UiThreadTest @Test
   public void sameAsId_success() throws Exception {
     view.setId(100);
-    TruthAndroid.assertThat(view)
+    Subjects.assertThat(view)
             .isId(100);
   }
 
@@ -123,35 +123,35 @@ public class ViewSubjectTest {
   public void sameAsId_failure() throws Exception {
     assumeVersion(HONEYCOMB);
     view.setId(100);
-    TruthAndroid.assertThat(view)
+    Subjects.assertThat(view)
             .isId(101);
   }
 
   @UiThreadTest @Test
   public void isVisible_success() throws Exception {
     view.setVisibility(View.VISIBLE);
-    TruthAndroid.assertThat(view)
+    Subjects.assertThat(view)
             .isVisible();
   }
 
   @UiThreadTest @Test(expected = AssertionError.class)
   public void isVisible_failure() throws Exception {
     view.setVisibility(View.INVISIBLE);
-    TruthAndroid.assertThat(view)
+    Subjects.assertThat(view)
             .isVisible();
   }
 
   @UiThreadTest @Test
   public void isNotVisible_success() throws Exception {
     view.setVisibility(View.GONE);
-    TruthAndroid.assertThat(view)
+    Subjects.assertThat(view)
             .isNotVisible();
   }
 
   @UiThreadTest @Test(expected = AssertionError.class)
   public void isNotVisible_failure() throws Exception {
     view.setVisibility(View.VISIBLE);
-    TruthAndroid.assertThat(view)
+    Subjects.assertThat(view)
             .isNotVisible();
   }
 
