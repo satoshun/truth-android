@@ -6,6 +6,7 @@ import com.github.satoshun.recyclerview.v7.api.widget.RecyclerViewAdapterSubject
 import com.github.satoshun.recyclerview.v7.api.widget.RecyclerViewItemAnimatorSubject;
 import com.github.satoshun.recyclerview.v7.api.widget.RecyclerViewLayoutManagerSubject;
 import com.github.satoshun.recyclerview.v7.api.widget.RecyclerViewLayoutSubject;
+import com.github.satoshun.recyclerview.v7.api.widget.RecyclerViewSmoothScrollerActionSubject;
 import com.github.satoshun.recyclerview.v7.api.widget.RecyclerViewSubject;
 import com.github.satoshun.recyclerview.v7.api.widget.RecyclerViewViewHolderSubject;
 import com.google.common.truth.Truth;
@@ -34,5 +35,9 @@ public final class Subjects {
 
   public static RecyclerViewItemAnimatorSubject assertThat(RecyclerView.ItemAnimator target) {
     return Truth.assertAbout(RecyclerViewItemAnimatorSubject.FACTORY).that(target);
+  }
+
+  public static RecyclerViewSmoothScrollerActionSubject assertThat(RecyclerView.SmoothScroller.Action target) {
+    return Truth.assertAbout(RecyclerViewSmoothScrollerActionSubject.FACTORY).that(target);
   }
 }
