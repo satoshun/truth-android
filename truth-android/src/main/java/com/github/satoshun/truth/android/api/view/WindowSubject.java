@@ -9,7 +9,6 @@ import com.google.common.truth.FailureStrategy;
 import com.google.common.truth.SubjectFactory;
 
 import static android.os.Build.VERSION_CODES.HONEYCOMB;
-import static com.google.common.truth.Truth.assertThat;
 
 public class WindowSubject extends BaseSubject<WindowSubject, Window> {
 
