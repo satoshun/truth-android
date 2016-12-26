@@ -28,7 +28,7 @@ android {
 }
 
 dependencies {
-  compile 'com.google.truth:truth:0.30'
+  compile 'com.google.truth:truth:0.31'
 
   testCompile 'junit:junit:4.12'
 
