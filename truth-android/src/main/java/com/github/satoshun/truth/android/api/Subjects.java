@@ -4,6 +4,7 @@ import android.accounts.Account;
 import android.net.Uri;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.webkit.WebView;
 import android.widget.AbsListView;
 import android.widget.Adapter;
@@ -18,6 +19,7 @@ import com.github.satoshun.truth.android.api.view.EditTextSubject;
 import com.github.satoshun.truth.android.api.view.TextViewSubject;
 import com.github.satoshun.truth.android.api.view.ViewGroupSubject;
 import com.github.satoshun.truth.android.api.view.ViewSubject;
+import com.github.satoshun.truth.android.api.view.WindowSubject;
 import com.github.satoshun.truth.android.api.webkit.WebViewSubject;
 import com.github.satoshun.truth.android.api.widget.AbsListViewSubject;
 import com.github.satoshun.truth.android.api.widget.AdapterViewSubject;
@@ -63,5 +65,9 @@ public class Subjects {
 
   public static AccountSubject assertThat(Account target) {
     return Truth.assertAbout(AccountSubject.FACTORY).that(target);
+  }
+
+  public static WindowSubject assertThat(Window target) {
+    return Truth.assertAbout(WindowSubject.FACTORY).that(target);
   }
 }
