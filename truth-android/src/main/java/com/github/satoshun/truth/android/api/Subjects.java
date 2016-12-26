@@ -4,6 +4,7 @@ import android.accounts.Account;
 import android.net.Uri;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewPropertyAnimator;
 import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.webkit.WebView;
@@ -19,6 +20,7 @@ import com.github.satoshun.truth.android.api.net.UriSubject;
 import com.github.satoshun.truth.android.api.view.EditTextSubject;
 import com.github.satoshun.truth.android.api.view.TextViewSubject;
 import com.github.satoshun.truth.android.api.view.ViewGroupSubject;
+import com.github.satoshun.truth.android.api.view.ViewPropertyAnimatorSubject;
 import com.github.satoshun.truth.android.api.view.ViewSubject;
 import com.github.satoshun.truth.android.api.view.ViewTreeObserverSubject;
 import com.github.satoshun.truth.android.api.view.WindowSubject;
@@ -67,6 +69,10 @@ public class Subjects {
 
   public static AccountSubject assertThat(Account target) {
     return Truth.assertAbout(AccountSubject.FACTORY).that(target);
+  }
+
+  public static ViewPropertyAnimatorSubject assertThat(ViewPropertyAnimator target) {
+    return Truth.assertAbout(ViewPropertyAnimatorSubject.FACTORY).that(target);
   }
 
   public static ViewTreeObserverSubject assertThat(ViewTreeObserver target) {
