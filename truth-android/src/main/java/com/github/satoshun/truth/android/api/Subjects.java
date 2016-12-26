@@ -3,6 +3,7 @@ package com.github.satoshun.truth.android.api;
 import android.accounts.Account;
 import android.net.Uri;
 import android.view.InputEvent;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,6 +23,7 @@ import com.github.satoshun.truth.android.api.accounts.AccountSubject;
 import com.github.satoshun.truth.android.api.net.UriSubject;
 import com.github.satoshun.truth.android.api.view.EditTextSubject;
 import com.github.satoshun.truth.android.api.view.InputEventSubject;
+import com.github.satoshun.truth.android.api.view.KeyEventSubject;
 import com.github.satoshun.truth.android.api.view.MenuItemSubject;
 import com.github.satoshun.truth.android.api.view.MenuSubject;
 import com.github.satoshun.truth.android.api.view.TextViewSubject;
@@ -99,5 +101,9 @@ public class Subjects {
 
   public static InputEventSubject assertThat(InputEvent target) {
     return Truth.assertAbout(InputEventSubject.FACTORY).that(target);
+  }
+
+  public static KeyEventSubject assertThat(KeyEvent target) {
+    return Truth.assertAbout(KeyEventSubject.FACTORY).that(target);
   }
 }
