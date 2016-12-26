@@ -2,6 +2,7 @@ package com.github.satoshun.truth.android.api;
 
 import android.accounts.Account;
 import android.net.Uri;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewPropertyAnimator;
@@ -18,6 +19,7 @@ import android.widget.TextView;
 import com.github.satoshun.truth.android.api.accounts.AccountSubject;
 import com.github.satoshun.truth.android.api.net.UriSubject;
 import com.github.satoshun.truth.android.api.view.EditTextSubject;
+import com.github.satoshun.truth.android.api.view.MenuSubject;
 import com.github.satoshun.truth.android.api.view.TextViewSubject;
 import com.github.satoshun.truth.android.api.view.ViewGroupSubject;
 import com.github.satoshun.truth.android.api.view.ViewPropertyAnimatorSubject;
@@ -81,5 +83,9 @@ public class Subjects {
 
   public static WindowSubject assertThat(Window target) {
     return Truth.assertAbout(WindowSubject.FACTORY).that(target);
+  }
+
+  public static MenuSubject assertThat(Menu target) {
+    return Truth.assertAbout(MenuSubject.FACTORY).that(target);
   }
 }
