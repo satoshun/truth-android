@@ -8,7 +8,8 @@ import com.google.common.truth.SubjectFactory;
 /**
  * Propositions for AbsListView subject
  */
-public abstract class AbsListViewSubject<S extends AbsListViewSubject<S, T>, T extends AbsListView> extends AdapterViewSubject<S, T> {
+public abstract class AbsListViewSubject<S extends AbsListViewSubject<S, T>, T extends AbsListView>
+    extends AdapterViewSubject<S, T> {
 
   public static final AbsListViewSubjectFactory FACTORY = new AbsListViewSubjectFactory();
 
