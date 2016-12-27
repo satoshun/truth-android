@@ -29,6 +29,7 @@ import com.github.satoshun.truth.android.api.view.MenuItemSubject;
 import com.github.satoshun.truth.android.api.view.MenuSubject;
 import com.github.satoshun.truth.android.api.view.OrientationEventListenerSubject;
 import com.github.satoshun.truth.android.api.view.TextViewSubject;
+import com.github.satoshun.truth.android.api.view.ViewGroupLayoutParamsSubject;
 import com.github.satoshun.truth.android.api.view.ViewGroupSubject;
 import com.github.satoshun.truth.android.api.view.ViewPropertyAnimatorSubject;
 import com.github.satoshun.truth.android.api.view.ViewSubject;
@@ -111,5 +112,9 @@ public class Subjects {
 
   public static OrientationEventListenerSubject assertThat(OrientationEventListener target) {
     return Truth.assertAbout(OrientationEventListenerSubject.FACTORY).that(target);
+  }
+
+  public static ViewGroupLayoutParamsSubject assertThat(ViewGroup.LayoutParams target) {
+    return Truth.assertAbout(ViewGroupLayoutParamsSubject.FACTORY).that(target);
   }
 }
