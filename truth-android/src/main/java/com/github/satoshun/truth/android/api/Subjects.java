@@ -2,8 +2,14 @@ package com.github.satoshun.truth.android.api;
 
 import android.accounts.Account;
 import android.net.Uri;
+import android.view.InputEvent;
+import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.OrientationEventListener;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewPropertyAnimator;
 import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.webkit.WebView;
@@ -17,8 +23,14 @@ import android.widget.TextView;
 import com.github.satoshun.truth.android.api.accounts.AccountSubject;
 import com.github.satoshun.truth.android.api.net.UriSubject;
 import com.github.satoshun.truth.android.api.view.EditTextSubject;
+import com.github.satoshun.truth.android.api.view.InputEventSubject;
+import com.github.satoshun.truth.android.api.view.KeyEventSubject;
+import com.github.satoshun.truth.android.api.view.MenuItemSubject;
+import com.github.satoshun.truth.android.api.view.MenuSubject;
+import com.github.satoshun.truth.android.api.view.OrientationEventListenerSubject;
 import com.github.satoshun.truth.android.api.view.TextViewSubject;
 import com.github.satoshun.truth.android.api.view.ViewGroupSubject;
+import com.github.satoshun.truth.android.api.view.ViewPropertyAnimatorSubject;
 import com.github.satoshun.truth.android.api.view.ViewSubject;
 import com.github.satoshun.truth.android.api.view.ViewTreeObserverSubject;
 import com.github.satoshun.truth.android.api.view.WindowSubject;
@@ -69,11 +81,35 @@ public class Subjects {
     return Truth.assertAbout(AccountSubject.FACTORY).that(target);
   }
 
+  public static ViewPropertyAnimatorSubject assertThat(ViewPropertyAnimator target) {
+    return Truth.assertAbout(ViewPropertyAnimatorSubject.FACTORY).that(target);
+  }
+
   public static ViewTreeObserverSubject assertThat(ViewTreeObserver target) {
     return Truth.assertAbout(ViewTreeObserverSubject.FACTORY).that(target);
   }
 
   public static WindowSubject assertThat(Window target) {
     return Truth.assertAbout(WindowSubject.FACTORY).that(target);
+  }
+
+  public static MenuSubject assertThat(Menu target) {
+    return Truth.assertAbout(MenuSubject.FACTORY).that(target);
+  }
+
+  public static MenuItemSubject assertThat(MenuItem target) {
+    return Truth.assertAbout(MenuItemSubject.FACTORY).that(target);
+  }
+
+  public static InputEventSubject assertThat(InputEvent target) {
+    return Truth.assertAbout(InputEventSubject.FACTORY).that(target);
+  }
+
+  public static KeyEventSubject assertThat(KeyEvent target) {
+    return Truth.assertAbout(KeyEventSubject.FACTORY).that(target);
+  }
+
+  public static OrientationEventListenerSubject assertThat(OrientationEventListener target) {
+    return Truth.assertAbout(OrientationEventListenerSubject.FACTORY).that(target);
   }
 }

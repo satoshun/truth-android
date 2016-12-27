@@ -15,7 +15,8 @@ import static android.os.Build.VERSION_CODES.KITKAT;
 /**
  * Propositions for View subject
  */
-public abstract class ViewSubject<S extends ViewSubject<S, T>, T extends View> extends BaseSubject<S, T> {
+public abstract class ViewSubject<S extends ViewSubject<S, T>, T extends View>
+    extends BaseSubject<S, T> {
 
   public static final ViewSubjectFactory FACTORY = new ViewSubjectFactory();
 

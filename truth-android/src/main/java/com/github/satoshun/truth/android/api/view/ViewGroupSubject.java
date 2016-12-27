@@ -8,7 +8,8 @@ import com.google.common.truth.SubjectFactory;
 /**
  * Propositions for ViewGroup subject
  */
-public abstract class ViewGroupSubject<S extends ViewGroupSubject<S, T>, T extends ViewGroup> extends ViewSubject<S, T> {
+public abstract class ViewGroupSubject<S extends ViewGroupSubject<S, T>, T extends ViewGroup>
+    extends ViewSubject<S, T> {
 
   public static final ViewGroupSubjectFactory FACTORY = new ViewGroupSubjectFactory();
 

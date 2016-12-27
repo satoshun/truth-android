@@ -9,7 +9,8 @@ import com.google.common.truth.SubjectFactory;
 /**
  * Propositions for AdapterView subject
  */
-public abstract class AdapterViewSubject<S extends ViewGroupSubject<S, T>, T extends AdapterView> extends ViewGroupSubject<S, T> {
+public abstract class AdapterViewSubject<S extends ViewGroupSubject<S, T>, T extends AdapterView>
+    extends ViewGroupSubject<S, T> {
 
   public static final AdapterViewSubjectFactory FACTORY = new AdapterViewSubjectFactory();
 
