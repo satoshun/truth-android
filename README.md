@@ -9,12 +9,17 @@ this project inspired by [assertj-android](https://github.com/square/assertj-and
 ## Examples
 
 ```java
-TruthAndroid.assertThat(view).isGone();
-``` 
+Subjects.assertThat(view).isGone();
+```
 
 ```java
-TruthAndroid.assertThat(view)
+Subjects.assertThat(view)
     .isGone()
     .sameAsWidth(100)
     .sameAsHeight(200);
 ```
+
+
+## Limitations
+
+truth Android is beta now
