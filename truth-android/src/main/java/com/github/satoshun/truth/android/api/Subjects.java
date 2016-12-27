@@ -6,6 +6,7 @@ import android.view.InputEvent;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.OrientationEventListener;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewPropertyAnimator;
@@ -26,6 +27,7 @@ import com.github.satoshun.truth.android.api.view.InputEventSubject;
 import com.github.satoshun.truth.android.api.view.KeyEventSubject;
 import com.github.satoshun.truth.android.api.view.MenuItemSubject;
 import com.github.satoshun.truth.android.api.view.MenuSubject;
+import com.github.satoshun.truth.android.api.view.OrientationEventListenerSubject;
 import com.github.satoshun.truth.android.api.view.TextViewSubject;
 import com.github.satoshun.truth.android.api.view.ViewGroupSubject;
 import com.github.satoshun.truth.android.api.view.ViewPropertyAnimatorSubject;
@@ -105,5 +107,9 @@ public class Subjects {
 
   public static KeyEventSubject assertThat(KeyEvent target) {
     return Truth.assertAbout(KeyEventSubject.FACTORY).that(target);
+  }
+
+  public static OrientationEventListenerSubject assertThat(OrientationEventListener target) {
+    return Truth.assertAbout(OrientationEventListenerSubject.FACTORY).that(target);
   }
 }
