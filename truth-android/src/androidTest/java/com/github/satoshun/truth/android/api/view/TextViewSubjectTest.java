@@ -28,12 +28,12 @@ public class TextViewSubjectTest {
   @UiThreadTest @Test
   public void sameAsText_success() throws Exception {
     view.setText("hoge");
-    Subjects.assertThat(view).sameAsText("hoge");
+    Subjects.assertThat(view).isText("hoge");
   }
 
   @UiThreadTest @Test(expected = AssertionError.class)
   public void sameAsText_failure() throws Exception {
     view.setText("hoge");
-    Subjects.assertThat(view).sameAsText("fuga");
+    Subjects.assertThat(view).isText("fuga");
   }
 }

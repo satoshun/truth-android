@@ -16,27 +16,27 @@ public abstract class TextViewSubject<S extends TextViewSubject<S, T>, T extends
     super(failureStrategy, actual);
   }
 
-  public S sameAsText(CharSequence text) {
+  public S isText(CharSequence text) {
     isNotNull();
-    if (!actual().getText().equals(text)) {
-      fail("is text", actual().isClickable());
-    }
+    check().withFailureMessage("is text")
+        .that(actual().getText())
+        .isEqualTo(text);
     return myself();
   }
 
   public S isEmpty() {
     isNotNull();
-    if (!actual().getText().equals("")) {
-      fail("is empty");
-    }
+    check().withFailureMessage("is empty")
+        .that(actual().getText())
+        .isEqualTo("");
     return myself();
   }
 
   public S isNotEmpty() {
     isNotNull();
-    if (actual().getText().equals("")) {
-      fail("is not empty", actual().isClickable());
-    }
+    check().withFailureMessage("is not empty")
+        .that(actual().getText())
+        .isNotEqualTo("");
     return myself();
   }
 
