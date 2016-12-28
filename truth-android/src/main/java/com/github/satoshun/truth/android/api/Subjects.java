@@ -29,6 +29,7 @@ import com.github.satoshun.truth.android.api.view.MenuItemSubject;
 import com.github.satoshun.truth.android.api.view.MenuSubject;
 import com.github.satoshun.truth.android.api.view.OrientationEventListenerSubject;
 import com.github.satoshun.truth.android.api.view.TextViewSubject;
+import com.github.satoshun.truth.android.api.view.SurfaceSubject;
 import com.github.satoshun.truth.android.api.view.ViewGroupLayoutParamsSubject;
 import com.github.satoshun.truth.android.api.view.ViewGroupSubject;
 import com.github.satoshun.truth.android.api.view.ViewPropertyAnimatorSubject;
@@ -116,5 +117,9 @@ public class Subjects {
 
   public static ViewGroupLayoutParamsSubject assertThat(ViewGroup.LayoutParams target) {
     return Truth.assertAbout(ViewGroupLayoutParamsSubject.FACTORY).that(target);
+  }
+
+  public static SurfaceSubject assertThat(Surface target) {
+    return Truth.assertAbout(SurfaceSubject.FACTORY).that(target);
   }
 }
