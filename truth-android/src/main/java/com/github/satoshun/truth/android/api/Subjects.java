@@ -7,6 +7,7 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.OrientationEventListener;
+import android.view.Surface;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewPropertyAnimator;
@@ -22,13 +23,11 @@ import android.widget.TextView;
 
 import com.github.satoshun.truth.android.api.accounts.AccountSubject;
 import com.github.satoshun.truth.android.api.net.UriSubject;
-import com.github.satoshun.truth.android.api.view.EditTextSubject;
 import com.github.satoshun.truth.android.api.view.InputEventSubject;
 import com.github.satoshun.truth.android.api.view.KeyEventSubject;
 import com.github.satoshun.truth.android.api.view.MenuItemSubject;
 import com.github.satoshun.truth.android.api.view.MenuSubject;
 import com.github.satoshun.truth.android.api.view.OrientationEventListenerSubject;
-import com.github.satoshun.truth.android.api.view.TextViewSubject;
 import com.github.satoshun.truth.android.api.view.SurfaceSubject;
 import com.github.satoshun.truth.android.api.view.ViewGroupLayoutParamsSubject;
 import com.github.satoshun.truth.android.api.view.ViewGroupSubject;
@@ -39,10 +38,13 @@ import com.github.satoshun.truth.android.api.view.WindowSubject;
 import com.github.satoshun.truth.android.api.webkit.WebViewSubject;
 import com.github.satoshun.truth.android.api.widget.AbsListViewSubject;
 import com.github.satoshun.truth.android.api.widget.AdapterViewSubject;
+import com.github.satoshun.truth.android.api.widget.EditTextSubject;
 import com.github.satoshun.truth.android.api.widget.ListViewSubject;
+import com.github.satoshun.truth.android.api.widget.TextViewSubject;
 import com.google.common.truth.Truth;
 
 public class Subjects {
+
   public static ViewSubject assertThat(View target) {
     return Truth.assertAbout(ViewSubject.FACTORY).that(target);
   }

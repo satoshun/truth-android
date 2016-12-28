@@ -1,7 +1,8 @@
-package com.github.satoshun.truth.android.api.view;
+package com.github.satoshun.truth.android.api.widget;
 
 import android.widget.TextView;
 
+import com.github.satoshun.truth.android.api.view.ViewSubject;
 import com.google.common.truth.FailureStrategy;
 import com.google.common.truth.SubjectFactory;
 

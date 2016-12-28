@@ -1,4 +1,4 @@
-package com.github.satoshun.truth.android.api.view;
+package com.github.satoshun.truth.android.api.widget;
 
 import android.widget.EditText;
 

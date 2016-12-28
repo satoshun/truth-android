@@ -20,7 +20,7 @@ public abstract class ViewSubject<S extends ViewSubject<S, T>, T extends View>
 
   public static final ViewSubjectFactory FACTORY = new ViewSubjectFactory();
 
-  ViewSubject(FailureStrategy failureStrategy, T actual) {
+  public ViewSubject(FailureStrategy failureStrategy, T actual) {
     super(failureStrategy, actual);
   }
 
