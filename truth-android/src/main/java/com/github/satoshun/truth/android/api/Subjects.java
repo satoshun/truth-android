@@ -3,6 +3,7 @@ package com.github.satoshun.truth.android.api;
 import android.accounts.Account;
 import android.net.Uri;
 import android.view.InputEvent;
+import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -29,6 +30,7 @@ import android.widget.TextView;
 import com.github.satoshun.truth.android.api.accounts.AccountSubject;
 import com.github.satoshun.truth.android.api.net.UriSubject;
 import com.github.satoshun.truth.android.api.view.InputEventSubject;
+import com.github.satoshun.truth.android.api.view.KeyCharacterMapSubject;
 import com.github.satoshun.truth.android.api.view.KeyEventSubject;
 import com.github.satoshun.truth.android.api.view.MenuItemSubject;
 import com.github.satoshun.truth.android.api.view.MenuSubject;
@@ -153,5 +155,9 @@ public class Subjects {
 
   public static ScaleGestureDetectorSubject assertThat(ScaleGestureDetector target) {
     return Truth.assertAbout(ScaleGestureDetectorSubject.FACTORY).that(target);
+  }
+
+  public static KeyCharacterMapSubject assertThat(KeyCharacterMap target) {
+    return Truth.assertAbout(KeyCharacterMapSubject.FACTORY).that(target);
   }
 }
