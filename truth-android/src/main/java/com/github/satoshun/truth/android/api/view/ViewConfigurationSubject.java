@@ -1,13 +1,10 @@
 package com.github.satoshun.truth.android.api.view;
 
-import android.annotation.TargetApi;
 import android.view.ViewConfiguration;
 
 import com.github.satoshun.truth.android.api.BaseSubject;
 import com.google.common.truth.FailureStrategy;
 import com.google.common.truth.SubjectFactory;
-
-import static android.os.Build.VERSION_CODES.FROYO;
 
 public class ViewConfigurationSubject extends BaseSubject<ViewConfigurationSubject, ViewConfiguration> {
 
@@ -81,7 +78,6 @@ public class ViewConfigurationSubject extends BaseSubject<ViewConfigurationSubje
     return this;
   }
 
-  @TargetApi(FROYO)
   public ViewConfigurationSubject isScaledPagingTouchSlop(int slop) {
     isNotNull();
     check().withFailureMessage("is scaled paging touch slop")
