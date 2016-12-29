@@ -7,6 +7,7 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.OrientationEventListener;
+import android.view.ScaleGestureDetector;
 import android.view.Surface;
 import android.view.TextureView;
 import android.view.VelocityTracker;
@@ -32,6 +33,7 @@ import com.github.satoshun.truth.android.api.view.KeyEventSubject;
 import com.github.satoshun.truth.android.api.view.MenuItemSubject;
 import com.github.satoshun.truth.android.api.view.MenuSubject;
 import com.github.satoshun.truth.android.api.view.OrientationEventListenerSubject;
+import com.github.satoshun.truth.android.api.view.ScaleGestureDetectorSubject;
 import com.github.satoshun.truth.android.api.view.SurfaceSubject;
 import com.github.satoshun.truth.android.api.view.TextureViewSubject;
 import com.github.satoshun.truth.android.api.view.VelocityTrackerSubject;
@@ -147,5 +149,9 @@ public class Subjects {
 
   public static TextureViewSubject assertThat(TextureView target) {
     return Truth.assertAbout(TextureViewSubject.FACTORY).that(target);
+  }
+
+  public static ScaleGestureDetectorSubject assertThat(ScaleGestureDetector target) {
+    return Truth.assertAbout(ScaleGestureDetectorSubject.FACTORY).that(target);
   }
 }
