@@ -139,7 +139,7 @@ public abstract class ViewGroupSubject<S extends ViewGroupSubject<S, T>, T exten
   }
 
   @TargetApi(HONEYCOMB)
-  public S hasMotionEventSplittingDisabled() {
+  public S isMotionEventSplittingDisabled() {
     isNotNull();
     check().withFailureMessage("is motion event splitting disabled")
         .that(actual().isMotionEventSplittingEnabled())
