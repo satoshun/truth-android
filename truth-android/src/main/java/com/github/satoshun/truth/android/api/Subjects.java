@@ -2,6 +2,7 @@ package com.github.satoshun.truth.android.api;
 
 import android.accounts.Account;
 import android.net.Uri;
+import android.view.DragEvent;
 import android.view.InputEvent;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
@@ -29,6 +30,7 @@ import android.widget.TextView;
 
 import com.github.satoshun.truth.android.api.accounts.AccountSubject;
 import com.github.satoshun.truth.android.api.net.UriSubject;
+import com.github.satoshun.truth.android.api.view.DragEventSubject;
 import com.github.satoshun.truth.android.api.view.InputEventSubject;
 import com.github.satoshun.truth.android.api.view.KeyCharacterMapSubject;
 import com.github.satoshun.truth.android.api.view.KeyEventSubject;
@@ -159,5 +161,9 @@ public class Subjects {
 
   public static KeyCharacterMapSubject assertThat(KeyCharacterMap target) {
     return Truth.assertAbout(KeyCharacterMapSubject.FACTORY).that(target);
+  }
+
+  public static DragEventSubject assertThat(DragEvent target) {
+    return Truth.assertAbout(DragEventSubject.FACTORY).that(target);
   }
 }
