@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.OrientationEventListener;
 import android.view.Surface;
+import android.view.VelocityTracker;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
@@ -31,6 +32,7 @@ import com.github.satoshun.truth.android.api.view.MenuItemSubject;
 import com.github.satoshun.truth.android.api.view.MenuSubject;
 import com.github.satoshun.truth.android.api.view.OrientationEventListenerSubject;
 import com.github.satoshun.truth.android.api.view.SurfaceSubject;
+import com.github.satoshun.truth.android.api.view.VelocityTrackerSubject;
 import com.github.satoshun.truth.android.api.view.ViewConfigurationSubject;
 import com.github.satoshun.truth.android.api.view.ViewGroupLayoutParamsSubject;
 import com.github.satoshun.truth.android.api.view.ViewGroupSubject;
@@ -135,5 +137,9 @@ public class Subjects {
 
   public static ViewConfigurationSubject assertThat(ViewConfiguration target) {
     return Truth.assertAbout(ViewConfigurationSubject.FACTORY).that(target);
+  }
+
+  public static VelocityTrackerSubject assertThat(VelocityTracker target) {
+    return Truth.assertAbout(VelocityTrackerSubject.FACTORY).that(target);
   }
 }
