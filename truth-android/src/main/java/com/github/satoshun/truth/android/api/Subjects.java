@@ -11,6 +11,7 @@ import android.view.Surface;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewPropertyAnimator;
+import android.view.ViewStub;
 import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.webkit.WebView;
@@ -32,6 +33,7 @@ import com.github.satoshun.truth.android.api.view.SurfaceSubject;
 import com.github.satoshun.truth.android.api.view.ViewGroupLayoutParamsSubject;
 import com.github.satoshun.truth.android.api.view.ViewGroupSubject;
 import com.github.satoshun.truth.android.api.view.ViewPropertyAnimatorSubject;
+import com.github.satoshun.truth.android.api.view.ViewStubSubject;
 import com.github.satoshun.truth.android.api.view.ViewSubject;
 import com.github.satoshun.truth.android.api.view.ViewTreeObserverSubject;
 import com.github.satoshun.truth.android.api.view.WindowSubject;
@@ -123,5 +125,9 @@ public class Subjects {
 
   public static SurfaceSubject assertThat(Surface target) {
     return Truth.assertAbout(SurfaceSubject.FACTORY).that(target);
+  }
+
+  public static ViewStubSubject assertThat(ViewStub target) {
+    return Truth.assertAbout(ViewStubSubject.FACTORY).that(target);
   }
 }
