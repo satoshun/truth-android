@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.OrientationEventListener;
 import android.view.Surface;
 import android.view.View;
+import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.view.ViewPropertyAnimator;
 import android.view.ViewStub;
@@ -30,6 +31,7 @@ import com.github.satoshun.truth.android.api.view.MenuItemSubject;
 import com.github.satoshun.truth.android.api.view.MenuSubject;
 import com.github.satoshun.truth.android.api.view.OrientationEventListenerSubject;
 import com.github.satoshun.truth.android.api.view.SurfaceSubject;
+import com.github.satoshun.truth.android.api.view.ViewConfigurationSubject;
 import com.github.satoshun.truth.android.api.view.ViewGroupLayoutParamsSubject;
 import com.github.satoshun.truth.android.api.view.ViewGroupSubject;
 import com.github.satoshun.truth.android.api.view.ViewPropertyAnimatorSubject;
@@ -129,5 +131,9 @@ public class Subjects {
 
   public static ViewStubSubject assertThat(ViewStub target) {
     return Truth.assertAbout(ViewStubSubject.FACTORY).that(target);
+  }
+
+  public static ViewConfigurationSubject assertThat(ViewConfiguration target) {
+    return Truth.assertAbout(ViewConfigurationSubject.FACTORY).that(target);
   }
 }
