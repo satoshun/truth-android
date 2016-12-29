@@ -6,7 +6,6 @@ import android.view.KeyEvent;
 import com.google.common.truth.FailureStrategy;
 import com.google.common.truth.SubjectFactory;
 
-import static android.os.Build.VERSION_CODES.GINGERBREAD;
 import static android.os.Build.VERSION_CODES.HONEYCOMB;
 
 public class KeyEventSubject extends InputEventSubject<KeyEventSubject, KeyEvent> {
@@ -57,7 +56,6 @@ public class KeyEventSubject extends InputEventSubject<KeyEventSubject, KeyEvent
     return myself();
   }
 
-  @TargetApi(GINGERBREAD)
   public KeyEventSubject isSource(int source) {
     isNotNull();
     check().withFailureMessage("is source")
