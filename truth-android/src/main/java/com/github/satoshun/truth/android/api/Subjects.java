@@ -1,5 +1,6 @@
 package com.github.satoshun.truth.android.api;
 
+import android.accessibilityservice.AccessibilityServiceInfo;
 import android.accounts.Account;
 import android.net.Uri;
 import android.view.ActionMode;
@@ -31,6 +32,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.github.satoshun.truth.android.api.accessibilityservice.AccessibilityServiceInfoSubject;
 import com.github.satoshun.truth.android.api.accounts.AccountSubject;
 import com.github.satoshun.truth.android.api.net.UriSubject;
 import com.github.satoshun.truth.android.api.view.ActionModeSubject;
@@ -64,6 +66,10 @@ import com.github.satoshun.truth.android.api.widget.TextViewSubject;
 import com.google.common.truth.Truth;
 
 public class Subjects {
+
+  public static AccessibilityServiceInfoSubject assertThat(AccessibilityServiceInfo target) {
+    return Truth.assertAbout(AccessibilityServiceInfoSubject.FACTORY).that(target);
+  }
 
   public static ViewSubject assertThat(View target) {
     return Truth.assertAbout(ViewSubject.FACTORY).that(target);
