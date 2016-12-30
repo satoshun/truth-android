@@ -27,6 +27,7 @@ import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.webkit.WebView;
 import android.widget.AbsListView;
+import android.widget.AbsSeekBar;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -62,6 +63,7 @@ import com.github.satoshun.truth.android.api.view.ViewTreeObserverSubject;
 import com.github.satoshun.truth.android.api.view.WindowSubject;
 import com.github.satoshun.truth.android.api.webkit.WebViewSubject;
 import com.github.satoshun.truth.android.api.widget.AbsListViewSubject;
+import com.github.satoshun.truth.android.api.widget.AbsSeekBarSubject;
 import com.github.satoshun.truth.android.api.widget.AdapterViewSubject;
 import com.github.satoshun.truth.android.api.widget.EditTextSubject;
 import com.github.satoshun.truth.android.api.widget.ListViewSubject;
@@ -203,5 +205,9 @@ public class Subjects {
 
   public static ProgressBarSubject assertThat(ProgressBar target) {
     return Truth.assertAbout(ProgressBarSubject.FACTORY).that(target);
+  }
+
+  public static AbsSeekBarSubject assertThat(AbsSeekBar target) {
+    return Truth.assertAbout(AbsSeekBarSubject.FACTORY).that(target);
   }
 }
