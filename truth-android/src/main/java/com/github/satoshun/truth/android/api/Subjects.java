@@ -3,6 +3,7 @@ package com.github.satoshun.truth.android.api;
 import android.accessibilityservice.AccessibilityServiceInfo;
 import android.accounts.Account;
 import android.net.Uri;
+import android.text.BidiFormatter;
 import android.view.ActionMode;
 import android.view.ActionProvider;
 import android.view.Display;
@@ -35,6 +36,7 @@ import android.widget.TextView;
 import com.github.satoshun.truth.android.api.accessibilityservice.AccessibilityServiceInfoSubject;
 import com.github.satoshun.truth.android.api.accounts.AccountSubject;
 import com.github.satoshun.truth.android.api.net.UriSubject;
+import com.github.satoshun.truth.android.api.text.BidiFormatterSubject;
 import com.github.satoshun.truth.android.api.view.ActionModeSubject;
 import com.github.satoshun.truth.android.api.view.ActionProviderSubject;
 import com.github.satoshun.truth.android.api.view.DisplaySubject;
@@ -189,5 +191,9 @@ public class Subjects {
 
   public static DisplaySubject assertThat(Display target) {
     return Truth.assertAbout(DisplaySubject.FACTORY).that(target);
+  }
+
+  public static BidiFormatterSubject assertThat(BidiFormatter target) {
+    return Truth.assertAbout(BidiFormatterSubject.FACTORY).that(target);
   }
 }
