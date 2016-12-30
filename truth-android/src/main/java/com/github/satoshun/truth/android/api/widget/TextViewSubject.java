@@ -9,7 +9,8 @@ import com.google.common.truth.SubjectFactory;
 /**
  * Propositions for TextView subject
  */
-public abstract class TextViewSubject<S extends TextViewSubject<S, T>, T extends TextView> extends ViewSubject<S, T> {
+public abstract class TextViewSubject<S extends TextViewSubject<S, T>, T extends TextView>
+    extends ViewSubject<S, T> {
 
   public static final TextViewSubjectFactory FACTORY = new TextViewSubjectFactory();
 

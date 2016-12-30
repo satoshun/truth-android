@@ -30,6 +30,7 @@ import android.widget.AbsListView;
 import android.widget.AbsSeekBar;
 import android.widget.Adapter;
 import android.widget.AdapterView;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -66,6 +67,7 @@ import com.github.satoshun.truth.android.api.webkit.WebViewSubject;
 import com.github.satoshun.truth.android.api.widget.AbsListViewSubject;
 import com.github.satoshun.truth.android.api.widget.AbsSeekBarSubject;
 import com.github.satoshun.truth.android.api.widget.AdapterViewSubject;
+import com.github.satoshun.truth.android.api.widget.CompoundButtonSubject;
 import com.github.satoshun.truth.android.api.widget.EditTextSubject;
 import com.github.satoshun.truth.android.api.widget.ListViewSubject;
 import com.github.satoshun.truth.android.api.widget.ProgressBarSubject;
@@ -215,5 +217,9 @@ public class Subjects {
 
   public static RatingBarSubject assertThat(RatingBar target) {
     return Truth.assertAbout(RatingBarSubject.FACTORY).that(target);
+  }
+
+  public static CompoundButtonSubject assertThat(CompoundButton target) {
+    return Truth.assertAbout(CompoundButtonSubject.FACTORY).that(target);
   }
 }
