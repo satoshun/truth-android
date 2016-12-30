@@ -35,6 +35,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RatingBar;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
@@ -73,6 +74,7 @@ import com.github.satoshun.truth.android.api.widget.EditTextSubject;
 import com.github.satoshun.truth.android.api.widget.ListViewSubject;
 import com.github.satoshun.truth.android.api.widget.ProgressBarSubject;
 import com.github.satoshun.truth.android.api.widget.RatingBarSubject;
+import com.github.satoshun.truth.android.api.widget.SwitchSubject;
 import com.github.satoshun.truth.android.api.widget.TextViewSubject;
 import com.github.satoshun.truth.android.api.widget.ToggleButtonSubject;
 import com.google.common.truth.Truth;
@@ -227,5 +229,9 @@ public class Subjects {
 
   public static ToggleButtonSubject assertThat(ToggleButton target) {
     return Truth.assertAbout(ToggleButtonSubject.FACTORY).that(target);
+  }
+
+  public static SwitchSubject assertThat(Switch target) {
+    return Truth.assertAbout(SwitchSubject.FACTORY).that(target);
   }
 }
