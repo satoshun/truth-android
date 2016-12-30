@@ -33,6 +33,7 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.github.satoshun.truth.android.api.accessibilityservice.AccessibilityServiceInfoSubject;
@@ -68,6 +69,7 @@ import com.github.satoshun.truth.android.api.widget.AdapterViewSubject;
 import com.github.satoshun.truth.android.api.widget.EditTextSubject;
 import com.github.satoshun.truth.android.api.widget.ListViewSubject;
 import com.github.satoshun.truth.android.api.widget.ProgressBarSubject;
+import com.github.satoshun.truth.android.api.widget.RatingBarSubject;
 import com.github.satoshun.truth.android.api.widget.TextViewSubject;
 import com.google.common.truth.Truth;
 
@@ -209,5 +211,9 @@ public class Subjects {
 
   public static AbsSeekBarSubject assertThat(AbsSeekBar target) {
     return Truth.assertAbout(AbsSeekBarSubject.FACTORY).that(target);
+  }
+
+  public static RatingBarSubject assertThat(RatingBar target) {
+    return Truth.assertAbout(RatingBarSubject.FACTORY).that(target);
   }
 }
