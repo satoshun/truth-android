@@ -36,6 +36,7 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import com.github.satoshun.truth.android.api.accessibilityservice.AccessibilityServiceInfoSubject;
 import com.github.satoshun.truth.android.api.accounts.AccountSubject;
@@ -73,6 +74,7 @@ import com.github.satoshun.truth.android.api.widget.ListViewSubject;
 import com.github.satoshun.truth.android.api.widget.ProgressBarSubject;
 import com.github.satoshun.truth.android.api.widget.RatingBarSubject;
 import com.github.satoshun.truth.android.api.widget.TextViewSubject;
+import com.github.satoshun.truth.android.api.widget.ToggleButtonSubject;
 import com.google.common.truth.Truth;
 
 public class Subjects {
@@ -221,5 +223,9 @@ public class Subjects {
 
   public static CompoundButtonSubject assertThat(CompoundButton target) {
     return Truth.assertAbout(CompoundButtonSubject.FACTORY).that(target);
+  }
+
+  public static ToggleButtonSubject assertThat(ToggleButton target) {
+    return Truth.assertAbout(ToggleButtonSubject.FACTORY).that(target);
   }
 }
