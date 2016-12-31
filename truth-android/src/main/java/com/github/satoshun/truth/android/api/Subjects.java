@@ -4,6 +4,7 @@ import android.accessibilityservice.AccessibilityServiceInfo;
 import android.accounts.Account;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.content.Loader;
 import android.content.SharedPreferences;
 import android.gesture.GestureOverlayView;
 import android.net.Uri;
@@ -81,6 +82,7 @@ import com.github.satoshun.truth.android.api.accessibilityservice.AccessibilityS
 import com.github.satoshun.truth.android.api.accounts.AccountSubject;
 import com.github.satoshun.truth.android.api.content.ContentValuesSubject;
 import com.github.satoshun.truth.android.api.content.IntentSubject;
+import com.github.satoshun.truth.android.api.content.LoaderSubject;
 import com.github.satoshun.truth.android.api.content.SharedPreferencesSubject;
 import com.github.satoshun.truth.android.api.net.UriSubject;
 import com.github.satoshun.truth.android.api.text.BidiFormatterSubject;
@@ -468,5 +470,9 @@ public class Subjects {
 
   public static ContentValuesSubject assertThat(ContentValues target) {
     return Truth.assertAbout(ContentValuesSubject.FACTORY).that(target);
+  }
+
+  public static LoaderSubject assertThat(Loader target) {
+    return Truth.assertAbout(LoaderSubject.FACTORY).that(target);
   }
 }
