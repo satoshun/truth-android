@@ -2,6 +2,13 @@ package com.github.satoshun.truth.android.api;
 
 import android.accessibilityservice.AccessibilityServiceInfo;
 import android.accounts.Account;
+import android.content.AsyncTaskLoader;
+import android.content.ContentValues;
+import android.content.CursorLoader;
+import android.content.Intent;
+import android.content.Loader;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.gesture.GestureOverlayView;
 import android.net.Uri;
 import android.text.BidiFormatter;
@@ -76,6 +83,13 @@ import android.widget.WrapperListAdapter;
 
 import com.github.satoshun.truth.android.api.accessibilityservice.AccessibilityServiceInfoSubject;
 import com.github.satoshun.truth.android.api.accounts.AccountSubject;
+import com.github.satoshun.truth.android.api.content.AsyncTaskLoaderSubject;
+import com.github.satoshun.truth.android.api.content.ContentValuesSubject;
+import com.github.satoshun.truth.android.api.content.CursorLoaderSubject;
+import com.github.satoshun.truth.android.api.content.IntentSubject;
+import com.github.satoshun.truth.android.api.content.LoaderSubject;
+import com.github.satoshun.truth.android.api.content.SharedPreferencesSubject;
+import com.github.satoshun.truth.android.api.content.res.ConfigurationSubject;
 import com.github.satoshun.truth.android.api.net.UriSubject;
 import com.github.satoshun.truth.android.api.text.BidiFormatterSubject;
 import com.github.satoshun.truth.android.api.view.ActionModeSubject;
@@ -448,5 +462,37 @@ public class Subjects {
 
   public static AutoCompleteTextViewSubject assertThat(AutoCompleteTextView target) {
     return Truth.assertAbout(AutoCompleteTextViewSubject.FACTORY).that(target);
+  }
+
+  // content
+
+  public static IntentSubject assertThat(Intent target) {
+    return Truth.assertAbout(IntentSubject.FACTORY).that(target);
+  }
+
+  public static SharedPreferencesSubject assertThat(SharedPreferences target) {
+    return Truth.assertAbout(SharedPreferencesSubject.FACTORY).that(target);
+  }
+
+  public static ContentValuesSubject assertThat(ContentValues target) {
+    return Truth.assertAbout(ContentValuesSubject.FACTORY).that(target);
+  }
+
+  public static LoaderSubject assertThat(Loader target) {
+    return Truth.assertAbout(LoaderSubject.FACTORY).that(target);
+  }
+
+  public static CursorLoaderSubject assertThat(CursorLoader target) {
+    return Truth.assertAbout(CursorLoaderSubject.FACTORY).that(target);
+  }
+
+  public static AsyncTaskLoaderSubject assertThat(AsyncTaskLoader target) {
+    return Truth.assertAbout(AsyncTaskLoaderSubject.FACTORY).that(target);
+  }
+
+  //// content.res
+
+  public static ConfigurationSubject assertThat(Configuration target) {
+    return Truth.assertAbout(ConfigurationSubject.FACTORY).that(target);
   }
 }
