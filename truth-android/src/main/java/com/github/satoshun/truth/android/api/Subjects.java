@@ -52,6 +52,7 @@ import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.ScrollView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TabHost;
 import android.widget.TabWidget;
@@ -119,6 +120,7 @@ import com.github.satoshun.truth.android.api.widget.ProgressBarSubject;
 import com.github.satoshun.truth.android.api.widget.RatingBarSubject;
 import com.github.satoshun.truth.android.api.widget.ScrollViewSubject;
 import com.github.satoshun.truth.android.api.widget.SimpleCursorAdapterSubject;
+import com.github.satoshun.truth.android.api.widget.SpinnerSubject;
 import com.github.satoshun.truth.android.api.widget.SwitchSubject;
 import com.github.satoshun.truth.android.api.widget.TabHostSubject;
 import com.github.satoshun.truth.android.api.widget.TabWidgetSubject;
@@ -400,5 +402,9 @@ public class Subjects {
 
   public static AbsSpinnerSubject assertThat(AbsSpinner target) {
     return Truth.assertAbout(AbsSpinnerSubject.FACTORY).that(target);
+  }
+
+  public static SpinnerSubject assertThat(Spinner target) {
+    return Truth.assertAbout(SpinnerSubject.FACTORY).that(target);
   }
 }
