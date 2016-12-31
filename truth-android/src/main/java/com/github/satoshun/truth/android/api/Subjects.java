@@ -49,6 +49,7 @@ import android.widget.ListPopupWindow;
 import android.widget.ListView;
 import android.widget.MediaController;
 import android.widget.ProgressBar;
+import android.widget.RadioGroup;
 import android.widget.RatingBar;
 import android.widget.ScrollView;
 import android.widget.SearchView;
@@ -118,6 +119,7 @@ import com.github.satoshun.truth.android.api.widget.ListPopupWindowSubject;
 import com.github.satoshun.truth.android.api.widget.ListViewSubject;
 import com.github.satoshun.truth.android.api.widget.MediaControllerSubject;
 import com.github.satoshun.truth.android.api.widget.ProgressBarSubject;
+import com.github.satoshun.truth.android.api.widget.RadioGroupSubject;
 import com.github.satoshun.truth.android.api.widget.RatingBarSubject;
 import com.github.satoshun.truth.android.api.widget.ScrollViewSubject;
 import com.github.satoshun.truth.android.api.widget.SearchViewSubject;
@@ -412,5 +414,9 @@ public class Subjects {
 
   public static SearchViewSubject assertThat(SearchView target) {
     return Truth.assertAbout(SearchViewSubject.FACTORY).that(target);
+  }
+
+  public static RadioGroupSubject assertThat(RadioGroup target) {
+    return Truth.assertAbout(RadioGroupSubject.FACTORY).that(target);
   }
 }
