@@ -48,6 +48,7 @@ import android.widget.ListAdapter;
 import android.widget.ListPopupWindow;
 import android.widget.ListView;
 import android.widget.MediaController;
+import android.widget.NumberPicker;
 import android.widget.ProgressBar;
 import android.widget.RadioGroup;
 import android.widget.RatingBar;
@@ -119,6 +120,7 @@ import com.github.satoshun.truth.android.api.widget.ListAdapterSubject;
 import com.github.satoshun.truth.android.api.widget.ListPopupWindowSubject;
 import com.github.satoshun.truth.android.api.widget.ListViewSubject;
 import com.github.satoshun.truth.android.api.widget.MediaControllerSubject;
+import com.github.satoshun.truth.android.api.widget.NumberPickerSubject;
 import com.github.satoshun.truth.android.api.widget.ProgressBarSubject;
 import com.github.satoshun.truth.android.api.widget.RadioGroupSubject;
 import com.github.satoshun.truth.android.api.widget.RatingBarSubject;
@@ -424,5 +426,9 @@ public class Subjects {
 
   public static RelativeLayoutSubject assertThat(RelativeLayout target) {
     return Truth.assertAbout(RelativeLayoutSubject.FACTORY).that(target);
+  }
+
+  public static NumberPickerSubject assertThat(NumberPicker target) {
+    return Truth.assertAbout(NumberPickerSubject.FACTORY).that(target);
   }
 }
