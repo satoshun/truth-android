@@ -45,6 +45,7 @@ import android.widget.SimpleCursorAdapter;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.ToggleButton;
+import android.widget.WrapperListAdapter;
 
 import com.github.satoshun.truth.android.api.accessibilityservice.AccessibilityServiceInfoSubject;
 import com.github.satoshun.truth.android.api.accounts.AccountSubject;
@@ -92,6 +93,7 @@ import com.github.satoshun.truth.android.api.widget.SimpleCursorAdapterSubject;
 import com.github.satoshun.truth.android.api.widget.SwitchSubject;
 import com.github.satoshun.truth.android.api.widget.TextViewSubject;
 import com.github.satoshun.truth.android.api.widget.ToggleButtonSubject;
+import com.github.satoshun.truth.android.api.widget.WrapperListAdapterSubject;
 import com.google.common.truth.Truth;
 
 public class Subjects {
@@ -280,5 +282,9 @@ public class Subjects {
 
   public static SimpleCursorAdapterSubject assertThat(SimpleCursorAdapter target) {
     return Truth.assertAbout(SimpleCursorAdapterSubject.FACTORY).that(target);
+  }
+
+  public static WrapperListAdapterSubject assertThat(WrapperListAdapter target) {
+    return Truth.assertAbout(WrapperListAdapterSubject.FACTORY).that(target);
   }
 }
