@@ -47,6 +47,7 @@ import android.widget.ListPopupWindow;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RatingBar;
+import android.widget.ScrollView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -101,6 +102,7 @@ import com.github.satoshun.truth.android.api.widget.ListPopupWindowSubject;
 import com.github.satoshun.truth.android.api.widget.ListViewSubject;
 import com.github.satoshun.truth.android.api.widget.ProgressBarSubject;
 import com.github.satoshun.truth.android.api.widget.RatingBarSubject;
+import com.github.satoshun.truth.android.api.widget.ScrollViewSubject;
 import com.github.satoshun.truth.android.api.widget.SimpleCursorAdapterSubject;
 import com.github.satoshun.truth.android.api.widget.SwitchSubject;
 import com.github.satoshun.truth.android.api.widget.TextViewSubject;
@@ -322,5 +324,9 @@ public class Subjects {
 
   public static GestureOverlayViewSubject assertThat(GestureOverlayView target) {
     return Truth.assertAbout(GestureOverlayViewSubject.FACTORY).that(target);
+  }
+
+  public static ScrollViewSubject assertThat(ScrollView target) {
+    return Truth.assertAbout(ScrollViewSubject.FACTORY).that(target);
   }
 }
