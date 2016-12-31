@@ -57,6 +57,7 @@ import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.ToggleButton;
+import android.widget.VideoView;
 import android.widget.WrapperListAdapter;
 
 import com.github.satoshun.truth.android.api.accessibilityservice.AccessibilityServiceInfoSubject;
@@ -117,6 +118,7 @@ import com.github.satoshun.truth.android.api.widget.TableLayoutSubject;
 import com.github.satoshun.truth.android.api.widget.TextViewSubject;
 import com.github.satoshun.truth.android.api.widget.TimePickerSubject;
 import com.github.satoshun.truth.android.api.widget.ToggleButtonSubject;
+import com.github.satoshun.truth.android.api.widget.VideoViewSubject;
 import com.github.satoshun.truth.android.api.widget.WrapperListAdapterSubject;
 import com.google.common.truth.Truth;
 
@@ -358,5 +360,9 @@ public class Subjects {
 
   public static TableLayoutSubject assertThat(TableLayout target) {
     return Truth.assertAbout(TableLayoutSubject.FACTORY).that(target);
+  }
+
+  public static VideoViewSubject assertThat(VideoView target) {
+    return Truth.assertAbout(VideoViewSubject.FACTORY).that(target);
   }
 }
