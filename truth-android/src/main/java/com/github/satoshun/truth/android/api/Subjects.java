@@ -40,6 +40,7 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.GridView;
 import android.widget.HeaderViewListAdapter;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
@@ -98,6 +99,7 @@ import com.github.satoshun.truth.android.api.widget.FrameLayoutSubject;
 import com.github.satoshun.truth.android.api.widget.GestureOverlayViewSubject;
 import com.github.satoshun.truth.android.api.widget.GridViewSubject;
 import com.github.satoshun.truth.android.api.widget.HeaderViewListAdapterSubject;
+import com.github.satoshun.truth.android.api.widget.HorizontalScrollViewSubject;
 import com.github.satoshun.truth.android.api.widget.ImageViewSubject;
 import com.github.satoshun.truth.android.api.widget.LinearLayoutSubject;
 import com.github.satoshun.truth.android.api.widget.ListAdapterSubject;
@@ -346,5 +348,9 @@ public class Subjects {
 
   public static MediaControllerSubject assertThat(MediaController target) {
     return Truth.assertAbout(MediaControllerSubject.FACTORY).that(target);
+  }
+
+  public static HorizontalScrollViewSubject assertThat(HorizontalScrollView target) {
+    return Truth.assertAbout(HorizontalScrollViewSubject.FACTORY).that(target);
   }
 }
