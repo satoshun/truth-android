@@ -2,6 +2,7 @@ package com.github.satoshun.truth.android.api;
 
 import android.accessibilityservice.AccessibilityServiceInfo;
 import android.accounts.Account;
+import android.content.AsyncTaskLoader;
 import android.content.ContentValues;
 import android.content.CursorLoader;
 import android.content.Intent;
@@ -81,6 +82,7 @@ import android.widget.WrapperListAdapter;
 
 import com.github.satoshun.truth.android.api.accessibilityservice.AccessibilityServiceInfoSubject;
 import com.github.satoshun.truth.android.api.accounts.AccountSubject;
+import com.github.satoshun.truth.android.api.content.AsyncTaskLoaderSubject;
 import com.github.satoshun.truth.android.api.content.ContentValuesSubject;
 import com.github.satoshun.truth.android.api.content.CursorLoaderSubject;
 import com.github.satoshun.truth.android.api.content.IntentSubject;
@@ -480,5 +482,9 @@ public class Subjects {
 
   public static CursorLoaderSubject assertThat(CursorLoader target) {
     return Truth.assertAbout(CursorLoaderSubject.FACTORY).that(target);
+  }
+
+  public static AsyncTaskLoaderSubject assertThat(AsyncTaskLoader target) {
+    return Truth.assertAbout(AsyncTaskLoaderSubject.FACTORY).that(target);
   }
 }
