@@ -34,6 +34,7 @@ import android.widget.ArrayAdapter;
 import android.widget.CalendarView;
 import android.widget.CompoundButton;
 import android.widget.CursorAdapter;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.GridView;
@@ -86,6 +87,7 @@ import com.github.satoshun.truth.android.api.widget.ArrayAdapterSubject;
 import com.github.satoshun.truth.android.api.widget.CalendarViewSubject;
 import com.github.satoshun.truth.android.api.widget.CompoundButtonSubject;
 import com.github.satoshun.truth.android.api.widget.CursorAdapterSubject;
+import com.github.satoshun.truth.android.api.widget.DatePickerSubject;
 import com.github.satoshun.truth.android.api.widget.EditTextSubject;
 import com.github.satoshun.truth.android.api.widget.FrameLayoutSubject;
 import com.github.satoshun.truth.android.api.widget.GridViewSubject;
@@ -310,5 +312,9 @@ public class Subjects {
 
   public static CalendarViewSubject assertThat(CalendarView target) {
     return Truth.assertAbout(CalendarViewSubject.FACTORY).that(target);
+  }
+
+  public static DatePickerSubject assertThat(DatePicker target) {
+    return Truth.assertAbout(DatePickerSubject.FACTORY).that(target);
   }
 }
