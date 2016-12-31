@@ -31,6 +31,7 @@ import android.widget.AbsSeekBar;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CalendarView;
 import android.widget.CompoundButton;
 import android.widget.CursorAdapter;
 import android.widget.EditText;
@@ -82,6 +83,7 @@ import com.github.satoshun.truth.android.api.widget.AbsSeekBarSubject;
 import com.github.satoshun.truth.android.api.widget.AdapterSubject;
 import com.github.satoshun.truth.android.api.widget.AdapterViewSubject;
 import com.github.satoshun.truth.android.api.widget.ArrayAdapterSubject;
+import com.github.satoshun.truth.android.api.widget.CalendarViewSubject;
 import com.github.satoshun.truth.android.api.widget.CompoundButtonSubject;
 import com.github.satoshun.truth.android.api.widget.CursorAdapterSubject;
 import com.github.satoshun.truth.android.api.widget.EditTextSubject;
@@ -304,5 +306,9 @@ public class Subjects {
 
   public static FrameLayoutSubject assertThat(FrameLayout target) {
     return Truth.assertAbout(FrameLayoutSubject.FACTORY).that(target);
+  }
+
+  public static CalendarViewSubject assertThat(CalendarView target) {
+    return Truth.assertAbout(CalendarViewSubject.FACTORY).that(target);
   }
 }
