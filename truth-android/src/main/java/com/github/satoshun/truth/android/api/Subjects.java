@@ -53,6 +53,7 @@ import android.widget.ScrollView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Switch;
 import android.widget.TabHost;
+import android.widget.TabWidget;
 import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -117,6 +118,7 @@ import com.github.satoshun.truth.android.api.widget.ScrollViewSubject;
 import com.github.satoshun.truth.android.api.widget.SimpleCursorAdapterSubject;
 import com.github.satoshun.truth.android.api.widget.SwitchSubject;
 import com.github.satoshun.truth.android.api.widget.TabHostSubject;
+import com.github.satoshun.truth.android.api.widget.TabWidgetSubject;
 import com.github.satoshun.truth.android.api.widget.TableLayoutSubject;
 import com.github.satoshun.truth.android.api.widget.TextViewSubject;
 import com.github.satoshun.truth.android.api.widget.TimePickerSubject;
@@ -382,5 +384,9 @@ public class Subjects {
 
   public static ToastSubject assertThat(Toast target) {
     return Truth.assertAbout(ToastSubject.FACTORY).that(target);
+  }
+
+  public static TabWidgetSubject assertThat(TabWidget target) {
+    return Truth.assertAbout(TabWidgetSubject.FACTORY).that(target);
   }
 }
