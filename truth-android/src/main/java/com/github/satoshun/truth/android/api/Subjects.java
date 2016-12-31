@@ -71,6 +71,7 @@ import com.github.satoshun.truth.android.api.view.WindowSubject;
 import com.github.satoshun.truth.android.api.webkit.WebViewSubject;
 import com.github.satoshun.truth.android.api.widget.AbsListViewSubject;
 import com.github.satoshun.truth.android.api.widget.AbsSeekBarSubject;
+import com.github.satoshun.truth.android.api.widget.AdapterSubject;
 import com.github.satoshun.truth.android.api.widget.AdapterViewSubject;
 import com.github.satoshun.truth.android.api.widget.CompoundButtonSubject;
 import com.github.satoshun.truth.android.api.widget.EditTextSubject;
@@ -251,5 +252,9 @@ public class Subjects {
 
   public static LinearLayoutSubject assertThat(LinearLayout target) {
     return Truth.assertAbout(LinearLayoutSubject.FACTORY).that(target);
+  }
+
+  public static AdapterSubject assertThat(Adapter target) {
+    return Truth.assertAbout(AdapterSubject.FACTORY).that(target);
   }
 }
