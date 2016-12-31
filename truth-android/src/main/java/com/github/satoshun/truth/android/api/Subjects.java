@@ -29,6 +29,7 @@ import android.view.Window;
 import android.webkit.WebView;
 import android.widget.AbsListView;
 import android.widget.AbsSeekBar;
+import android.widget.AbsSpinner;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -94,6 +95,7 @@ import com.github.satoshun.truth.android.api.view.WindowSubject;
 import com.github.satoshun.truth.android.api.webkit.WebViewSubject;
 import com.github.satoshun.truth.android.api.widget.AbsListViewSubject;
 import com.github.satoshun.truth.android.api.widget.AbsSeekBarSubject;
+import com.github.satoshun.truth.android.api.widget.AbsSpinnerSubject;
 import com.github.satoshun.truth.android.api.widget.AdapterSubject;
 import com.github.satoshun.truth.android.api.widget.AdapterViewSubject;
 import com.github.satoshun.truth.android.api.widget.ArrayAdapterSubject;
@@ -394,5 +396,9 @@ public class Subjects {
 
   public static TableRowSubject assertThat(TableRow target) {
     return Truth.assertAbout(TableRowSubject.FACTORY).that(target);
+  }
+
+  public static AbsSpinnerSubject assertThat(AbsSpinner target) {
+    return Truth.assertAbout(AbsSpinnerSubject.FACTORY).that(target);
   }
 }
