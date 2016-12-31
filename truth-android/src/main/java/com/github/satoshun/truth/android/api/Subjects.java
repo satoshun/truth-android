@@ -2,6 +2,7 @@ package com.github.satoshun.truth.android.api;
 
 import android.accessibilityservice.AccessibilityServiceInfo;
 import android.accounts.Account;
+import android.content.Intent;
 import android.gesture.GestureOverlayView;
 import android.net.Uri;
 import android.text.BidiFormatter;
@@ -76,6 +77,7 @@ import android.widget.WrapperListAdapter;
 
 import com.github.satoshun.truth.android.api.accessibilityservice.AccessibilityServiceInfoSubject;
 import com.github.satoshun.truth.android.api.accounts.AccountSubject;
+import com.github.satoshun.truth.android.api.content.IntentSubject;
 import com.github.satoshun.truth.android.api.net.UriSubject;
 import com.github.satoshun.truth.android.api.text.BidiFormatterSubject;
 import com.github.satoshun.truth.android.api.view.ActionModeSubject;
@@ -448,5 +450,11 @@ public class Subjects {
 
   public static AutoCompleteTextViewSubject assertThat(AutoCompleteTextView target) {
     return Truth.assertAbout(AutoCompleteTextViewSubject.FACTORY).that(target);
+  }
+
+  // content
+
+  public static IntentSubject assertThat(Intent target) {
+    return Truth.assertAbout(IntentSubject.FACTORY).that(target);
   }
 }
