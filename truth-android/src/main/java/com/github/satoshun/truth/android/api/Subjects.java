@@ -52,6 +52,7 @@ import android.widget.SimpleCursorAdapter;
 import android.widget.Switch;
 import android.widget.TabHost;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.ToggleButton;
 import android.widget.WrapperListAdapter;
 
@@ -108,6 +109,7 @@ import com.github.satoshun.truth.android.api.widget.SimpleCursorAdapterSubject;
 import com.github.satoshun.truth.android.api.widget.SwitchSubject;
 import com.github.satoshun.truth.android.api.widget.TabHostSubject;
 import com.github.satoshun.truth.android.api.widget.TextViewSubject;
+import com.github.satoshun.truth.android.api.widget.TimePickerSubject;
 import com.github.satoshun.truth.android.api.widget.ToggleButtonSubject;
 import com.github.satoshun.truth.android.api.widget.WrapperListAdapterSubject;
 import com.google.common.truth.Truth;
@@ -334,5 +336,9 @@ public class Subjects {
 
   public static TabHostSubject assertThat(TabHost target) {
     return Truth.assertAbout(TabHostSubject.FACTORY).that(target);
+  }
+
+  public static TimePickerSubject assertThat(TimePicker target) {
+    return Truth.assertAbout(TimePickerSubject.FACTORY).that(target);
   }
 }
