@@ -32,6 +32,7 @@ import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
+import android.widget.CursorAdapter;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -77,6 +78,7 @@ import com.github.satoshun.truth.android.api.widget.AdapterSubject;
 import com.github.satoshun.truth.android.api.widget.AdapterViewSubject;
 import com.github.satoshun.truth.android.api.widget.ArrayAdapterSubject;
 import com.github.satoshun.truth.android.api.widget.CompoundButtonSubject;
+import com.github.satoshun.truth.android.api.widget.CursorAdapterSubject;
 import com.github.satoshun.truth.android.api.widget.EditTextSubject;
 import com.github.satoshun.truth.android.api.widget.GridViewSubject;
 import com.github.satoshun.truth.android.api.widget.ImageViewSubject;
@@ -268,5 +270,9 @@ public class Subjects {
 
   public static ArrayAdapterSubject assertThat(ArrayAdapter target) {
     return Truth.assertAbout(ArrayAdapterSubject.FACTORY).that(target);
+  }
+
+  public static CursorAdapterSubject assertThat(CursorAdapter target) {
+    return Truth.assertAbout(CursorAdapterSubject.FACTORY).that(target);
   }
 }
