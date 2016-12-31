@@ -41,6 +41,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RatingBar;
+import android.widget.SimpleCursorAdapter;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.ToggleButton;
@@ -87,6 +88,7 @@ import com.github.satoshun.truth.android.api.widget.ListAdapterSubject;
 import com.github.satoshun.truth.android.api.widget.ListViewSubject;
 import com.github.satoshun.truth.android.api.widget.ProgressBarSubject;
 import com.github.satoshun.truth.android.api.widget.RatingBarSubject;
+import com.github.satoshun.truth.android.api.widget.SimpleCursorAdapterSubject;
 import com.github.satoshun.truth.android.api.widget.SwitchSubject;
 import com.github.satoshun.truth.android.api.widget.TextViewSubject;
 import com.github.satoshun.truth.android.api.widget.ToggleButtonSubject;
@@ -274,5 +276,9 @@ public class Subjects {
 
   public static CursorAdapterSubject assertThat(CursorAdapter target) {
     return Truth.assertAbout(CursorAdapterSubject.FACTORY).that(target);
+  }
+
+  public static SimpleCursorAdapterSubject assertThat(SimpleCursorAdapter target) {
+    return Truth.assertAbout(SimpleCursorAdapterSubject.FACTORY).that(target);
   }
 }
