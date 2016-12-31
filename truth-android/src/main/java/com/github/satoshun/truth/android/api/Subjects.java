@@ -2,6 +2,7 @@ package com.github.satoshun.truth.android.api;
 
 import android.accessibilityservice.AccessibilityServiceInfo;
 import android.accounts.Account;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.gesture.GestureOverlayView;
@@ -78,6 +79,7 @@ import android.widget.WrapperListAdapter;
 
 import com.github.satoshun.truth.android.api.accessibilityservice.AccessibilityServiceInfoSubject;
 import com.github.satoshun.truth.android.api.accounts.AccountSubject;
+import com.github.satoshun.truth.android.api.content.ContentValuesSubject;
 import com.github.satoshun.truth.android.api.content.IntentSubject;
 import com.github.satoshun.truth.android.api.content.SharedPreferencesSubject;
 import com.github.satoshun.truth.android.api.net.UriSubject;
@@ -462,5 +464,9 @@ public class Subjects {
 
   public static SharedPreferencesSubject assertThat(SharedPreferences target) {
     return Truth.assertAbout(SharedPreferencesSubject.FACTORY).that(target);
+  }
+
+  public static ContentValuesSubject assertThat(ContentValues target) {
+    return Truth.assertAbout(ContentValuesSubject.FACTORY).that(target);
   }
 }
