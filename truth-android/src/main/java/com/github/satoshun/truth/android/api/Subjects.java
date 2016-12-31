@@ -33,6 +33,7 @@ import android.widget.AbsSpinner;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.CalendarView;
 import android.widget.CheckedTextView;
 import android.widget.Chronometer;
@@ -106,6 +107,7 @@ import com.github.satoshun.truth.android.api.widget.AbsSpinnerSubject;
 import com.github.satoshun.truth.android.api.widget.AdapterSubject;
 import com.github.satoshun.truth.android.api.widget.AdapterViewSubject;
 import com.github.satoshun.truth.android.api.widget.ArrayAdapterSubject;
+import com.github.satoshun.truth.android.api.widget.AutoCompleteTextViewSubject;
 import com.github.satoshun.truth.android.api.widget.CalendarViewSubject;
 import com.github.satoshun.truth.android.api.widget.CheckedTextViewSubject;
 import com.github.satoshun.truth.android.api.widget.ChronometerSubject;
@@ -442,5 +444,9 @@ public class Subjects {
 
   public static ChronometerSubject assertThat(Chronometer target) {
     return Truth.assertAbout(ChronometerSubject.FACTORY).that(target);
+  }
+
+  public static AutoCompleteTextViewSubject assertThat(AutoCompleteTextView target) {
+    return Truth.assertAbout(AutoCompleteTextViewSubject.FACTORY).that(target);
   }
 }
