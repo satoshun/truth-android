@@ -51,6 +51,7 @@ import android.widget.MediaController;
 import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.ScrollView;
+import android.widget.SearchView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
 import android.widget.Switch;
@@ -119,6 +120,7 @@ import com.github.satoshun.truth.android.api.widget.MediaControllerSubject;
 import com.github.satoshun.truth.android.api.widget.ProgressBarSubject;
 import com.github.satoshun.truth.android.api.widget.RatingBarSubject;
 import com.github.satoshun.truth.android.api.widget.ScrollViewSubject;
+import com.github.satoshun.truth.android.api.widget.SearchViewSubject;
 import com.github.satoshun.truth.android.api.widget.SimpleCursorAdapterSubject;
 import com.github.satoshun.truth.android.api.widget.SpinnerSubject;
 import com.github.satoshun.truth.android.api.widget.SwitchSubject;
@@ -406,5 +408,9 @@ public class Subjects {
 
   public static SpinnerSubject assertThat(Spinner target) {
     return Truth.assertAbout(SpinnerSubject.FACTORY).that(target);
+  }
+
+  public static SearchViewSubject assertThat(SearchView target) {
+    return Truth.assertAbout(SearchViewSubject.FACTORY).that(target);
   }
 }
