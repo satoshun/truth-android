@@ -45,6 +45,7 @@ import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListPopupWindow;
 import android.widget.ListView;
+import android.widget.MediaController;
 import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.ScrollView;
@@ -102,6 +103,7 @@ import com.github.satoshun.truth.android.api.widget.LinearLayoutSubject;
 import com.github.satoshun.truth.android.api.widget.ListAdapterSubject;
 import com.github.satoshun.truth.android.api.widget.ListPopupWindowSubject;
 import com.github.satoshun.truth.android.api.widget.ListViewSubject;
+import com.github.satoshun.truth.android.api.widget.MediaControllerSubject;
 import com.github.satoshun.truth.android.api.widget.ProgressBarSubject;
 import com.github.satoshun.truth.android.api.widget.RatingBarSubject;
 import com.github.satoshun.truth.android.api.widget.ScrollViewSubject;
@@ -340,5 +342,9 @@ public class Subjects {
 
   public static TimePickerSubject assertThat(TimePicker target) {
     return Truth.assertAbout(TimePickerSubject.FACTORY).that(target);
+  }
+
+  public static MediaControllerSubject assertThat(MediaController target) {
+    return Truth.assertAbout(MediaControllerSubject.FACTORY).that(target);
   }
 }
