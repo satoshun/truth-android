@@ -53,6 +53,7 @@ import android.widget.ScrollView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Switch;
 import android.widget.TabHost;
+import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.ToggleButton;
@@ -112,6 +113,7 @@ import com.github.satoshun.truth.android.api.widget.ScrollViewSubject;
 import com.github.satoshun.truth.android.api.widget.SimpleCursorAdapterSubject;
 import com.github.satoshun.truth.android.api.widget.SwitchSubject;
 import com.github.satoshun.truth.android.api.widget.TabHostSubject;
+import com.github.satoshun.truth.android.api.widget.TableLayoutSubject;
 import com.github.satoshun.truth.android.api.widget.TextViewSubject;
 import com.github.satoshun.truth.android.api.widget.TimePickerSubject;
 import com.github.satoshun.truth.android.api.widget.ToggleButtonSubject;
@@ -130,18 +132,6 @@ public class Subjects {
 
   public static ViewGroupSubject assertThat(ViewGroup target) {
     return Truth.assertAbout(ViewGroupSubject.FACTORY).that(target);
-  }
-
-  public static <T extends Adapter> AdapterViewSubject assertThat(AdapterView<T> target) {
-    return Truth.assertAbout(AdapterViewSubject.FACTORY).that(target);
-  }
-
-  public static AbsListViewSubject assertThat(AbsListView target) {
-    return Truth.assertAbout(AbsListViewSubject.FACTORY).that(target);
-  }
-
-  public static ListViewSubject assertThat(ListView target) {
-    return Truth.assertAbout(ListViewSubject.FACTORY).that(target);
   }
 
   public static WebViewSubject assertThat(WebView target) {
@@ -352,5 +342,21 @@ public class Subjects {
 
   public static HorizontalScrollViewSubject assertThat(HorizontalScrollView target) {
     return Truth.assertAbout(HorizontalScrollViewSubject.FACTORY).that(target);
+  }
+
+  public static AbsListViewSubject assertThat(AbsListView target) {
+    return Truth.assertAbout(AbsListViewSubject.FACTORY).that(target);
+  }
+
+  public static ListViewSubject assertThat(ListView target) {
+    return Truth.assertAbout(ListViewSubject.FACTORY).that(target);
+  }
+
+  public static <T extends Adapter> AdapterViewSubject assertThat(AdapterView<T> target) {
+    return Truth.assertAbout(AdapterViewSubject.FACTORY).that(target);
+  }
+
+  public static TableLayoutSubject assertThat(TableLayout target) {
+    return Truth.assertAbout(TableLayoutSubject.FACTORY).that(target);
   }
 }
