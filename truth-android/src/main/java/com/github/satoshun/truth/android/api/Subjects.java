@@ -34,6 +34,7 @@ import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.CursorAdapter;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.GridView;
 import android.widget.HeaderViewListAdapter;
 import android.widget.ImageView;
@@ -84,6 +85,7 @@ import com.github.satoshun.truth.android.api.widget.ArrayAdapterSubject;
 import com.github.satoshun.truth.android.api.widget.CompoundButtonSubject;
 import com.github.satoshun.truth.android.api.widget.CursorAdapterSubject;
 import com.github.satoshun.truth.android.api.widget.EditTextSubject;
+import com.github.satoshun.truth.android.api.widget.FrameLayoutSubject;
 import com.github.satoshun.truth.android.api.widget.GridViewSubject;
 import com.github.satoshun.truth.android.api.widget.HeaderViewListAdapterSubject;
 import com.github.satoshun.truth.android.api.widget.ImageViewSubject;
@@ -298,5 +300,9 @@ public class Subjects {
 
   public static ListPopupWindowSubject assertThat(ListPopupWindow target) {
     return Truth.assertAbout(ListPopupWindowSubject.FACTORY).that(target);
+  }
+
+  public static FrameLayoutSubject assertThat(FrameLayout target) {
+    return Truth.assertAbout(FrameLayoutSubject.FACTORY).that(target);
   }
 }
