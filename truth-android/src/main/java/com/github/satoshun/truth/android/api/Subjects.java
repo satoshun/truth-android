@@ -35,6 +35,7 @@ import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RatingBar;
@@ -78,6 +79,7 @@ import com.github.satoshun.truth.android.api.widget.EditTextSubject;
 import com.github.satoshun.truth.android.api.widget.GridViewSubject;
 import com.github.satoshun.truth.android.api.widget.ImageViewSubject;
 import com.github.satoshun.truth.android.api.widget.LinearLayoutSubject;
+import com.github.satoshun.truth.android.api.widget.ListAdapterSubject;
 import com.github.satoshun.truth.android.api.widget.ListViewSubject;
 import com.github.satoshun.truth.android.api.widget.ProgressBarSubject;
 import com.github.satoshun.truth.android.api.widget.RatingBarSubject;
@@ -256,5 +258,9 @@ public class Subjects {
 
   public static AdapterSubject assertThat(Adapter target) {
     return Truth.assertAbout(AdapterSubject.FACTORY).that(target);
+  }
+
+  public static ListAdapterSubject assertThat(ListAdapter target) {
+    return Truth.assertAbout(ListAdapterSubject.FACTORY).that(target);
   }
 }
