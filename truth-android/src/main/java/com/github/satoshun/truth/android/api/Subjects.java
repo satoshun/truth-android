@@ -56,6 +56,7 @@ import android.widget.TabHost;
 import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 import android.widget.VideoView;
 import android.widget.ViewAnimator;
@@ -119,6 +120,7 @@ import com.github.satoshun.truth.android.api.widget.TabHostSubject;
 import com.github.satoshun.truth.android.api.widget.TableLayoutSubject;
 import com.github.satoshun.truth.android.api.widget.TextViewSubject;
 import com.github.satoshun.truth.android.api.widget.TimePickerSubject;
+import com.github.satoshun.truth.android.api.widget.ToastSubject;
 import com.github.satoshun.truth.android.api.widget.ToggleButtonSubject;
 import com.github.satoshun.truth.android.api.widget.VideoViewSubject;
 import com.github.satoshun.truth.android.api.widget.ViewAnimatorSubject;
@@ -376,5 +378,9 @@ public class Subjects {
 
   public static ViewFlipperSubject assertThat(ViewFlipper target) {
     return Truth.assertAbout(ViewFlipperSubject.FACTORY).that(target);
+  }
+
+  public static ToastSubject assertThat(Toast target) {
+    return Truth.assertAbout(ToastSubject.FACTORY).that(target);
   }
 }
