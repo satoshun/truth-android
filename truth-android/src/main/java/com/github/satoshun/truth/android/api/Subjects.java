@@ -55,6 +55,7 @@ import android.widget.Switch;
 import android.widget.TabHost;
 import android.widget.TabWidget;
 import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -120,6 +121,7 @@ import com.github.satoshun.truth.android.api.widget.SwitchSubject;
 import com.github.satoshun.truth.android.api.widget.TabHostSubject;
 import com.github.satoshun.truth.android.api.widget.TabWidgetSubject;
 import com.github.satoshun.truth.android.api.widget.TableLayoutSubject;
+import com.github.satoshun.truth.android.api.widget.TableRowSubject;
 import com.github.satoshun.truth.android.api.widget.TextViewSubject;
 import com.github.satoshun.truth.android.api.widget.TimePickerSubject;
 import com.github.satoshun.truth.android.api.widget.ToastSubject;
@@ -388,5 +390,9 @@ public class Subjects {
 
   public static TabWidgetSubject assertThat(TabWidget target) {
     return Truth.assertAbout(TabWidgetSubject.FACTORY).that(target);
+  }
+
+  public static TableRowSubject assertThat(TableRow target) {
+    return Truth.assertAbout(TableRowSubject.FACTORY).that(target);
   }
 }
