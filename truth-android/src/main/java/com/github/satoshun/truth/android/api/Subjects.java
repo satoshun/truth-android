@@ -58,6 +58,8 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.ToggleButton;
 import android.widget.VideoView;
+import android.widget.ViewAnimator;
+import android.widget.ViewFlipper;
 import android.widget.WrapperListAdapter;
 
 import com.github.satoshun.truth.android.api.accessibilityservice.AccessibilityServiceInfoSubject;
@@ -119,6 +121,8 @@ import com.github.satoshun.truth.android.api.widget.TextViewSubject;
 import com.github.satoshun.truth.android.api.widget.TimePickerSubject;
 import com.github.satoshun.truth.android.api.widget.ToggleButtonSubject;
 import com.github.satoshun.truth.android.api.widget.VideoViewSubject;
+import com.github.satoshun.truth.android.api.widget.ViewAnimatorSubject;
+import com.github.satoshun.truth.android.api.widget.ViewFlipperSubject;
 import com.github.satoshun.truth.android.api.widget.WrapperListAdapterSubject;
 import com.google.common.truth.Truth;
 
@@ -364,5 +368,13 @@ public class Subjects {
 
   public static VideoViewSubject assertThat(VideoView target) {
     return Truth.assertAbout(VideoViewSubject.FACTORY).that(target);
+  }
+
+  public static ViewAnimatorSubject assertThat(ViewAnimator target) {
+    return Truth.assertAbout(ViewAnimatorSubject.FACTORY).that(target);
+  }
+
+  public static ViewFlipperSubject assertThat(ViewFlipper target) {
+    return Truth.assertAbout(ViewFlipperSubject.FACTORY).that(target);
   }
 }
