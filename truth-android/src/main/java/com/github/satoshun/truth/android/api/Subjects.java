@@ -34,6 +34,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RatingBar;
@@ -75,6 +76,7 @@ import com.github.satoshun.truth.android.api.widget.CompoundButtonSubject;
 import com.github.satoshun.truth.android.api.widget.EditTextSubject;
 import com.github.satoshun.truth.android.api.widget.GridViewSubject;
 import com.github.satoshun.truth.android.api.widget.ImageViewSubject;
+import com.github.satoshun.truth.android.api.widget.LinearLayoutSubject;
 import com.github.satoshun.truth.android.api.widget.ListViewSubject;
 import com.github.satoshun.truth.android.api.widget.ProgressBarSubject;
 import com.github.satoshun.truth.android.api.widget.RatingBarSubject;
@@ -245,5 +247,9 @@ public class Subjects {
 
   public static ImageViewSubject assertThat(ImageView target) {
     return Truth.assertAbout(ImageViewSubject.FACTORY).that(target);
+  }
+
+  public static LinearLayoutSubject assertThat(LinearLayout target) {
+    return Truth.assertAbout(LinearLayoutSubject.FACTORY).that(target);
   }
 }
