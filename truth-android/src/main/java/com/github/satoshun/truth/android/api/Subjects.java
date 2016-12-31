@@ -34,6 +34,7 @@ import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CalendarView;
+import android.widget.CheckedTextView;
 import android.widget.CompoundButton;
 import android.widget.CursorAdapter;
 import android.widget.DatePicker;
@@ -105,6 +106,7 @@ import com.github.satoshun.truth.android.api.widget.AdapterSubject;
 import com.github.satoshun.truth.android.api.widget.AdapterViewSubject;
 import com.github.satoshun.truth.android.api.widget.ArrayAdapterSubject;
 import com.github.satoshun.truth.android.api.widget.CalendarViewSubject;
+import com.github.satoshun.truth.android.api.widget.CheckedTextViewSubject;
 import com.github.satoshun.truth.android.api.widget.CompoundButtonSubject;
 import com.github.satoshun.truth.android.api.widget.CursorAdapterSubject;
 import com.github.satoshun.truth.android.api.widget.DatePickerSubject;
@@ -430,5 +432,9 @@ public class Subjects {
 
   public static NumberPickerSubject assertThat(NumberPicker target) {
     return Truth.assertAbout(NumberPickerSubject.FACTORY).that(target);
+  }
+
+  public static CheckedTextViewSubject assertThat(CheckedTextView target) {
+    return Truth.assertAbout(CheckedTextViewSubject.FACTORY).that(target);
   }
 }
