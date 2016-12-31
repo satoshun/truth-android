@@ -51,6 +51,7 @@ import android.widget.MediaController;
 import android.widget.ProgressBar;
 import android.widget.RadioGroup;
 import android.widget.RatingBar;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.SearchView;
 import android.widget.SimpleCursorAdapter;
@@ -121,6 +122,7 @@ import com.github.satoshun.truth.android.api.widget.MediaControllerSubject;
 import com.github.satoshun.truth.android.api.widget.ProgressBarSubject;
 import com.github.satoshun.truth.android.api.widget.RadioGroupSubject;
 import com.github.satoshun.truth.android.api.widget.RatingBarSubject;
+import com.github.satoshun.truth.android.api.widget.RelativeLayoutSubject;
 import com.github.satoshun.truth.android.api.widget.ScrollViewSubject;
 import com.github.satoshun.truth.android.api.widget.SearchViewSubject;
 import com.github.satoshun.truth.android.api.widget.SimpleCursorAdapterSubject;
@@ -418,5 +420,9 @@ public class Subjects {
 
   public static RadioGroupSubject assertThat(RadioGroup target) {
     return Truth.assertAbout(RadioGroupSubject.FACTORY).that(target);
+  }
+
+  public static RelativeLayoutSubject assertThat(RelativeLayout target) {
+    return Truth.assertAbout(RelativeLayoutSubject.FACTORY).that(target);
   }
 }
