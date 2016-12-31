@@ -2,6 +2,7 @@ package com.github.satoshun.truth.android.api;
 
 import android.accessibilityservice.AccessibilityServiceInfo;
 import android.accounts.Account;
+import android.gesture.GestureOverlayView;
 import android.net.Uri;
 import android.text.BidiFormatter;
 import android.view.ActionMode;
@@ -90,6 +91,7 @@ import com.github.satoshun.truth.android.api.widget.CursorAdapterSubject;
 import com.github.satoshun.truth.android.api.widget.DatePickerSubject;
 import com.github.satoshun.truth.android.api.widget.EditTextSubject;
 import com.github.satoshun.truth.android.api.widget.FrameLayoutSubject;
+import com.github.satoshun.truth.android.api.widget.GestureOverlayViewSubject;
 import com.github.satoshun.truth.android.api.widget.GridViewSubject;
 import com.github.satoshun.truth.android.api.widget.HeaderViewListAdapterSubject;
 import com.github.satoshun.truth.android.api.widget.ImageViewSubject;
@@ -316,5 +318,9 @@ public class Subjects {
 
   public static DatePickerSubject assertThat(DatePicker target) {
     return Truth.assertAbout(DatePickerSubject.FACTORY).that(target);
+  }
+
+  public static GestureOverlayViewSubject assertThat(GestureOverlayView target) {
+    return Truth.assertAbout(GestureOverlayViewSubject.FACTORY).that(target);
   }
 }
