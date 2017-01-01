@@ -55,6 +55,7 @@ import android.util.Pair;
 import android.util.Property;
 import android.util.SparseArray;
 import android.util.SparseBooleanArray;
+import android.util.SparseIntArray;
 import android.view.ActionMode;
 import android.view.ActionProvider;
 import android.view.Display;
@@ -179,6 +180,7 @@ import com.github.satoshun.truth.android.api.util.PairSubject;
 import com.github.satoshun.truth.android.api.util.PropertySubject;
 import com.github.satoshun.truth.android.api.util.SparseArraySubject;
 import com.github.satoshun.truth.android.api.util.SparseBooleanArraySubject;
+import com.github.satoshun.truth.android.api.util.SparseIntArraySubject;
 import com.github.satoshun.truth.android.api.view.ActionModeSubject;
 import com.github.satoshun.truth.android.api.view.ActionProviderSubject;
 import com.github.satoshun.truth.android.api.view.DisplaySubject;
@@ -773,5 +775,9 @@ public class Subjects {
 
   public static SparseBooleanArraySubject assertThat(SparseBooleanArray target) {
     return Truth.assertAbout(SparseBooleanArraySubject.FACTORY).that(target);
+  }
+
+  public static SparseIntArraySubject assertThat(SparseIntArray target) {
+    return Truth.assertAbout(SparseIntArraySubject.FACTORY).that(target);
   }
 }
