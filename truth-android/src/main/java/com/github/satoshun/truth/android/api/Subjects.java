@@ -21,6 +21,7 @@ import android.app.KeyguardManager;
 import android.app.ListActivity;
 import android.app.ListFragment;
 import android.app.LoaderManager;
+import android.app.Notification;
 import android.app.Service;
 import android.content.AsyncTaskLoader;
 import android.content.ContentValues;
@@ -128,6 +129,7 @@ import com.github.satoshun.truth.android.api.app.KeyguardManagerSubject;
 import com.github.satoshun.truth.android.api.app.ListActivitySubject;
 import com.github.satoshun.truth.android.api.app.ListFragmentSubject;
 import com.github.satoshun.truth.android.api.app.LoaderManagerSubject;
+import com.github.satoshun.truth.android.api.app.NotificationSubject;
 import com.github.satoshun.truth.android.api.app.ServiceSubject;
 import com.github.satoshun.truth.android.api.content.AsyncTaskLoaderSubject;
 import com.github.satoshun.truth.android.api.content.ContentValuesSubject;
@@ -657,5 +659,9 @@ public class Subjects {
 
   public static LoaderManagerSubject assertThat(LoaderManager target) {
     return Truth.assertAbout(LoaderManagerSubject.FACTORY).that(target);
+  }
+
+  public static NotificationSubject assertThat(Notification target) {
+    return Truth.assertAbout(NotificationSubject.FACTORY).that(target);
   }
 }
