@@ -53,6 +53,7 @@ import android.util.DisplayMetrics;
 import android.util.LongSparseArray;
 import android.util.Pair;
 import android.util.Property;
+import android.util.SparseArray;
 import android.view.ActionMode;
 import android.view.ActionProvider;
 import android.view.Display;
@@ -175,6 +176,7 @@ import com.github.satoshun.truth.android.api.util.DisplayMetricsSubject;
 import com.github.satoshun.truth.android.api.util.LongSparseArraySubject;
 import com.github.satoshun.truth.android.api.util.PairSubject;
 import com.github.satoshun.truth.android.api.util.PropertySubject;
+import com.github.satoshun.truth.android.api.util.SparseArraySubject;
 import com.github.satoshun.truth.android.api.view.ActionModeSubject;
 import com.github.satoshun.truth.android.api.view.ActionProviderSubject;
 import com.github.satoshun.truth.android.api.view.DisplaySubject;
@@ -760,5 +762,10 @@ public class Subjects {
   @SuppressWarnings("unchecked")
   public static <T, V> PropertySubject<T, V> assertThat(Property<T, V> target) {
     return (PropertySubject<T, V>) Truth.assertAbout(PropertySubject.FACTORY).that(target);
+  }
+
+  @SuppressWarnings("unchecked")
+  public static <E> SparseArraySubject<E> assertThat(SparseArray<E> target) {
+    return (SparseArraySubject<E>) Truth.assertAbout(SparseArraySubject.FACTORY).that(target);
   }
 }
