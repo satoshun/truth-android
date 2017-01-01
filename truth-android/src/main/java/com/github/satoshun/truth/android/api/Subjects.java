@@ -2,6 +2,7 @@ package com.github.satoshun.truth.android.api;
 
 import android.accessibilityservice.AccessibilityServiceInfo;
 import android.accounts.Account;
+import android.animation.Animator;
 import android.content.AsyncTaskLoader;
 import android.content.ContentValues;
 import android.content.CursorLoader;
@@ -87,6 +88,7 @@ import android.widget.WrapperListAdapter;
 
 import com.github.satoshun.truth.android.api.accessibilityservice.AccessibilityServiceInfoSubject;
 import com.github.satoshun.truth.android.api.accounts.AccountSubject;
+import com.github.satoshun.truth.android.api.animation.AnimatorSubject;
 import com.github.satoshun.truth.android.api.content.AsyncTaskLoaderSubject;
 import com.github.satoshun.truth.android.api.content.ContentValuesSubject;
 import com.github.satoshun.truth.android.api.content.CursorLoaderSubject;
@@ -522,5 +524,11 @@ public class Subjects {
 
   public static SQLiteDatabaseSubject assertThat(SQLiteDatabase target) {
     return Truth.assertAbout(SQLiteDatabaseSubject.FACTORY).that(target);
+  }
+
+  // animation
+
+  public static AnimatorSubject assertThat(Animator target) {
+    return Truth.assertAbout(AnimatorSubject.FACTORY).that(target);
   }
 }
