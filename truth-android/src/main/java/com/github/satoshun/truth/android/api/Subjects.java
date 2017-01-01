@@ -8,8 +8,28 @@ import android.animation.Keyframe;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
+import android.app.ActionBar;
+import android.app.Activity;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.app.ExpandableListActivity;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.app.Instrumentation;
+import android.app.KeyguardManager;
+import android.app.ListActivity;
+import android.app.ListFragment;
+import android.app.LoaderManager;
+import android.app.Notification;
+import android.app.PendingIntent;
+import android.app.ProgressDialog;
+import android.app.Service;
+import android.app.TaskStackBuilder;
+import android.app.UiModeManager;
 import android.content.AsyncTaskLoader;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.Loader;
@@ -99,8 +119,29 @@ import com.github.satoshun.truth.android.api.animation.KeyframeSubject;
 import com.github.satoshun.truth.android.api.animation.ObjectAnimatorSubject;
 import com.github.satoshun.truth.android.api.animation.PropertyValuesHolderSubject;
 import com.github.satoshun.truth.android.api.animation.ValueAnimatorSubject;
+import com.github.satoshun.truth.android.api.app.ActionBarSubject;
+import com.github.satoshun.truth.android.api.app.ActivityMonitorSubject;
+import com.github.satoshun.truth.android.api.app.ActivityResultSubject;
+import com.github.satoshun.truth.android.api.app.ActivitySubject;
+import com.github.satoshun.truth.android.api.app.DialogFragmentSubject;
+import com.github.satoshun.truth.android.api.app.DialogSubject;
+import com.github.satoshun.truth.android.api.app.ExpandableListActivitySubject;
+import com.github.satoshun.truth.android.api.app.FragmentManagerSubject;
+import com.github.satoshun.truth.android.api.app.FragmentSubject;
+import com.github.satoshun.truth.android.api.app.FragmentTransactionSubject;
+import com.github.satoshun.truth.android.api.app.KeyguardManagerSubject;
+import com.github.satoshun.truth.android.api.app.ListActivitySubject;
+import com.github.satoshun.truth.android.api.app.ListFragmentSubject;
+import com.github.satoshun.truth.android.api.app.LoaderManagerSubject;
+import com.github.satoshun.truth.android.api.app.NotificationSubject;
+import com.github.satoshun.truth.android.api.app.PendingIntentSubject;
+import com.github.satoshun.truth.android.api.app.ProgressDialogSubject;
+import com.github.satoshun.truth.android.api.app.ServiceSubject;
+import com.github.satoshun.truth.android.api.app.TaskStackBuilderSubject;
+import com.github.satoshun.truth.android.api.app.UiModeManagerSubject;
 import com.github.satoshun.truth.android.api.content.AsyncTaskLoaderSubject;
 import com.github.satoshun.truth.android.api.content.ContentValuesSubject;
+import com.github.satoshun.truth.android.api.content.ContextSubject;
 import com.github.satoshun.truth.android.api.content.CursorLoaderSubject;
 import com.github.satoshun.truth.android.api.content.IntentSubject;
 import com.github.satoshun.truth.android.api.content.LoaderSubject;
@@ -486,6 +527,10 @@ public class Subjects {
 
   // content
 
+  public static ContextSubject assertThat(Context target) {
+    return Truth.assertAbout(ContextSubject.FACTORY).that(target);
+  }
+
   public static IntentSubject assertThat(Intent target) {
     return Truth.assertAbout(IntentSubject.FACTORY).that(target);
   }
@@ -560,5 +605,87 @@ public class Subjects {
 
   public static KeyframeSubject assertThat(Keyframe target) {
     return Truth.assertAbout(KeyframeSubject.FACTORY).that(target);
+  }
+
+  // app
+
+  public static ActivitySubject assertThat(Activity target) {
+    return Truth.assertAbout(ActivitySubject.FACTORY).that(target);
+  }
+
+  public static ListActivitySubject assertThat(ListActivity target) {
+    return Truth.assertAbout(ListActivitySubject.FACTORY).that(target);
+  }
+
+  public static ExpandableListActivitySubject assertThat(ExpandableListActivity target) {
+    return Truth.assertAbout(ExpandableListActivitySubject.FACTORY).that(target);
+  }
+
+  public static FragmentSubject assertThat(Fragment target) {
+    return Truth.assertAbout(FragmentSubject.FACTORY).that(target);
+  }
+
+  public static ListFragmentSubject assertThat(ListFragment target) {
+    return Truth.assertAbout(ListFragmentSubject.FACTORY).that(target);
+  }
+
+  public static FragmentManagerSubject assertThat(FragmentManager target) {
+    return Truth.assertAbout(FragmentManagerSubject.FACTORY).that(target);
+  }
+
+  public static FragmentTransactionSubject assertThat(FragmentTransaction target) {
+    return Truth.assertAbout(FragmentTransactionSubject.FACTORY).that(target);
+  }
+
+  public static DialogFragmentSubject assertThat(DialogFragment target) {
+    return Truth.assertAbout(DialogFragmentSubject.FACTORY).that(target);
+  }
+
+  public static ServiceSubject assertThat(Service target) {
+    return Truth.assertAbout(ServiceSubject.FACTORY).that(target);
+  }
+
+  public static DialogSubject assertThat(Dialog target) {
+    return Truth.assertAbout(DialogSubject.FACTORY).that(target);
+  }
+
+  public static ProgressDialogSubject assertThat(ProgressDialog target) {
+    return Truth.assertAbout(ProgressDialogSubject.FACTORY).that(target);
+  }
+
+  public static ActionBarSubject assertThat(ActionBar target) {
+    return Truth.assertAbout(ActionBarSubject.FACTORY).that(target);
+  }
+
+  public static ActivityMonitorSubject assertThat(Instrumentation.ActivityMonitor target) {
+    return Truth.assertAbout(ActivityMonitorSubject.FACTORY).that(target);
+  }
+
+  public static ActivityResultSubject assertThat(Instrumentation.ActivityResult target) {
+    return Truth.assertAbout(ActivityResultSubject.FACTORY).that(target);
+  }
+
+  public static KeyguardManagerSubject assertThat(KeyguardManager target) {
+    return Truth.assertAbout(KeyguardManagerSubject.FACTORY).that(target);
+  }
+
+  public static LoaderManagerSubject assertThat(LoaderManager target) {
+    return Truth.assertAbout(LoaderManagerSubject.FACTORY).that(target);
+  }
+
+  public static NotificationSubject assertThat(Notification target) {
+    return Truth.assertAbout(NotificationSubject.FACTORY).that(target);
+  }
+
+  public static PendingIntentSubject assertThat(PendingIntent target) {
+    return Truth.assertAbout(PendingIntentSubject.FACTORY).that(target);
+  }
+
+  public static TaskStackBuilderSubject assertThat(TaskStackBuilder target) {
+    return Truth.assertAbout(TaskStackBuilderSubject.FACTORY).that(target);
+  }
+
+  public static UiModeManagerSubject assertThat(UiModeManager target) {
+    return Truth.assertAbout(UiModeManagerSubject.FACTORY).that(target);
   }
 }
