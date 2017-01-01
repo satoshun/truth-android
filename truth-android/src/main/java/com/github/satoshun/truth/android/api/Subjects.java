@@ -113,6 +113,7 @@ import com.github.satoshun.truth.android.api.animation.PropertyValuesHolderSubje
 import com.github.satoshun.truth.android.api.animation.ValueAnimatorSubject;
 import com.github.satoshun.truth.android.api.app.ActionBarSubject;
 import com.github.satoshun.truth.android.api.app.ActivityMonitorSubject;
+import com.github.satoshun.truth.android.api.app.ActivityResultSubject;
 import com.github.satoshun.truth.android.api.app.ActivitySubject;
 import com.github.satoshun.truth.android.api.app.DialogFragmentSubject;
 import com.github.satoshun.truth.android.api.app.DialogSubject;
@@ -634,5 +635,9 @@ public class Subjects {
 
   public static ActivityMonitorSubject assertThat(Instrumentation.ActivityMonitor target) {
     return Truth.assertAbout(ActivityMonitorSubject.FACTORY).that(target);
+  }
+
+  public static ActivityResultSubject assertThat(Instrumentation.ActivityResult target) {
+    return Truth.assertAbout(ActivityResultSubject.FACTORY).that(target);
   }
 }
