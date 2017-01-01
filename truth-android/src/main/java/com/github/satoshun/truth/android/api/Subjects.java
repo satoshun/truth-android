@@ -46,6 +46,7 @@ import android.os.Bundle;
 import android.os.PowerManager;
 import android.os.Vibrator;
 import android.text.BidiFormatter;
+import android.util.AtomicFile;
 import android.view.ActionMode;
 import android.view.ActionProvider;
 import android.view.Display;
@@ -161,6 +162,7 @@ import com.github.satoshun.truth.android.api.os.BundleSubject;
 import com.github.satoshun.truth.android.api.os.PowerManagerSubject;
 import com.github.satoshun.truth.android.api.os.VibratorSubject;
 import com.github.satoshun.truth.android.api.text.BidiFormatterSubject;
+import com.github.satoshun.truth.android.api.util.AtomicFileSubject;
 import com.github.satoshun.truth.android.api.view.ActionModeSubject;
 import com.github.satoshun.truth.android.api.view.ActionProviderSubject;
 import com.github.satoshun.truth.android.api.view.DisplaySubject;
@@ -713,5 +715,11 @@ public class Subjects {
 
   public static VibratorSubject assertThat(Vibrator target) {
     return Truth.assertAbout(VibratorSubject.FACTORY).that(target);
+  }
+
+  // util
+
+  public static AtomicFileSubject assertThat(AtomicFile target) {
+    return Truth.assertAbout(AtomicFileSubject.FACTORY).that(target);
   }
 }
