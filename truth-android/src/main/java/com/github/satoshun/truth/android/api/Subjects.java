@@ -17,6 +17,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.app.Instrumentation;
+import android.app.KeyguardManager;
 import android.app.ListActivity;
 import android.app.Service;
 import android.content.AsyncTaskLoader;
@@ -121,6 +122,7 @@ import com.github.satoshun.truth.android.api.app.ExpandableListActivitySubject;
 import com.github.satoshun.truth.android.api.app.FragmentManagerSubject;
 import com.github.satoshun.truth.android.api.app.FragmentSubject;
 import com.github.satoshun.truth.android.api.app.FragmentTransactionSubject;
+import com.github.satoshun.truth.android.api.app.KeyguardManagerSubject;
 import com.github.satoshun.truth.android.api.app.ListActivitySubject;
 import com.github.satoshun.truth.android.api.app.ServiceSubject;
 import com.github.satoshun.truth.android.api.content.AsyncTaskLoaderSubject;
@@ -639,5 +641,9 @@ public class Subjects {
 
   public static ActivityResultSubject assertThat(Instrumentation.ActivityResult target) {
     return Truth.assertAbout(ActivityResultSubject.FACTORY).that(target);
+  }
+
+  public static KeyguardManagerSubject assertThat(KeyguardManager target) {
+    return Truth.assertAbout(KeyguardManagerSubject.FACTORY).that(target);
   }
 }
