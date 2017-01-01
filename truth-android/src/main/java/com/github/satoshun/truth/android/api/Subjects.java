@@ -6,6 +6,7 @@ import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.Keyframe;
 import android.animation.ObjectAnimator;
+import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
 import android.content.AsyncTaskLoader;
 import android.content.ContentValues;
@@ -96,6 +97,7 @@ import com.github.satoshun.truth.android.api.animation.AnimatorSetSubject;
 import com.github.satoshun.truth.android.api.animation.AnimatorSubject;
 import com.github.satoshun.truth.android.api.animation.KeyframeSubject;
 import com.github.satoshun.truth.android.api.animation.ObjectAnimatorSubject;
+import com.github.satoshun.truth.android.api.animation.PropertyValuesHolderSubject;
 import com.github.satoshun.truth.android.api.animation.ValueAnimatorSubject;
 import com.github.satoshun.truth.android.api.content.AsyncTaskLoaderSubject;
 import com.github.satoshun.truth.android.api.content.ContentValuesSubject;
@@ -546,6 +548,10 @@ public class Subjects {
 
   public static ObjectAnimatorSubject assertThat(ObjectAnimator target) {
     return Truth.assertAbout(ObjectAnimatorSubject.FACTORY).that(target);
+  }
+
+  public static PropertyValuesHolderSubject assertThat(PropertyValuesHolder target) {
+    return Truth.assertAbout(PropertyValuesHolderSubject.FACTORY).that(target);
   }
 
   public static AnimatorSetSubject assertThat(AnimatorSet target) {
