@@ -42,6 +42,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.gesture.GestureOverlayView;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.text.BidiFormatter;
 import android.view.ActionMode;
 import android.view.ActionProvider;
@@ -154,6 +155,7 @@ import com.github.satoshun.truth.android.api.database.CursorWindowSubject;
 import com.github.satoshun.truth.android.api.database.sqlite.SQLiteDatabaseSubject;
 import com.github.satoshun.truth.android.api.net.UriSubject;
 import com.github.satoshun.truth.android.api.os.AsyncTaskSubject;
+import com.github.satoshun.truth.android.api.os.BundleSubject;
 import com.github.satoshun.truth.android.api.text.BidiFormatterSubject;
 import com.github.satoshun.truth.android.api.view.ActionModeSubject;
 import com.github.satoshun.truth.android.api.view.ActionProviderSubject;
@@ -695,5 +697,9 @@ public class Subjects {
 
   public static AsyncTaskSubject assertThat(AsyncTask target) {
     return Truth.assertAbout(AsyncTaskSubject.FACTORY).that(target);
+  }
+
+  public static BundleSubject assertThat(Bundle target) {
+    return Truth.assertAbout(BundleSubject.FACTORY).that(target);
   }
 }
