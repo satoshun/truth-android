@@ -11,6 +11,7 @@ import android.animation.ValueAnimator;
 import android.app.ActionBar;
 import android.content.AsyncTaskLoader;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.Loader;
@@ -103,6 +104,7 @@ import com.github.satoshun.truth.android.api.animation.ValueAnimatorSubject;
 import com.github.satoshun.truth.android.api.app.ActionBarSubject;
 import com.github.satoshun.truth.android.api.content.AsyncTaskLoaderSubject;
 import com.github.satoshun.truth.android.api.content.ContentValuesSubject;
+import com.github.satoshun.truth.android.api.content.ContextSubject;
 import com.github.satoshun.truth.android.api.content.CursorLoaderSubject;
 import com.github.satoshun.truth.android.api.content.IntentSubject;
 import com.github.satoshun.truth.android.api.content.LoaderSubject;
@@ -487,6 +489,10 @@ public class Subjects {
   }
 
   // content
+
+  public static ContextSubject assertThat(Context target) {
+    return Truth.assertAbout(ContextSubject.FACTORY).that(target);
+  }
 
   public static IntentSubject assertThat(Intent target) {
     return Truth.assertAbout(IntentSubject.FACTORY).that(target);
