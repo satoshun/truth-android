@@ -25,6 +25,7 @@ import android.app.Notification;
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.app.Service;
+import android.app.TaskStackBuilder;
 import android.content.AsyncTaskLoader;
 import android.content.ContentValues;
 import android.content.Context;
@@ -135,6 +136,7 @@ import com.github.satoshun.truth.android.api.app.NotificationSubject;
 import com.github.satoshun.truth.android.api.app.PendingIntentSubject;
 import com.github.satoshun.truth.android.api.app.ProgressDialogSubject;
 import com.github.satoshun.truth.android.api.app.ServiceSubject;
+import com.github.satoshun.truth.android.api.app.TaskStackBuilderSubject;
 import com.github.satoshun.truth.android.api.content.AsyncTaskLoaderSubject;
 import com.github.satoshun.truth.android.api.content.ContentValuesSubject;
 import com.github.satoshun.truth.android.api.content.ContextSubject;
@@ -675,5 +677,9 @@ public class Subjects {
 
   public static PendingIntentSubject assertThat(PendingIntent target) {
     return Truth.assertAbout(PendingIntentSubject.FACTORY).that(target);
+  }
+
+  public static TaskStackBuilderSubject assertThat(TaskStackBuilder target) {
+    return Truth.assertAbout(TaskStackBuilderSubject.FACTORY).that(target);
   }
 }
