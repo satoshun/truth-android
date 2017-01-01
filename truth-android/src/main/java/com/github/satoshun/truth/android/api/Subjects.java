@@ -8,6 +8,7 @@ import android.animation.Keyframe;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
+import android.app.ActionBar;
 import android.content.AsyncTaskLoader;
 import android.content.ContentValues;
 import android.content.CursorLoader;
@@ -99,6 +100,7 @@ import com.github.satoshun.truth.android.api.animation.KeyframeSubject;
 import com.github.satoshun.truth.android.api.animation.ObjectAnimatorSubject;
 import com.github.satoshun.truth.android.api.animation.PropertyValuesHolderSubject;
 import com.github.satoshun.truth.android.api.animation.ValueAnimatorSubject;
+import com.github.satoshun.truth.android.api.app.ActionBarSubject;
 import com.github.satoshun.truth.android.api.content.AsyncTaskLoaderSubject;
 import com.github.satoshun.truth.android.api.content.ContentValuesSubject;
 import com.github.satoshun.truth.android.api.content.CursorLoaderSubject;
@@ -560,5 +562,11 @@ public class Subjects {
 
   public static KeyframeSubject assertThat(Keyframe target) {
     return Truth.assertAbout(KeyframeSubject.FACTORY).that(target);
+  }
+
+  // app
+
+  public static ActionBarSubject assertThat(ActionBar target) {
+    return Truth.assertAbout(ActionBarSubject.FACTORY).that(target);
   }
 }
