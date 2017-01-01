@@ -15,6 +15,7 @@ import android.app.DialogFragment;
 import android.app.ExpandableListActivity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.app.ListActivity;
 import android.app.Service;
 import android.content.AsyncTaskLoader;
@@ -116,6 +117,7 @@ import com.github.satoshun.truth.android.api.app.DialogSubject;
 import com.github.satoshun.truth.android.api.app.ExpandableListActivitySubject;
 import com.github.satoshun.truth.android.api.app.FragmentManagerSubject;
 import com.github.satoshun.truth.android.api.app.FragmentSubject;
+import com.github.satoshun.truth.android.api.app.FragmentTransactionSubject;
 import com.github.satoshun.truth.android.api.app.ListActivitySubject;
 import com.github.satoshun.truth.android.api.app.ServiceSubject;
 import com.github.satoshun.truth.android.api.content.AsyncTaskLoaderSubject;
@@ -606,6 +608,10 @@ public class Subjects {
 
   public static FragmentManagerSubject assertThat(FragmentManager target) {
     return Truth.assertAbout(FragmentManagerSubject.FACTORY).that(target);
+  }
+
+  public static FragmentTransactionSubject assertThat(FragmentTransaction target) {
+    return Truth.assertAbout(FragmentTransactionSubject.FACTORY).that(target);
   }
 
   public static DialogFragmentSubject assertThat(DialogFragment target) {
