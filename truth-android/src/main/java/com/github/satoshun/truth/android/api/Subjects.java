@@ -731,6 +731,7 @@ public class Subjects {
 
   // util
 
+  @SuppressWarnings("unchecked")
   public static <K, V> ArrayMapSubject<K, V> assertThat(ArrayMap<K, V> target) {
     return (ArrayMapSubject<K, V>) Truth.assertAbout(ArrayMapSubject.FACTORY).that(target);
   }
@@ -751,11 +752,13 @@ public class Subjects {
     return Truth.assertAbout(LongSparseArraySubject.FACTORY).that(target);
   }
 
+  @SuppressWarnings("unchecked")
   public static <F, S> PairSubject<F, S> assertThat(Pair<F, S> target) {
     return (PairSubject<F, S>) Truth.assertAbout(PairSubject.FACTORY).that(target);
   }
 
+  @SuppressWarnings("unchecked")
   public static <T, V> PropertySubject<T, V> assertThat(Property<T, V> target) {
     return (PropertySubject<T, V>) Truth.assertAbout(PropertySubject.FACTORY).that(target);
-    }
+  }
 }
