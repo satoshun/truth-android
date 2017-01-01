@@ -4,6 +4,7 @@ import android.accessibilityservice.AccessibilityServiceInfo;
 import android.accounts.Account;
 import android.animation.Animator;
 import android.animation.AnimatorSet;
+import android.animation.Keyframe;
 import android.content.AsyncTaskLoader;
 import android.content.ContentValues;
 import android.content.CursorLoader;
@@ -91,6 +92,7 @@ import com.github.satoshun.truth.android.api.accessibilityservice.AccessibilityS
 import com.github.satoshun.truth.android.api.accounts.AccountSubject;
 import com.github.satoshun.truth.android.api.animation.AnimatorSetSubject;
 import com.github.satoshun.truth.android.api.animation.AnimatorSubject;
+import com.github.satoshun.truth.android.api.animation.KeyframeSubject;
 import com.github.satoshun.truth.android.api.content.AsyncTaskLoaderSubject;
 import com.github.satoshun.truth.android.api.content.ContentValuesSubject;
 import com.github.satoshun.truth.android.api.content.CursorLoaderSubject;
@@ -536,5 +538,9 @@ public class Subjects {
 
   public static AnimatorSetSubject assertThat(AnimatorSet target) {
     return Truth.assertAbout(AnimatorSetSubject.FACTORY).that(target);
+  }
+
+  public static KeyframeSubject assertThat(Keyframe target) {
+    return Truth.assertAbout(KeyframeSubject.FACTORY).that(target);
   }
 }
