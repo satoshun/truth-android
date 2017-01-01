@@ -1,7 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
-
-group = 'com.github.satoshun.truth.android'
+apply plugin: 'jacoco'
 
 android {
   compileSdkVersion rootProject.ext.compileSdkVersion
@@ -21,9 +20,8 @@ android {
     abortOnError false
   }
   buildTypes {
-    release {
-      minifyEnabled false
-      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    debug {
+      testCoverageEnabled true
     }
   }
 }
