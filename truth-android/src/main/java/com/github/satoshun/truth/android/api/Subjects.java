@@ -12,6 +12,7 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.app.ExpandableListActivity;
 import android.app.Fragment;
 import android.app.ListActivity;
 import android.app.Service;
@@ -111,6 +112,7 @@ import com.github.satoshun.truth.android.api.app.ActionBarSubject;
 import com.github.satoshun.truth.android.api.app.ActivitySubject;
 import com.github.satoshun.truth.android.api.app.DialogFragmentSubject;
 import com.github.satoshun.truth.android.api.app.DialogSubject;
+import com.github.satoshun.truth.android.api.app.ExpandableListActivitySubject;
 import com.github.satoshun.truth.android.api.app.FragmentSubject;
 import com.github.satoshun.truth.android.api.app.ListActivitySubject;
 import com.github.satoshun.truth.android.api.app.ServiceSubject;
@@ -590,6 +592,10 @@ public class Subjects {
 
   public static ListActivitySubject assertThat(ListActivity target) {
     return Truth.assertAbout(ListActivitySubject.FACTORY).that(target);
+  }
+
+  public static ExpandableListActivitySubject assertThat(ExpandableListActivity target) {
+    return Truth.assertAbout(ExpandableListActivitySubject.FACTORY).that(target);
   }
 
   public static FragmentSubject assertThat(Fragment target) {
