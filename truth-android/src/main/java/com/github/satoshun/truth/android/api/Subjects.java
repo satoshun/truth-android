@@ -16,6 +16,7 @@ import android.app.ExpandableListActivity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.app.Instrumentation;
 import android.app.ListActivity;
 import android.app.Service;
 import android.content.AsyncTaskLoader;
@@ -111,6 +112,7 @@ import com.github.satoshun.truth.android.api.animation.ObjectAnimatorSubject;
 import com.github.satoshun.truth.android.api.animation.PropertyValuesHolderSubject;
 import com.github.satoshun.truth.android.api.animation.ValueAnimatorSubject;
 import com.github.satoshun.truth.android.api.app.ActionBarSubject;
+import com.github.satoshun.truth.android.api.app.ActivityMonitorSubject;
 import com.github.satoshun.truth.android.api.app.ActivitySubject;
 import com.github.satoshun.truth.android.api.app.DialogFragmentSubject;
 import com.github.satoshun.truth.android.api.app.DialogSubject;
@@ -628,5 +630,9 @@ public class Subjects {
 
   public static ActionBarSubject assertThat(ActionBar target) {
     return Truth.assertAbout(ActionBarSubject.FACTORY).that(target);
+  }
+
+  public static ActivityMonitorSubject assertThat(Instrumentation.ActivityMonitor target) {
+    return Truth.assertAbout(ActivityMonitorSubject.FACTORY).that(target);
   }
 }
