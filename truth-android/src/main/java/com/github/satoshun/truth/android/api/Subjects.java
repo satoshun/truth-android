@@ -11,6 +11,7 @@ import android.animation.ValueAnimator;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Dialog;
+import android.app.DialogFragment;
 import android.app.Fragment;
 import android.app.ListActivity;
 import android.app.Service;
@@ -108,6 +109,7 @@ import com.github.satoshun.truth.android.api.animation.PropertyValuesHolderSubje
 import com.github.satoshun.truth.android.api.animation.ValueAnimatorSubject;
 import com.github.satoshun.truth.android.api.app.ActionBarSubject;
 import com.github.satoshun.truth.android.api.app.ActivitySubject;
+import com.github.satoshun.truth.android.api.app.DialogFragmentSubject;
 import com.github.satoshun.truth.android.api.app.DialogSubject;
 import com.github.satoshun.truth.android.api.app.FragmentSubject;
 import com.github.satoshun.truth.android.api.app.ListActivitySubject;
@@ -592,6 +594,10 @@ public class Subjects {
 
   public static FragmentSubject assertThat(Fragment target) {
     return Truth.assertAbout(FragmentSubject.FACTORY).that(target);
+  }
+
+  public static DialogFragmentSubject assertThat(DialogFragment target) {
+    return Truth.assertAbout(DialogFragmentSubject.FACTORY).that(target);
   }
 
   public static ServiceSubject assertThat(Service target) {
