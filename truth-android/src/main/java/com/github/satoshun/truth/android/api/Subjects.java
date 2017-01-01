@@ -44,6 +44,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.PowerManager;
+import android.os.Vibrator;
 import android.text.BidiFormatter;
 import android.view.ActionMode;
 import android.view.ActionProvider;
@@ -158,6 +159,7 @@ import com.github.satoshun.truth.android.api.net.UriSubject;
 import com.github.satoshun.truth.android.api.os.AsyncTaskSubject;
 import com.github.satoshun.truth.android.api.os.BundleSubject;
 import com.github.satoshun.truth.android.api.os.PowerManagerSubject;
+import com.github.satoshun.truth.android.api.os.VibratorSubject;
 import com.github.satoshun.truth.android.api.text.BidiFormatterSubject;
 import com.github.satoshun.truth.android.api.view.ActionModeSubject;
 import com.github.satoshun.truth.android.api.view.ActionProviderSubject;
@@ -707,5 +709,9 @@ public class Subjects {
 
   public static PowerManagerSubject assertThat(PowerManager target) {
     return Truth.assertAbout(PowerManagerSubject.FACTORY).that(target);
+  }
+
+  public static VibratorSubject assertThat(Vibrator target) {
+    return Truth.assertAbout(VibratorSubject.FACTORY).that(target);
   }
 }
