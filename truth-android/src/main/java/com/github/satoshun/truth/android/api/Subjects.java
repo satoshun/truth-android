@@ -13,6 +13,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.app.Fragment;
 import android.app.ListActivity;
+import android.app.Service;
 import android.content.AsyncTaskLoader;
 import android.content.ContentValues;
 import android.content.Context;
@@ -110,6 +111,7 @@ import com.github.satoshun.truth.android.api.app.ActivitySubject;
 import com.github.satoshun.truth.android.api.app.DialogSubject;
 import com.github.satoshun.truth.android.api.app.FragmentSubject;
 import com.github.satoshun.truth.android.api.app.ListActivitySubject;
+import com.github.satoshun.truth.android.api.app.ServiceSubject;
 import com.github.satoshun.truth.android.api.content.AsyncTaskLoaderSubject;
 import com.github.satoshun.truth.android.api.content.ContentValuesSubject;
 import com.github.satoshun.truth.android.api.content.ContextSubject;
@@ -590,6 +592,10 @@ public class Subjects {
 
   public static FragmentSubject assertThat(Fragment target) {
     return Truth.assertAbout(FragmentSubject.FACTORY).that(target);
+  }
+
+  public static ServiceSubject assertThat(Service target) {
+    return Truth.assertAbout(ServiceSubject.FACTORY).that(target);
   }
 
   public static DialogSubject assertThat(Dialog target) {
