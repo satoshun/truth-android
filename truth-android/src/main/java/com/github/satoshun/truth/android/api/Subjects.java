@@ -52,6 +52,7 @@ import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.LongSparseArray;
 import android.util.Pair;
+import android.util.Property;
 import android.view.ActionMode;
 import android.view.ActionProvider;
 import android.view.Display;
@@ -173,6 +174,7 @@ import com.github.satoshun.truth.android.api.util.AttributeSetSubject;
 import com.github.satoshun.truth.android.api.util.DisplayMetricsSubject;
 import com.github.satoshun.truth.android.api.util.LongSparseArraySubject;
 import com.github.satoshun.truth.android.api.util.PairSubject;
+import com.github.satoshun.truth.android.api.util.PropertySubject;
 import com.github.satoshun.truth.android.api.view.ActionModeSubject;
 import com.github.satoshun.truth.android.api.view.ActionProviderSubject;
 import com.github.satoshun.truth.android.api.view.DisplaySubject;
@@ -752,4 +754,8 @@ public class Subjects {
   public static <F, S> PairSubject<F, S> assertThat(Pair<F, S> target) {
     return (PairSubject<F, S>) Truth.assertAbout(PairSubject.FACTORY).that(target);
   }
+
+  public static <T, V> PropertySubject<T, V> assertThat(Property<T, V> target) {
+    return (PropertySubject<T, V>) Truth.assertAbout(PropertySubject.FACTORY).that(target);
+    }
 }
