@@ -46,6 +46,7 @@ import android.os.Bundle;
 import android.os.PowerManager;
 import android.os.Vibrator;
 import android.text.BidiFormatter;
+import android.util.ArrayMap;
 import android.util.AtomicFile;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
@@ -164,6 +165,7 @@ import com.github.satoshun.truth.android.api.os.BundleSubject;
 import com.github.satoshun.truth.android.api.os.PowerManagerSubject;
 import com.github.satoshun.truth.android.api.os.VibratorSubject;
 import com.github.satoshun.truth.android.api.text.BidiFormatterSubject;
+import com.github.satoshun.truth.android.api.util.ArrayMapSubject;
 import com.github.satoshun.truth.android.api.util.AtomicFileSubject;
 import com.github.satoshun.truth.android.api.util.AttributeSetSubject;
 import com.github.satoshun.truth.android.api.util.DisplayMetricsSubject;
@@ -722,6 +724,10 @@ public class Subjects {
   }
 
   // util
+
+  public static <K, V> ArrayMapSubject<K, V> assertThat(ArrayMap<K, V> target) {
+    return (ArrayMapSubject<K, V>) Truth.assertAbout(ArrayMapSubject.FACTORY).that(target);
+  }
 
   public static AtomicFileSubject assertThat(AtomicFile target) {
     return Truth.assertAbout(AtomicFileSubject.FACTORY).that(target);
