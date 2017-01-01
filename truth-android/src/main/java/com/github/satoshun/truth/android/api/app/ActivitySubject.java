@@ -10,7 +10,6 @@ import com.google.common.truth.SubjectFactory;
 import static android.os.Build.VERSION_CODES.HONEYCOMB;
 import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR1;
 import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR2;
-import static com.google.common.truth.Truth.assertThat;
 
 public abstract class ActivitySubject<S extends ActivitySubject<S, T>, T extends Activity>
     extends ContextSubject<S, T> {
