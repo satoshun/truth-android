@@ -9,6 +9,10 @@ import android.content.Intent;
 import android.content.Loader;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.database.AbstractCursor;
+import android.database.Cursor;
+import android.database.CursorWindow;
+import android.database.sqlite.SQLiteDatabase;
 import android.gesture.GestureOverlayView;
 import android.net.Uri;
 import android.text.BidiFormatter;
@@ -90,6 +94,10 @@ import com.github.satoshun.truth.android.api.content.IntentSubject;
 import com.github.satoshun.truth.android.api.content.LoaderSubject;
 import com.github.satoshun.truth.android.api.content.SharedPreferencesSubject;
 import com.github.satoshun.truth.android.api.content.res.ConfigurationSubject;
+import com.github.satoshun.truth.android.api.database.AbstractCursorSubject;
+import com.github.satoshun.truth.android.api.database.CursorSubject;
+import com.github.satoshun.truth.android.api.database.CursorWindowSubject;
+import com.github.satoshun.truth.android.api.database.sqlite.SQLiteDatabaseSubject;
 import com.github.satoshun.truth.android.api.net.UriSubject;
 import com.github.satoshun.truth.android.api.text.BidiFormatterSubject;
 import com.github.satoshun.truth.android.api.view.ActionModeSubject;
@@ -494,5 +502,25 @@ public class Subjects {
 
   public static ConfigurationSubject assertThat(Configuration target) {
     return Truth.assertAbout(ConfigurationSubject.FACTORY).that(target);
+  }
+
+  // database
+
+  public static CursorSubject assertThat(Cursor target) {
+    return Truth.assertAbout(CursorSubject.FACTORY).that(target);
+  }
+
+  public static AbstractCursorSubject assertThat(AbstractCursor target) {
+    return Truth.assertAbout(AbstractCursorSubject.FACTORY).that(target);
+  }
+
+  public static CursorWindowSubject assertThat(CursorWindow target) {
+    return Truth.assertAbout(CursorWindowSubject.FACTORY).that(target);
+  }
+
+  //// database.sqlite
+
+  public static SQLiteDatabaseSubject assertThat(SQLiteDatabase target) {
+    return Truth.assertAbout(SQLiteDatabaseSubject.FACTORY).that(target);
   }
 }
