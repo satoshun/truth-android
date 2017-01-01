@@ -9,6 +9,7 @@ import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
 import android.app.ActionBar;
+import android.app.Activity;
 import android.content.AsyncTaskLoader;
 import android.content.ContentValues;
 import android.content.Context;
@@ -102,6 +103,7 @@ import com.github.satoshun.truth.android.api.animation.ObjectAnimatorSubject;
 import com.github.satoshun.truth.android.api.animation.PropertyValuesHolderSubject;
 import com.github.satoshun.truth.android.api.animation.ValueAnimatorSubject;
 import com.github.satoshun.truth.android.api.app.ActionBarSubject;
+import com.github.satoshun.truth.android.api.app.ActivitySubject;
 import com.github.satoshun.truth.android.api.content.AsyncTaskLoaderSubject;
 import com.github.satoshun.truth.android.api.content.ContentValuesSubject;
 import com.github.satoshun.truth.android.api.content.ContextSubject;
@@ -571,6 +573,10 @@ public class Subjects {
   }
 
   // app
+
+  public static ActivitySubject assertThat(Activity target) {
+    return Truth.assertAbout(ActivitySubject.FACTORY).that(target);
+  }
 
   public static ActionBarSubject assertThat(ActionBar target) {
     return Truth.assertAbout(ActionBarSubject.FACTORY).that(target);
