@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.Loader;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.database.AbstractCursor;
 import android.database.Cursor;
 import android.database.CursorWindow;
 import android.gesture.GestureOverlayView;
@@ -92,6 +93,7 @@ import com.github.satoshun.truth.android.api.content.IntentSubject;
 import com.github.satoshun.truth.android.api.content.LoaderSubject;
 import com.github.satoshun.truth.android.api.content.SharedPreferencesSubject;
 import com.github.satoshun.truth.android.api.content.res.ConfigurationSubject;
+import com.github.satoshun.truth.android.api.database.AbstractCursorSubject;
 import com.github.satoshun.truth.android.api.database.CursorSubject;
 import com.github.satoshun.truth.android.api.database.CursorWindowSubject;
 import com.github.satoshun.truth.android.api.net.UriSubject;
@@ -504,6 +506,10 @@ public class Subjects {
 
   public static CursorSubject assertThat(Cursor target) {
     return Truth.assertAbout(CursorSubject.FACTORY).that(target);
+  }
+
+  public static AbstractCursorSubject assertThat(AbstractCursor target) {
+    return Truth.assertAbout(AbstractCursorSubject.FACTORY).that(target);
   }
 
   public static CursorWindowSubject assertThat(CursorWindow target) {

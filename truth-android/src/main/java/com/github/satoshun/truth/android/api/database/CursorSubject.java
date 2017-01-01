@@ -8,11 +8,12 @@ import com.google.common.truth.SubjectFactory;
 
 import java.util.Arrays;
 
-public class CursorSubject extends BaseSubject<CursorSubject, Cursor> {
+public abstract class CursorSubject<S extends CursorSubject<S, T>, T extends Cursor>
+    extends BaseSubject<S, T> {
 
   public static final CursorSubjectFactory FACTORY = new CursorSubjectFactory();
 
-  public CursorSubject(FailureStrategy failureStrategy, Cursor actual) {
+  public CursorSubject(FailureStrategy failureStrategy, T actual) {
     super(failureStrategy, actual);
   }
 
@@ -136,10 +137,16 @@ public class CursorSubject extends BaseSubject<CursorSubject, Cursor> {
     return this;
   }
 
-  private static class CursorSubjectFactory extends SubjectFactory<CursorSubject, Cursor> {
+  private static class CursorSubjectImpl extends CursorSubject<CursorSubjectImpl, Cursor> {
+    CursorSubjectImpl(FailureStrategy failureStrategy, Cursor actual) {
+      super(failureStrategy, actual);
+    }
+  }
+
+  private static class CursorSubjectFactory extends SubjectFactory<CursorSubjectImpl, Cursor> {
     @Override
-    public CursorSubject getSubject(FailureStrategy fs, Cursor that) {
-      return new CursorSubject(fs, that);
+    public CursorSubjectImpl getSubject(FailureStrategy fs, Cursor that) {
+      return new CursorSubjectImpl(fs, that);
     }
   }
 }
