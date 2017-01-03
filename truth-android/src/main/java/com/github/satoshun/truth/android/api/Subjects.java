@@ -86,6 +86,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.GridLayoutAnimationController;
 import android.view.animation.LayoutAnimationController;
+import android.view.animation.Transformation;
 import android.webkit.WebView;
 import android.widget.AbsListView;
 import android.widget.AbsSeekBar;
@@ -221,6 +222,7 @@ import com.github.satoshun.truth.android.api.view.animation.AnimationSetSubject;
 import com.github.satoshun.truth.android.api.view.animation.AnimationSubject;
 import com.github.satoshun.truth.android.api.view.animation.GridLayoutAnimationControllerSubject;
 import com.github.satoshun.truth.android.api.view.animation.LayoutAnimationControllerSubject;
+import com.github.satoshun.truth.android.api.view.animation.TransformationSubject;
 import com.github.satoshun.truth.android.api.webkit.WebViewSubject;
 import com.github.satoshun.truth.android.api.widget.AbsListViewSubject;
 import com.github.satoshun.truth.android.api.widget.AbsSeekBarSubject;
@@ -837,5 +839,9 @@ public class Subjects {
 
   public static GridLayoutAnimationControllerSubject assertThat(GridLayoutAnimationController target) {
     return Truth.assertAbout(GridLayoutAnimationControllerSubject.FACTORY).that(target);
+  }
+
+  public static TransformationSubject assertThat(Transformation target) {
+    return Truth.assertAbout(TransformationSubject.FACTORY).that(target);
   }
 }
