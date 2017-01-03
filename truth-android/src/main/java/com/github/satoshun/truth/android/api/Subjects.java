@@ -78,6 +78,10 @@ import android.view.ViewPropertyAnimator;
 import android.view.ViewStub;
 import android.view.ViewTreeObserver;
 import android.view.Window;
+import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityManager;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.view.accessibility.AccessibilityRecord;
 import android.webkit.WebView;
 import android.widget.AbsListView;
 import android.widget.AbsSeekBar;
@@ -205,6 +209,10 @@ import com.github.satoshun.truth.android.api.view.ViewStubSubject;
 import com.github.satoshun.truth.android.api.view.ViewSubject;
 import com.github.satoshun.truth.android.api.view.ViewTreeObserverSubject;
 import com.github.satoshun.truth.android.api.view.WindowSubject;
+import com.github.satoshun.truth.android.api.view.accessibility.AccessibilityEventSubject;
+import com.github.satoshun.truth.android.api.view.accessibility.AccessibilityManagerSubject;
+import com.github.satoshun.truth.android.api.view.accessibility.AccessibilityNodeInfoSubject;
+import com.github.satoshun.truth.android.api.view.accessibility.AccessibilityRecordSubject;
 import com.github.satoshun.truth.android.api.webkit.WebViewSubject;
 import com.github.satoshun.truth.android.api.widget.AbsListViewSubject;
 import com.github.satoshun.truth.android.api.widget.AbsSeekBarSubject;
@@ -785,5 +793,23 @@ public class Subjects {
 
   public static SparseLongArraySubject assertThat(SparseLongArray target) {
     return Truth.assertAbout(SparseLongArraySubject.FACTORY).that(target);
+  }
+
+  //// view.accessibility
+
+  public static AccessibilityRecordSubject assertThat(AccessibilityRecord target) {
+    return Truth.assertAbout(AccessibilityRecordSubject.FACTORY).that(target);
+  }
+
+  public static AccessibilityEventSubject assertThat(AccessibilityEvent target) {
+    return Truth.assertAbout(AccessibilityEventSubject.FACTORY).that(target);
+  }
+
+  public static AccessibilityManagerSubject assertThat(AccessibilityManager target) {
+    return Truth.assertAbout(AccessibilityManagerSubject.FACTORY).that(target);
+  }
+
+  public static AccessibilityNodeInfoSubject assertThat(AccessibilityNodeInfo target) {
+    return Truth.assertAbout(AccessibilityNodeInfoSubject.FACTORY).that(target);
   }
 }
