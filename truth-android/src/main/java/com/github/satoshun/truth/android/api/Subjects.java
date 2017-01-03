@@ -78,6 +78,7 @@ import android.view.ViewPropertyAnimator;
 import android.view.ViewStub;
 import android.view.ViewTreeObserver;
 import android.view.Window;
+import android.view.accessibility.AccessibilityRecord;
 import android.webkit.WebView;
 import android.widget.AbsListView;
 import android.widget.AbsSeekBar;
@@ -205,6 +206,7 @@ import com.github.satoshun.truth.android.api.view.ViewStubSubject;
 import com.github.satoshun.truth.android.api.view.ViewSubject;
 import com.github.satoshun.truth.android.api.view.ViewTreeObserverSubject;
 import com.github.satoshun.truth.android.api.view.WindowSubject;
+import com.github.satoshun.truth.android.api.view.accessibility.AccessibilityRecordSubject;
 import com.github.satoshun.truth.android.api.webkit.WebViewSubject;
 import com.github.satoshun.truth.android.api.widget.AbsListViewSubject;
 import com.github.satoshun.truth.android.api.widget.AbsSeekBarSubject;
@@ -785,5 +787,11 @@ public class Subjects {
 
   public static SparseLongArraySubject assertThat(SparseLongArray target) {
     return Truth.assertAbout(SparseLongArraySubject.FACTORY).that(target);
+  }
+
+  //// view.accessibility
+
+  public static AccessibilityRecordSubject assertThat(AccessibilityRecord target) {
+    return Truth.assertAbout(AccessibilityRecordSubject.FACTORY).that(target);
   }
 }
