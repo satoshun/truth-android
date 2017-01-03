@@ -79,6 +79,7 @@ import android.view.ViewStub;
 import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.AccessibilityRecord;
 import android.webkit.WebView;
 import android.widget.AbsListView;
@@ -208,6 +209,7 @@ import com.github.satoshun.truth.android.api.view.ViewSubject;
 import com.github.satoshun.truth.android.api.view.ViewTreeObserverSubject;
 import com.github.satoshun.truth.android.api.view.WindowSubject;
 import com.github.satoshun.truth.android.api.view.accessibility.AccessibilityEventSubject;
+import com.github.satoshun.truth.android.api.view.accessibility.AccessibilityManagerSubject;
 import com.github.satoshun.truth.android.api.view.accessibility.AccessibilityRecordSubject;
 import com.github.satoshun.truth.android.api.webkit.WebViewSubject;
 import com.github.satoshun.truth.android.api.widget.AbsListViewSubject;
@@ -799,5 +801,9 @@ public class Subjects {
 
   public static AccessibilityEventSubject assertThat(AccessibilityEvent target) {
     return Truth.assertAbout(AccessibilityEventSubject.FACTORY).that(target);
+  }
+
+  public static AccessibilityManagerSubject assertThat(AccessibilityManager target) {
+    return Truth.assertAbout(AccessibilityManagerSubject.FACTORY).that(target);
   }
 }
