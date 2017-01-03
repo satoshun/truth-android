@@ -83,6 +83,7 @@ import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.accessibility.AccessibilityRecord;
 import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
 import android.view.animation.LayoutAnimationController;
 import android.webkit.WebView;
 import android.widget.AbsListView;
@@ -215,6 +216,7 @@ import com.github.satoshun.truth.android.api.view.accessibility.AccessibilityEve
 import com.github.satoshun.truth.android.api.view.accessibility.AccessibilityManagerSubject;
 import com.github.satoshun.truth.android.api.view.accessibility.AccessibilityNodeInfoSubject;
 import com.github.satoshun.truth.android.api.view.accessibility.AccessibilityRecordSubject;
+import com.github.satoshun.truth.android.api.view.animation.AnimationSetSubject;
 import com.github.satoshun.truth.android.api.view.animation.AnimationSubject;
 import com.github.satoshun.truth.android.api.view.animation.LayoutAnimationControllerSubject;
 import com.github.satoshun.truth.android.api.webkit.WebViewSubject;
@@ -821,6 +823,10 @@ public class Subjects {
 
   public static AnimationSubject assertThat(Animation target) {
     return Truth.assertAbout(AnimationSubject.FACTORY).that(target);
+  }
+
+  public static AnimationSetSubject assertThat(AnimationSet target) {
+    return Truth.assertAbout(AnimationSetSubject.FACTORY).that(target);
   }
 
   public static LayoutAnimationControllerSubject assertThat(LayoutAnimationController target) {
