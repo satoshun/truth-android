@@ -84,6 +84,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.accessibility.AccessibilityRecord;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
+import android.view.animation.GridLayoutAnimationController;
 import android.view.animation.LayoutAnimationController;
 import android.webkit.WebView;
 import android.widget.AbsListView;
@@ -218,6 +219,7 @@ import com.github.satoshun.truth.android.api.view.accessibility.AccessibilityNod
 import com.github.satoshun.truth.android.api.view.accessibility.AccessibilityRecordSubject;
 import com.github.satoshun.truth.android.api.view.animation.AnimationSetSubject;
 import com.github.satoshun.truth.android.api.view.animation.AnimationSubject;
+import com.github.satoshun.truth.android.api.view.animation.GridLayoutAnimationControllerSubject;
 import com.github.satoshun.truth.android.api.view.animation.LayoutAnimationControllerSubject;
 import com.github.satoshun.truth.android.api.webkit.WebViewSubject;
 import com.github.satoshun.truth.android.api.widget.AbsListViewSubject;
@@ -831,5 +833,9 @@ public class Subjects {
 
   public static LayoutAnimationControllerSubject assertThat(LayoutAnimationController target) {
     return Truth.assertAbout(LayoutAnimationControllerSubject.FACTORY).that(target);
+  }
+
+  public static GridLayoutAnimationControllerSubject assertThat(GridLayoutAnimationController target) {
+    return Truth.assertAbout(GridLayoutAnimationControllerSubject.FACTORY).that(target);
   }
 }
