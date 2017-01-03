@@ -30,6 +30,7 @@ import android.app.UiModeManager;
 import android.bluetooth.BluetoothClass;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothGattCharacteristic;
+import android.bluetooth.BluetoothGattDescriptor;
 import android.content.AsyncTaskLoader;
 import android.content.ContentValues;
 import android.content.Context;
@@ -169,6 +170,7 @@ import com.github.satoshun.truth.android.api.app.UiModeManagerSubject;
 import com.github.satoshun.truth.android.api.bluetooth.BluetoothClassSubject;
 import com.github.satoshun.truth.android.api.bluetooth.BluetoothDeviceSubject;
 import com.github.satoshun.truth.android.api.bluetooth.BluetoothGattCharacteristicSubject;
+import com.github.satoshun.truth.android.api.bluetooth.BluetoothGattDescriptorSubject;
 import com.github.satoshun.truth.android.api.content.AsyncTaskLoaderSubject;
 import com.github.satoshun.truth.android.api.content.ContentValuesSubject;
 import com.github.satoshun.truth.android.api.content.ContextSubject;
@@ -863,5 +865,9 @@ public class Subjects {
 
   public static BluetoothGattCharacteristicSubject assertThat(BluetoothGattCharacteristic target) {
     return Truth.assertAbout(BluetoothGattCharacteristicSubject.FACTORY).that(target);
+  }
+
+  public static BluetoothGattDescriptorSubject assertThat(BluetoothGattDescriptor target) {
+    return Truth.assertAbout(BluetoothGattDescriptorSubject.FACTORY).that(target);
   }
 }
