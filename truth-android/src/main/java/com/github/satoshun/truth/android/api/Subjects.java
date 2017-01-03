@@ -27,6 +27,7 @@ import android.app.ProgressDialog;
 import android.app.Service;
 import android.app.TaskStackBuilder;
 import android.app.UiModeManager;
+import android.bluetooth.BluetoothClass;
 import android.content.AsyncTaskLoader;
 import android.content.ContentValues;
 import android.content.Context;
@@ -163,6 +164,7 @@ import com.github.satoshun.truth.android.api.app.ProgressDialogSubject;
 import com.github.satoshun.truth.android.api.app.ServiceSubject;
 import com.github.satoshun.truth.android.api.app.TaskStackBuilderSubject;
 import com.github.satoshun.truth.android.api.app.UiModeManagerSubject;
+import com.github.satoshun.truth.android.api.bluetooth.BluetoothClassSubject;
 import com.github.satoshun.truth.android.api.content.AsyncTaskLoaderSubject;
 import com.github.satoshun.truth.android.api.content.ContentValuesSubject;
 import com.github.satoshun.truth.android.api.content.ContextSubject;
@@ -843,5 +845,11 @@ public class Subjects {
 
   public static TransformationSubject assertThat(Transformation target) {
     return Truth.assertAbout(TransformationSubject.FACTORY).that(target);
+  }
+
+  // bluetooth
+
+  public static BluetoothClassSubject assertThat(BluetoothClass target) {
+    return Truth.assertAbout(BluetoothClassSubject.FACTORY).that(target);
   }
 }
