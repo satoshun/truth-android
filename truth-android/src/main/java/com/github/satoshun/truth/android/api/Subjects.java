@@ -82,6 +82,11 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.accessibility.AccessibilityRecord;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.GridLayoutAnimationController;
+import android.view.animation.LayoutAnimationController;
+import android.view.animation.Transformation;
 import android.webkit.WebView;
 import android.widget.AbsListView;
 import android.widget.AbsSeekBar;
@@ -213,6 +218,11 @@ import com.github.satoshun.truth.android.api.view.accessibility.AccessibilityEve
 import com.github.satoshun.truth.android.api.view.accessibility.AccessibilityManagerSubject;
 import com.github.satoshun.truth.android.api.view.accessibility.AccessibilityNodeInfoSubject;
 import com.github.satoshun.truth.android.api.view.accessibility.AccessibilityRecordSubject;
+import com.github.satoshun.truth.android.api.view.animation.AnimationSetSubject;
+import com.github.satoshun.truth.android.api.view.animation.AnimationSubject;
+import com.github.satoshun.truth.android.api.view.animation.GridLayoutAnimationControllerSubject;
+import com.github.satoshun.truth.android.api.view.animation.LayoutAnimationControllerSubject;
+import com.github.satoshun.truth.android.api.view.animation.TransformationSubject;
 import com.github.satoshun.truth.android.api.webkit.WebViewSubject;
 import com.github.satoshun.truth.android.api.widget.AbsListViewSubject;
 import com.github.satoshun.truth.android.api.widget.AbsSeekBarSubject;
@@ -811,5 +821,27 @@ public class Subjects {
 
   public static AccessibilityNodeInfoSubject assertThat(AccessibilityNodeInfo target) {
     return Truth.assertAbout(AccessibilityNodeInfoSubject.FACTORY).that(target);
+  }
+
+  //// view.animation
+
+  public static AnimationSubject assertThat(Animation target) {
+    return Truth.assertAbout(AnimationSubject.FACTORY).that(target);
+  }
+
+  public static AnimationSetSubject assertThat(AnimationSet target) {
+    return Truth.assertAbout(AnimationSetSubject.FACTORY).that(target);
+  }
+
+  public static LayoutAnimationControllerSubject assertThat(LayoutAnimationController target) {
+    return Truth.assertAbout(LayoutAnimationControllerSubject.FACTORY).that(target);
+  }
+
+  public static GridLayoutAnimationControllerSubject assertThat(GridLayoutAnimationController target) {
+    return Truth.assertAbout(GridLayoutAnimationControllerSubject.FACTORY).that(target);
+  }
+
+  public static TransformationSubject assertThat(Transformation target) {
+    return Truth.assertAbout(TransformationSubject.FACTORY).that(target);
   }
 }
