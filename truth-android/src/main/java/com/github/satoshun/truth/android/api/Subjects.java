@@ -50,6 +50,7 @@ import android.gesture.GestureOverlayView;
 import android.gesture.GesturePoint;
 import android.gesture.GestureStore;
 import android.gesture.GestureStroke;
+import android.gesture.OrientedBoundingBox;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -196,6 +197,7 @@ import com.github.satoshun.truth.android.api.gesture.GesturePointSubject;
 import com.github.satoshun.truth.android.api.gesture.GestureStoreSubject;
 import com.github.satoshun.truth.android.api.gesture.GestureStrokeSubject;
 import com.github.satoshun.truth.android.api.gesture.GestureSubject;
+import com.github.satoshun.truth.android.api.gesture.OrientedBoundingBoxSubject;
 import com.github.satoshun.truth.android.api.net.UriSubject;
 import com.github.satoshun.truth.android.api.os.AsyncTaskSubject;
 import com.github.satoshun.truth.android.api.os.BundleSubject;
@@ -907,5 +909,9 @@ public class Subjects {
 
   public static GestureStrokeSubject assertThat(GestureStroke target) {
     return Truth.assertAbout(GestureStrokeSubject.FACTORY).that(target);
+  }
+
+  public static OrientedBoundingBoxSubject assertThat(OrientedBoundingBox target) {
+    return Truth.assertAbout(OrientedBoundingBoxSubject.FACTORY).that(target);
   }
 }
