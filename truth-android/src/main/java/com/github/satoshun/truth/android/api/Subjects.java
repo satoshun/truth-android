@@ -47,6 +47,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.gesture.Gesture;
 import android.gesture.GestureLibrary;
 import android.gesture.GestureOverlayView;
+import android.gesture.GesturePoint;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -189,6 +190,7 @@ import com.github.satoshun.truth.android.api.database.CursorWindowSubject;
 import com.github.satoshun.truth.android.api.database.sqlite.SQLiteDatabaseSubject;
 import com.github.satoshun.truth.android.api.gesture.GestureLibrarySubject;
 import com.github.satoshun.truth.android.api.gesture.GestureOverlayViewSubject;
+import com.github.satoshun.truth.android.api.gesture.GesturePointSubject;
 import com.github.satoshun.truth.android.api.gesture.GestureSubject;
 import com.github.satoshun.truth.android.api.net.UriSubject;
 import com.github.satoshun.truth.android.api.os.AsyncTaskSubject;
@@ -889,5 +891,9 @@ public class Subjects {
 
   public static GestureOverlayViewSubject assertThat(GestureOverlayView target) {
     return Truth.assertAbout(GestureOverlayViewSubject.FACTORY).that(target);
+  }
+
+  public static GesturePointSubject assertThat(GesturePoint target) {
+    return Truth.assertAbout(GesturePointSubject.FACTORY).that(target);
   }
 }
