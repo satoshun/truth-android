@@ -47,6 +47,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.gesture.Gesture;
 import android.gesture.GestureLibrary;
 import android.gesture.GestureOverlayView;
+import android.gesture.GesturePoint;
+import android.gesture.GestureStore;
+import android.gesture.GestureStroke;
+import android.gesture.OrientedBoundingBox;
+import android.gesture.Prediction;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -188,7 +193,13 @@ import com.github.satoshun.truth.android.api.database.CursorSubject;
 import com.github.satoshun.truth.android.api.database.CursorWindowSubject;
 import com.github.satoshun.truth.android.api.database.sqlite.SQLiteDatabaseSubject;
 import com.github.satoshun.truth.android.api.gesture.GestureLibrarySubject;
+import com.github.satoshun.truth.android.api.gesture.GestureOverlayViewSubject;
+import com.github.satoshun.truth.android.api.gesture.GesturePointSubject;
+import com.github.satoshun.truth.android.api.gesture.GestureStoreSubject;
+import com.github.satoshun.truth.android.api.gesture.GestureStrokeSubject;
 import com.github.satoshun.truth.android.api.gesture.GestureSubject;
+import com.github.satoshun.truth.android.api.gesture.OrientedBoundingBoxSubject;
+import com.github.satoshun.truth.android.api.gesture.PredictionSubject;
 import com.github.satoshun.truth.android.api.net.UriSubject;
 import com.github.satoshun.truth.android.api.os.AsyncTaskSubject;
 import com.github.satoshun.truth.android.api.os.BundleSubject;
@@ -253,7 +264,6 @@ import com.github.satoshun.truth.android.api.widget.CursorAdapterSubject;
 import com.github.satoshun.truth.android.api.widget.DatePickerSubject;
 import com.github.satoshun.truth.android.api.widget.EditTextSubject;
 import com.github.satoshun.truth.android.api.widget.FrameLayoutSubject;
-import com.github.satoshun.truth.android.api.widget.GestureOverlayViewSubject;
 import com.github.satoshun.truth.android.api.widget.GridViewSubject;
 import com.github.satoshun.truth.android.api.widget.HeaderViewListAdapterSubject;
 import com.github.satoshun.truth.android.api.widget.HorizontalScrollViewSubject;
@@ -485,10 +495,6 @@ public class Subjects {
 
   public static DatePickerSubject assertThat(DatePicker target) {
     return Truth.assertAbout(DatePickerSubject.FACTORY).that(target);
-  }
-
-  public static GestureOverlayViewSubject assertThat(GestureOverlayView target) {
-    return Truth.assertAbout(GestureOverlayViewSubject.FACTORY).that(target);
   }
 
   public static ScrollViewSubject assertThat(ScrollView target) {
@@ -889,5 +895,29 @@ public class Subjects {
 
   public static GestureLibrarySubject assertThat(GestureLibrary target) {
     return Truth.assertAbout(GestureLibrarySubject.FACTORY).that(target);
+  }
+
+  public static GestureOverlayViewSubject assertThat(GestureOverlayView target) {
+    return Truth.assertAbout(GestureOverlayViewSubject.FACTORY).that(target);
+  }
+
+  public static GesturePointSubject assertThat(GesturePoint target) {
+    return Truth.assertAbout(GesturePointSubject.FACTORY).that(target);
+  }
+
+  public static GestureStoreSubject assertThat(GestureStore target) {
+    return Truth.assertAbout(GestureStoreSubject.FACTORY).that(target);
+  }
+
+  public static GestureStrokeSubject assertThat(GestureStroke target) {
+    return Truth.assertAbout(GestureStrokeSubject.FACTORY).that(target);
+  }
+
+  public static OrientedBoundingBoxSubject assertThat(OrientedBoundingBox target) {
+    return Truth.assertAbout(OrientedBoundingBoxSubject.FACTORY).that(target);
+  }
+
+  public static PredictionSubject assertThat(Prediction target) {
+    return Truth.assertAbout(PredictionSubject.FACTORY).that(target);
   }
 }
