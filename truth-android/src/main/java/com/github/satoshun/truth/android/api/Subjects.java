@@ -188,6 +188,7 @@ import com.github.satoshun.truth.android.api.database.CursorSubject;
 import com.github.satoshun.truth.android.api.database.CursorWindowSubject;
 import com.github.satoshun.truth.android.api.database.sqlite.SQLiteDatabaseSubject;
 import com.github.satoshun.truth.android.api.gesture.GestureLibrarySubject;
+import com.github.satoshun.truth.android.api.gesture.GestureOverlayViewSubject;
 import com.github.satoshun.truth.android.api.gesture.GestureSubject;
 import com.github.satoshun.truth.android.api.net.UriSubject;
 import com.github.satoshun.truth.android.api.os.AsyncTaskSubject;
@@ -253,7 +254,6 @@ import com.github.satoshun.truth.android.api.widget.CursorAdapterSubject;
 import com.github.satoshun.truth.android.api.widget.DatePickerSubject;
 import com.github.satoshun.truth.android.api.widget.EditTextSubject;
 import com.github.satoshun.truth.android.api.widget.FrameLayoutSubject;
-import com.github.satoshun.truth.android.api.widget.GestureOverlayViewSubject;
 import com.github.satoshun.truth.android.api.widget.GridViewSubject;
 import com.github.satoshun.truth.android.api.widget.HeaderViewListAdapterSubject;
 import com.github.satoshun.truth.android.api.widget.HorizontalScrollViewSubject;
@@ -485,10 +485,6 @@ public class Subjects {
 
   public static DatePickerSubject assertThat(DatePicker target) {
     return Truth.assertAbout(DatePickerSubject.FACTORY).that(target);
-  }
-
-  public static GestureOverlayViewSubject assertThat(GestureOverlayView target) {
-    return Truth.assertAbout(GestureOverlayViewSubject.FACTORY).that(target);
   }
 
   public static ScrollViewSubject assertThat(ScrollView target) {
@@ -889,5 +885,9 @@ public class Subjects {
 
   public static GestureLibrarySubject assertThat(GestureLibrary target) {
     return Truth.assertAbout(GestureLibrarySubject.FACTORY).that(target);
+  }
+
+  public static GestureOverlayViewSubject assertThat(GestureOverlayView target) {
+    return Truth.assertAbout(GestureOverlayViewSubject.FACTORY).that(target);
   }
 }

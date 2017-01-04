@@ -1,11 +1,12 @@
-package com.github.satoshun.truth.android.api.widget;
+package com.github.satoshun.truth.android.api.gesture;
 
 import android.gesture.GestureOverlayView;
 
+import com.github.satoshun.truth.android.api.BaseSubject;
 import com.google.common.truth.FailureStrategy;
 import com.google.common.truth.SubjectFactory;
 
-public class GestureOverlayViewSubject extends FrameLayoutSubject<GestureOverlayViewSubject, GestureOverlayView> {
+public class GestureOverlayViewSubject extends BaseSubject<GestureOverlayViewSubject, GestureOverlayView> {
 
   public static final GestureOverlayViewSubjectFactory FACTORY = new GestureOverlayViewSubjectFactory();
 
@@ -53,9 +54,9 @@ public class GestureOverlayViewSubject extends FrameLayoutSubject<GestureOverlay
     return this;
   }
 
-  public GestureOverlayViewSubject isGestureStrokeType(int type) {
+  public GestureOverlayViewSubject isGestureStokeType(int type) {
     isNotNull();
-    check().withFailureMessage("is gesture stroke type")
+    check().withFailureMessage("is gesture stoke type")
         .that(actual().getGestureStrokeType())
         .isEqualTo(type);
     return this;
@@ -69,7 +70,7 @@ public class GestureOverlayViewSubject extends FrameLayoutSubject<GestureOverlay
     return this;
   }
 
-  public GestureOverlayViewSubject isOrientation(int orientation) {
+  public GestureOverlayViewSubject isOrientation( int orientation) {
     isNotNull();
     check().withFailureMessage("is orientation")
         .that(actual().getOrientation())
@@ -111,7 +112,7 @@ public class GestureOverlayViewSubject extends FrameLayoutSubject<GestureOverlay
 
   public GestureOverlayViewSubject isFadeDisabled() {
     isNotNull();
-    check().withFailureMessage("is fade disbled")
+    check().withFailureMessage("is fade disabled")
         .that(actual().isFadeEnabled())
         .isFalse();
     return this;
