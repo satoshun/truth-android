@@ -44,6 +44,7 @@ import android.database.AbstractCursor;
 import android.database.Cursor;
 import android.database.CursorWindow;
 import android.database.sqlite.SQLiteDatabase;
+import android.gesture.Gesture;
 import android.gesture.GestureOverlayView;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -185,6 +186,7 @@ import com.github.satoshun.truth.android.api.database.AbstractCursorSubject;
 import com.github.satoshun.truth.android.api.database.CursorSubject;
 import com.github.satoshun.truth.android.api.database.CursorWindowSubject;
 import com.github.satoshun.truth.android.api.database.sqlite.SQLiteDatabaseSubject;
+import com.github.satoshun.truth.android.api.gesture.GestureSubject;
 import com.github.satoshun.truth.android.api.net.UriSubject;
 import com.github.satoshun.truth.android.api.os.AsyncTaskSubject;
 import com.github.satoshun.truth.android.api.os.BundleSubject;
@@ -875,5 +877,11 @@ public class Subjects {
 
   public static BluetoothGattServiceSubject assertThat(BluetoothGattService target) {
     return Truth.assertAbout(BluetoothGattServiceSubject.FACTORY).that(target);
+  }
+
+  // gesture
+
+  public static GestureSubject assertThat(Gesture target) {
+    return Truth.assertAbout(GestureSubject.FACTORY).that(target);
   }
 }
