@@ -51,6 +51,7 @@ import android.gesture.GesturePoint;
 import android.gesture.GestureStore;
 import android.gesture.GestureStroke;
 import android.gesture.OrientedBoundingBox;
+import android.gesture.Prediction;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -198,6 +199,7 @@ import com.github.satoshun.truth.android.api.gesture.GestureStoreSubject;
 import com.github.satoshun.truth.android.api.gesture.GestureStrokeSubject;
 import com.github.satoshun.truth.android.api.gesture.GestureSubject;
 import com.github.satoshun.truth.android.api.gesture.OrientedBoundingBoxSubject;
+import com.github.satoshun.truth.android.api.gesture.PredictionSubject;
 import com.github.satoshun.truth.android.api.net.UriSubject;
 import com.github.satoshun.truth.android.api.os.AsyncTaskSubject;
 import com.github.satoshun.truth.android.api.os.BundleSubject;
@@ -913,5 +915,9 @@ public class Subjects {
 
   public static OrientedBoundingBoxSubject assertThat(OrientedBoundingBox target) {
     return Truth.assertAbout(OrientedBoundingBoxSubject.FACTORY).that(target);
+  }
+
+  public static PredictionSubject assertThat(Prediction target) {
+    return Truth.assertAbout(PredictionSubject.FACTORY).that(target);
   }
 }
