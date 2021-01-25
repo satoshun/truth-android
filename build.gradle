@@ -25,5 +25,5 @@ ext {
   compileSdkVersion = 25
   buildToolsVersion = '25.0.2'
 
-  truth = 'com.google.truth:truth:0.31'
+  truth = 'com.google.truth:truth:1.1.2'
 }
